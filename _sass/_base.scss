@@ -40,7 +40,7 @@ section {
 	color: white;
 	// height: 640px;
 	position: relative;
-	padding-top: emRhythm(16, $ms-down1);
+	padding-top: emRhythm(12, $ms-down1);
 	padding-bottom: emRhythm(16, $ms-down1);
 
 	@media(max-width: 768px) {
@@ -52,7 +52,7 @@ section {
 		margin-bottom: emRhythm(8, $ms-down1);
 
 		@media(max-width: 768px) {
-			margin-bottom: emRhythm(16, $ms-down1);			
+			margin-bottom: emRhythm(12, $ms-down1);			
 		}
 	}
 }
