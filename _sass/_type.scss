@@ -1,18 +1,18 @@
 @font-face {
-    font-family: 'nimbus_sansregular';
-    src: url('fonts/nimbus-webfont.eot');
-    src: url('fonts/nimbus-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/nimbus-webfont.woff2') format('woff2'),
-         url('fonts/nimbus-webfont.woff') format('woff'),
-         url('fonts/nimbus-webfont.ttf') format('truetype'),
-         url('fonts/nimbus-webfont.svg#nimbus_sansregular') format('svg');
+    font-family: 'brandon_grotesqueregular';
+    src: url('fonts/brandon_re-webfont.eot');
+    src: url('fonts/brandon_re-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/brandon_re-webfont.woff2') format('woff2'),
+         url('fonts/brandon_re-webfont.woff') format('woff'),
+         url('fonts/brandon_re-webfont.ttf') format('truetype'),
+         url('fonts/brandon_re-webfont.svg#brandon_grotesqueregular') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
 
 body {
-	font-size: 1.500em;
+	font-size: 2em;
 	@media (max-width: 640px) {
 		font-size: 1.3em;
 	}
