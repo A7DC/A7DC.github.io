@@ -1,15 +1,15 @@
 // scaffolding
 
 section {
-	padding-top: emRhythm(12, $ms-down1);
-	padding-bottom: emRhythm(12, $ms-down1);
+	padding-top: emRhythm(9, $ms-down1);
+	padding-bottom: emRhythm(9, $ms-down1);
 	float: left;
 	width: 100%;
 	color: white;
 
 	@media(max-width: 768px) {
-		padding-top: emRhythm(6, $ms-down1);
-		padding-bottom: emRhythm(6, $ms-down1);		
+		padding-top: emRhythm(3, $ms-down1);
+		padding-bottom: emRhythm(3, $ms-down1);		
 	}
 }
 
@@ -40,8 +40,8 @@ section {
 	color: white;
 	// height: 640px;
 	position: relative;
-	padding-top: emRhythm(12, $ms-down1);
-	padding-bottom: emRhythm(16, $ms-down1);
+	padding-top: emRhythm(9, $ms-down1);
+	padding-bottom: emRhythm(12, $ms-down1);
 
 	@media(max-width: 768px) {
 		padding-top: emRhythm(6, $ms-down1);
@@ -49,10 +49,10 @@ section {
 	}
 
 	h2 {
-		margin-bottom: emRhythm(8, $ms-down1);
+		margin-bottom: emRhythm(6, $ms-down1);
 
 		@media(max-width: 768px) {
-			margin-bottom: emRhythm(12, $ms-down1);			
+			margin-bottom: emRhythm(9, $ms-down1);			
 		}
 	}
 }
@@ -63,7 +63,6 @@ section {
 }
 
 .contact {
-	background: #ECF0F1;
 	color: #363743;
 }
 
