@@ -19,15 +19,14 @@ body {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: modular-scale(3); 
 	line-height: 1.17;
 	letter-spacing: -.2px;
 }
 
 h2 {
-	font-size: 1em;
+	font-size: modular-scale(1); 
 	display: inline-block;
-
 }
 
 h2.--alt {
@@ -62,7 +61,8 @@ ul {
 	@extend .underline;
 }
 
-.contact h2 {
+.contact h2,
+.CV h2 {
 	@extend .underline--alt;
 }
 
@@ -73,4 +73,8 @@ ul {
 
 .contact p {
 	letter-spacing: -.7px;
+}
+
+.contact, .CV {
+	color: #363743;
 }

@@ -62,9 +62,6 @@ section {
 
 }
 
-.contact {
-	color: #363743;
-}
 
 // what i do
 
@@ -87,4 +84,26 @@ ul {
 
 li {
 	list-style: none;
+}
+
+// CV
+
+.CV {
+	p {
+		font-size: .75em; // refactor
+	}
+	.content {
+			@include span-columns(8);
+	}
+	.heading {
+			@include span-columns(4);
+	}
+	li {
+		list-style: disc;
+		margin-left: 1em;
+	} 
+}
+
+.client {
+	padding-bottom: emRhythm(3, $ms-down1);	
 }
