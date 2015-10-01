@@ -1,0 +1,10 @@
+.keyboard {
+	position: absolute;
+	left: 7.2%;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	@media (max-width: 768px) {
+		width: 90%;
+	}
+}

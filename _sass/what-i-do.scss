@@ -1,0 +1,11 @@
+.skills-list {
+	@include span-columns(4);
+	@media (max-width: 840px) {
+		width: 100%;
+		margin-bottom: emRhythm(3, $ms-down1);		
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}

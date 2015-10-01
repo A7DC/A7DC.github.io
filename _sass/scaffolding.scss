@@ -1,0 +1,44 @@
+// scaffolding
+
+section {
+	padding-top: emRhythm(18, $ms-down1);
+	padding-bottom: emRhythm(18, $ms-down1);
+	float: left;
+	width: 100%;
+
+	@media(max-width: 768px) {
+		padding-top: emRhythm(12, $ms-down1);
+		padding-bottom: emRhythm(12, $ms-down1);		
+	}
+
+}
+
+.CV {
+	padding-top: emRhythm(18, $ms-down1);
+	padding-bottom: emRhythm(18, $ms-down1);
+
+	.head {
+		padding-bottom: emRhythm(18, $ms-down1);	
+	}	
+
+	.work {
+		float: left;
+		padding-top: emRhythm(4, $ms-down1);
+		padding-bottom: emRhythm(4, $ms-down1);		
+	}
+
+	.intro {
+		padding-top: emRhythm(18, $ms-down1);
+		padding-bottom: emRhythm(30, $ms-down1);			
+	}
+
+}
+
+.inner {
+	max-width: 960px;
+	margin: 0 auto;
+	@media (max-width: 960px) {
+		width: 95%;
+		padding: 0 2.5%;
+	}
+}

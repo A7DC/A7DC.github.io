@@ -1,0 +1,40 @@
+.CV {
+	color: black;
+	
+	.content {
+		@include span-columns(8);
+	}
+	
+	.heading {
+		@include span-columns(4);
+	}
+
+	.name {
+		@include span-columns(8);
+	}
+
+	.contact {
+		@include span-columns(4);
+		@include setType(7, $ms-up1);		
+		text-align: right;
+
+		span {
+			display: block;
+		}
+	}
+	
+	p {
+		@include setType(7, $ms-up1);
+	}
+	
+	
+	li {
+		list-style: disc;
+		margin-left: 1em;
+	} 
+}
+
+
+.client {
+	padding-bottom: emRhythm(9, $ms-down1);	
+}
