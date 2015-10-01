@@ -12,21 +12,33 @@
 }
 
 body {
-	font-size: 2em;
-	@media (max-width: 640px) {
-		font-size: 1.3em;
+	font-size: $base-em-font-size;
+	@media (max-width: 768px) {
+		font-size: 80%;
 	}
 }
 
 h1 {
-	font-size: modular-scale(3); 
-	line-height: 1.17;
+	@include setType(15, $ms-up5);
 	letter-spacing: -.2px;
+
+	@media (max-width: 768px) {
+		@include setType(12, $ms-up4);		
+	}
 }
 
 h2 {
-	font-size: modular-scale(1); 
+	@include setType(6, $ms-up2);
 	display: inline-block;
+}
+
+h5 {
+	@include setType(7, $ms-up2);
+	display: inline-block;
+}
+
+h6 {
+	@include setType(6, $ms-up1);
 }
 
 h2.--alt {
@@ -34,16 +46,20 @@ h2.--alt {
 	border-color: #363743 !important; //and this
 }
 
+p {
+	@include setType(8, $ms-up2);
+}
+
 ul {
-	font-size: .75em;
+	@include setType(7, $ms-up1);
 }
 
 .underline {
 	color: white;
 	text-decoration: none;
 	font-weight: inherit;
-	margin-bottom: emRhythm(1, $ms-down1);
-	@include rhythmBorderBottom(4px, .75, $ms-down1); // [2]
+	margin-bottom: emRhythm(5, $ms-up3);
+	@include rhythmBorderBottom(4px, 2, $ms-up3);
 	border-bottom: 4px solid white;
 }
 
@@ -51,9 +67,19 @@ ul {
 	text-decoration: none;
 	font-weight: inherit;
 	color: #363743;
-	margin-bottom: emRhythm(1, $ms-down1);
-	@include rhythmBorderBottom(4px, .75, $ms-down1); // [2]
+	margin-bottom: emRhythm(5, $ms-up3);
+	@include rhythmBorderBottom(4px, 2, $ms-up3);
 	border-bottom: 4px solid #363743;
+}
+
+.client h5 {
+	border: none;
+}
+
+.client b {
+	font-weight: normal;
+	font-style: italic;
+	font-size: $ms-down1; 
 }
 
 .hero a,
@@ -61,9 +87,19 @@ ul {
 	@extend .underline;
 }
 
+.what-i-do {
+	color: white;
+}
+
 .contact h2,
-.CV h2 {
+.CV h2,
+.CV h5 {
 	@extend .underline--alt;
+}
+
+.CV h1 {
+	margin-bottom: 0;
+    margin-left: -.05em;
 }
 
 .contact a {
