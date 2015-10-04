@@ -1,0 +1,33 @@
+@media print {
+
+	body {
+		font-size: 60%;
+	}
+
+	section,
+	.CV,
+	.CV .work {
+		padding-top: 10% !important;
+		padding-bottom: 10% !important;
+
+	}
+
+	.CV {
+		padding-top: 0 !important;
+		padding-bottom: 0 !important;
+	}
+
+	.client {
+		padding-bottom: 10% !important;
+	}
+
+}
+
+
+@media all {
+	.page-break	{ display: none; }
+}
+
+@media print {
+	.page-break	{ display: block; page-break-after: always; }
+}

@@ -10,12 +10,10 @@
     }
 }
 
-// Import partials from `sass_dir` (defaults to `_sass`)
 @import
 		"bourbon/_bourbon",
 		"neat/_neat",
         "layout",
-        "syntax-highlighting",
         "typesettings",
         "fonts",
         "type",
@@ -24,5 +22,6 @@
         "hero",
         "keyboard",
         "what-i-do",
-        "cv"
+        "cv",
+        "print"
 ;
