@@ -1,11 +1,12 @@
 $(document).ready(function(){
-	// $('.work-holder').slick({
-	//   infinite: false,
-	//   prevArrow: true,
-	//   nextArrow: true,
-	//   slidesToShow: 3,
-	//   slidesToScroll: 3
-	// });
-	$('.slider').slick();
+	$('.projects').slick();
+
+	$('.project-preview').on('click', function(){
+		$(this).next().addClass('active');
+	});
+
+	$('.project-close-btn').on('click', function(){
+		$(this).parent().removeClass('active');
+	});
 });
 
