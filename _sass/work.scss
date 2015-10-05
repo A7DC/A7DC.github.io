@@ -1,7 +1,71 @@
-.project-case-study {
+.overlay {
+	overflow-y: scroll;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: white;
 	display: none;
+
+	// p {
+	// 	@include setType(7, $ms-up1);
+	// }
+
+	.heading {
+		@include span-columns(4);
+	}
+
+	.introduction {
+		@include span-columns(8);
+		@include setType(7, $ms-down1);
+	}
 }
 
-.project-case-study.active {
+.overlay.active {
 	display: block;
+}
+
+.project-view-btn {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #F2837F;
+	border: none;
+	width: 100%;
+	padding: 1em;
+	text-align: center;
+	color: white;
+}
+
+.hero-holder {
+	position: relative;
+}
+
+.screens {
+	float: left;
+	width: 100%;
+	background: #EDEDED;
+}
+
+.thegodfatherbarbers-safari--hero {
+    width: 75%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    margin: auto;
+    bottom: 0;
+    box-shadow: 0px 4px 7px #313131;
+}
+
+.thegodfatherbarbers-iphone-footer {
+    margin: auto;
+    display: block;
+    width: 40%;	
+}
+
+.the-godfather-barbers {
+	background: #FACF9B;
 }

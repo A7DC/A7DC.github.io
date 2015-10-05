@@ -41,6 +41,11 @@ ul {
 	@include setType(7, $ms-up1);
 }
 
+.project-studies h2 {
+	display: block;
+	margin-bottom: emRhythm(2, $ms-up2);
+}
+
 .underline {
 	color: white;
 	text-decoration: none;
