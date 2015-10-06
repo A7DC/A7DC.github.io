@@ -21,12 +21,6 @@ section {
 		padding-bottom: emRhythm(18, $ms-down1);	
 	}	
 
-	.work {
-		float: left;
-		padding-top: emRhythm(4, $ms-down1);
-		padding-bottom: emRhythm(4, $ms-down1);		
-	}
-
 	.intro {
 		padding-top: emRhythm(18, $ms-down1);
 		padding-bottom: emRhythm(30, $ms-down1);			
@@ -34,19 +28,13 @@ section {
 
 }
 
-.overlay {
-	padding-top: emRhythm(18, $ms-down1);
-	padding-bottom: emRhythm(18, $ms-down1);
+.work {
+	padding: 0;
 }
 
 .iphone {
-	padding-top: emRhythm(8, $ms-down1);
-	padding-bottom: emRhythm(8, $ms-down1);
-}
-
-.screens {
-	margin-top: emRhythm(8, $ms-down1);
-	margin-bottom: emRhythm(8, $ms-down1);
+	padding-top: emRhythm(18, $ms-down1);
+	padding-bottom: emRhythm(18, $ms-down1);
 }
 
 .inner {

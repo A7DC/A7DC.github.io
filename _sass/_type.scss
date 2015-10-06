@@ -75,7 +75,8 @@ ul {
 }
 
 .hero a,
-.what-i-do h2 {
+.what-i-do h2,
+.work h2 a {
 	@extend .underline;
 }
 

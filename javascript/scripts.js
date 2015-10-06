@@ -5,10 +5,14 @@ $(document).ready(function(){
 		$('.the-godfather-barbers').addClass('active');
 	});
 
+	$('.project').on('click', function(){
+		$('.project-studies').addClass('active');
+	});
+
 
 	// closes current overlay
 	$('.project-close-btn').on('click', function(){
-		$(this).parent().removeClass('active');
+		$(this).parentsUntil('overlay').removeClass('active');
 	});
 });
 
