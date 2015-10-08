@@ -104,18 +104,31 @@
 }
 
 .project-godfather-barbers {
-	height: 100vh;
 	overflow: hidden;
 	position: relative;
 
-	img,
+	@media (min-width: 768px) {
+		height: 100vh;
+	}
+
+	img {
+		@media (min-width: 768px) {
+			position: absolute;
+		    left: 0;
+		    right: 0;
+		    top: 0;
+		    bottom: 0;
+		    margin: auto;		
+		}
+	}
+
 	h2 {
 		position: absolute;
 	    left: 0;
 	    right: 0;
 	    top: 0;
 	    bottom: 0;
-	    margin: auto;		
+	    margin: auto;	
 	}
 
 	img {
@@ -123,7 +136,7 @@
 	}
 
 	h2 {
-	    width: 21em;
+	    width: 100%;
 	    text-align: center;
 	    height: 1em;
 	    z-index: 3;
