@@ -13,8 +13,8 @@ section {
 
 }
 
-section:not(:last-child, .work) {
-	@media(min-width: 380px) {
+section:not(:last-child, .work, .what-i-do) {
+	@media(min-width: 768px) {
 		height: 100vh;
 	}
 }
