@@ -52,13 +52,13 @@ ul {
 	font-weight: inherit;
 	margin-bottom: emRhythm(5, $ms-up3);
 	@include rhythmBorderBottom(4px, 2, $ms-up3);
-	border-bottom: 4px solid white;
+	border-bottom: 4px solid;
 }
 
 .underline--alt {
 	text-decoration: none;
 	font-weight: inherit;
-	color: #363743;
+	color: #222;
 	margin-bottom: emRhythm(5, $ms-up3);
 	@include rhythmBorderBottom(4px, 2, $ms-up3);
 	border-bottom: 4px solid #363743;
@@ -75,16 +75,12 @@ ul {
 }
 
 .hero a,
-.what-i-do h2,
 .work h2 a {
 	@extend .underline;
 }
 
-.what-i-do {
-	color: white;
-}
-
 .contact h2,
+.what-i-do h2,
 .CV h2,
 .CV h5 {
 	@extend .underline--alt;
