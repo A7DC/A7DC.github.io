@@ -73,7 +73,7 @@
 }
 
 .thegodfatherbarbers-safari--hero {
-    width: 75%;
+	width: 100%;
     position: absolute;
     right: 0;
     top: 0;
@@ -85,6 +85,10 @@
     @media (max-width: 768px) {
     	right: -16em;
     }
+
+    @media (min-width: 768px) {
+    	width: 75%;
+	}
 }
 
 .overlay--dark {

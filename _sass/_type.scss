@@ -61,7 +61,7 @@ ul {
 	color: #222;
 	margin-bottom: emRhythm(5, $ms-up3);
 	@include rhythmBorderBottom(4px, 2, $ms-up3);
-	border-bottom: 4px solid #363743;
+	border-bottom: 4px solid;
 }
 
 .client h5 {
@@ -75,12 +75,12 @@ ul {
 }
 
 .hero a,
+.what-i-do h2,
 .work h2 a {
 	@extend .underline;
 }
 
 .contact h2,
-.what-i-do h2,
 .CV h2,
 .CV h5 {
 	@extend .underline--alt;
