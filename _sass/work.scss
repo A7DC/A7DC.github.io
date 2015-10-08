@@ -28,6 +28,13 @@
 		@include span-columns(8);
 		@include setType(7, $ms-down1);
 	}
+
+	.heading,
+	.introduction {
+		@media (max-width: 768px) {
+			width: 100%;
+		}
+	}
 }
 
 .overlay.active {
