@@ -48,7 +48,8 @@ section:not(:last-child, .work, .what-i-do) {
 
 	.intro {
 		padding-top: emRhythm(18, $ms-down1);
-		padding-bottom: emRhythm(30, $ms-down1);			
+		padding-bottom: emRhythm(18, $ms-down1);
+		float: left;			
 	}
 
 }
