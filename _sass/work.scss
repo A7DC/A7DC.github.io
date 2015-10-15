@@ -1,12 +1,18 @@
 .overlay {
-	overflow-y: scroll;
 	position: fixed;
+	bottom: 0;
+	top: 0;
 	left: 0;
 	right: 0;
-	top: 0;
-	bottom: 0;
 	background: white;
-	display: none;
+	visibility: hidden;
+	transition: .3s ease all;
+	transform: translateY(100%);
+
+    .overlay-content {
+        height: 100%;
+        overflow: scroll;
+    }
 
 	.project-close-btn {
 	    position: absolute;
@@ -38,14 +44,12 @@
 }
 
 .overlay.active {
-	display: block;
+	visibility: visible;
+	transform: translateY(0);
 }
 
 .project-view-btn {
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	// position: fixed;
 	background: #F2837F;
 	border: none;
 	width: 100%;
@@ -54,6 +58,7 @@
 	color: white;
 	@include setType(1);
 	font-family: inherit;
+	display: inline-block;
 }
 
 .hero-holder {

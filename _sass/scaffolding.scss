@@ -1,5 +1,24 @@
 // scaffolding
 
+body,
+html {
+	height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.no-scroll {
+    height: 100%;
+    overflow: auto;
+}
+
+.page-content {
+	position: relative;
+}
+
+.page-content.active {
+	overflow: hidden;
+}
+
 section {
 	padding-top: emRhythm(18, $ms-down1);
 	padding-bottom: emRhythm(18, $ms-down1);

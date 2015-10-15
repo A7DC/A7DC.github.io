@@ -3,6 +3,8 @@ $(document).ready(function(){
 
 	$('.project-godfather-barbers').on('click', function(){
 		$('.the-godfather-barbers').addClass('active');
+		$('.page-content').addClass('active');
+		$('.main-content').addClass('no-scroll');
 	});
 
 	$('.project').on('click', function(){
@@ -13,6 +15,8 @@ $(document).ready(function(){
 	// closes current overlay
 	$('.project-close-btn').on('click', function(){
 		$(this).parentsUntil('overlay').removeClass('active');
+		$('.page-content').removeClass('active');
+		$('.main-content').removeClass('no-scroll');
 	});
 });
 
