@@ -35,6 +35,9 @@ h2.--alt {
 
 p {
 	@include setType(8, $ms-up2);
+	-webkit-hyphens: none;
+	-ms-hyphens: none;
+	-moz-hyphens: none;
 }
 
 ul {
