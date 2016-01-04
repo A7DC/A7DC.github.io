@@ -1,12 +1,24 @@
 .blog {
+	.inner {
+		width: 800px;
+	}
 
 	h2 {
-		margin-bottom: emRhythm(3, $ms-down1); // [1]
+		margin-bottom: emRhythm(3, $ms-up2);
+		@include setType(8, $ms-up3);
+	}
+
+	p {
+		@include setType(8, $ms-up1);
 	}
 
 	img {
 		margin: 0 auto;
 		display: block;
+	}
+
+	ul {
+		margin-bottom: emRhythm(3, $ms-down1); // [1]
 	}
 
 	li {
