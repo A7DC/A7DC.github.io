@@ -1,0 +1,15 @@
+.blog {
+
+	h2 {
+		margin-bottom: emRhythm(3, $ms-down1); // [1]
+	}
+
+	img {
+		margin: 0 auto;
+		display: block;
+	}
+
+	li {
+		list-style: inherit;
+	}
+}
