@@ -4,8 +4,8 @@ import { Transition } from 'react-spring'
 
 // components
 import { Navigation } from '../Navigation';
-import { Home } from '../Home';
-import { About } from '../About';
+// import { Home } from '../Home';
+// import { About } from '../About';
 
 // styles
 import './styles.css'
@@ -29,8 +29,8 @@ export const App = ({location}) =>
                 leave={{ opacity: 0 }}>
                 {style => (
                   <Switch location={location}>
-                    <Route exact path="/" render={props => Home({ ...props, style })} />
-                    <Route exact path="/about" render={props => About({ ...props, style })} />
+                    <Route exact path="/" render={props => Home({ ...style })} />
+                    <Route exact path="/about" render={props => About({ ...style })} />
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
                 )}
@@ -41,3 +41,6 @@ export const App = ({location}) =>
       />
     </Router>
   )
+
+const About = style => <div className="mainRoute" style={{ ...style, backgroundColor: '#4CAF50' }}>About</div>
+const Home = style => <div className="mainRoute" style={{ ...style, backgroundColor: '#d32f2f' }}>Home</div>
