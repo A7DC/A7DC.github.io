@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { animated } from 'react-spring'
 
-export const About = () => (
-    <div>
-      About
-    </div>
-)
+export const About = (styles, defaultStyles) => <animated.div style={{ ...defaultStyles, ...styles, backgroundColor: '#247AA0' }}>About</animated.div>
+
 
 
