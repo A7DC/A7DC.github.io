@@ -3,12 +3,14 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-ro
 import { Transition } from 'react-spring'
 
 // components
-import { Navigation } from '../Navigation';
+import { Header } from '../Header';
 import { Home } from '../Home';
 import { About } from '../About';
 
 // styles
 import './styles.css'
+
+
 
 
 export const App = ({location}) => (
@@ -20,9 +22,10 @@ export const App = ({location}) => (
               exact 
               path="/" 
               />
-            <Navigation />
+            <Header />
             <div className="content">
               <Transition
+                keys={location.pathname.split('/').filter(a => a)[0]}
                 config={{ tension: 1, friction: 6 }}
                 from={{ transform: 'translateY(-100vh)', opacity: 0 }}
                 enter={{ transform: 'translateY(0px)', opacity: 1 }}

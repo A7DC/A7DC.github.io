@@ -1,18 +1,29 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
+import { Logo } from '../Icons/'
 
 const classes = {
-  items: 'w-50 tc',
+  items: 'mr6',
   links: 'link light-silver'
 }
 
+const navItems = [
+  {
+    text: 'home',
+    url: '/',
+  },
+  {
+    text: 'about',
+    url: '/about'
+  }
+];
+
 export const Navigation = () => (
-  <nav className={'fixed w-100 z-max pa2'}>
+  <nav className="ml6 pl5 overflow-x-scroll no-scrollbar">
+
       <ul className='list flex flex-row pa0'>
-        <li className={classes.items}><Link className={classes.links} to='/'>home</Link></li>
-        <li className={classes.items}><Link className={classes.links} to='/about'>about</Link></li>
+        {navItems.map(li => <li className={classes.items} key={li}><Link className={classes.links} to={li.url}>{li.text}</Link></li>)}
       </ul>
     </nav>
 )
-
-
