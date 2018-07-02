@@ -23,7 +23,7 @@ export const App = ({location}) => (
               path="/" 
               />
             <Header />
-            <div className="content">
+          <div>
               <Transition
                 keys={location.pathname.split('/').filter(a => a)[0]}
                 config={{ tension: 1, friction: 6 }}
