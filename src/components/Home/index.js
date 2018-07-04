@@ -12,15 +12,15 @@ const classes = {
 }
 
 
-const fast = { ...config.stiff, restSpeedThreshold: 1, restDisplacementThreshold: 0.01 }
+// const fast = { ...config.stiff, restSpeedThreshold: 10, restDisplacementThreshold: 0.01 }
 
-// Creates a spring with predefined animation slots
-const Sidebar = Keyframes.Spring({
-  // Slots can take arrays/chains,
-  start: [
-    { delay: 500, from: { x: 0 }, to: { x: 1 }, config: config.slow },
-  ]
-})
+// // Creates a spring with predefined animation slots
+// const Sidebar = Keyframes.Spring({
+//   // Slots can take arrays/chains,
+//   start: [
+//     { delay: 500, from: { x: 0 }, to: { x: 1 }, config: config.slow },
+//   ]
+// })
 
 
 
@@ -50,37 +50,62 @@ const Sidebar = Keyframes.Spring({
 // )
 
 
-
-class Home extends Component {
-  state = { open: undefined }
+export class Home extends Component {
   render() {
-    const state = this.state.open === undefined ? 'start' : this.state.open ? 'open' : 'close'
     const { style } = this.props;
     return (
-    <div 
-      className="mainRoute" 
-    style={
-      { ...style, 
-        backgroundColor: '#FFF87A',
-        color: '#2b2b2b'
-        }
-      }>
-      <ContentContainer>
-        <div className="mw8 pl6 pt6 mt6">
-          <Sidebar native state={state}>
-            {({ x }) => (
-              <animated.div className="sidebar" style={{ opacity: x.interpolate(x => x) }}>
-                <h1 className={classes.h1}>Daniel Caine is a full-stack designer from England</h1>
-                <p className={classes.subtitle}>Currently: Bordellio. Previously: SilverStripe, Levo and Reapit. <br /> Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
-              </animated.div>
-            )}
-          </Sidebar>
-          <ArrowDown />
-        </div>
-      </ContentContainer>
-    </div>
+      <div
+        className="mainRoute"
+        style={
+          {
+            ...style,
+            backgroundColor: '#FFF87A',
+            color: '#2b2b2b'
+          }
+        }>
+        <ContentContainer>
+          <div className="mw8 pl6 pt6 mt6">
+            <h1 className={classes.h1}>Daniel Caine is a full-stack designer from England</h1>
+            <p className={classes.subtitle}>Currently: Bordellio. Previously: SilverStripe, Levo and Reapit. <br /> Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+            <ArrowDown />
+          </div>
+        </ContentContainer>
+      </div>
     )
   }
 }
 
-export default Home;
+
+// class Home extends Component {
+//   state = { open: undefined }
+//   render() {
+//     const state = this.state.open === undefined ? 'start' : this.state.open ? 'open' : 'close'
+//     const { style } = this.props;
+//     return (
+//     <div 
+//       className="mainRoute" 
+//     style={
+//       { ...style, 
+//         backgroundColor: '#FFF87A',
+//         color: '#2b2b2b'
+//         }
+//       }>
+//       <ContentContainer>
+//         <div className="mw8 pl6 pt6 mt6">
+//           <Sidebar native state={state}>
+//             {({ x }) => (
+//               <animated.div className="sidebar" style={{ opacity: x.interpolate(x => x) }}>
+//                 <h1 className={classes.h1}>Daniel Caine is a full-stack designer from England</h1>
+//                 <p className={classes.subtitle}>Currently: Bordellio. Previously: SilverStripe, Levo and Reapit. <br /> Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+//               </animated.div>
+//             )}
+//           </Sidebar>
+//           <ArrowDown />
+//         </div>
+//       </ContentContainer>
+//     </div>
+//     )
+//   }
+// }
+
+// export default Home;

@@ -4,7 +4,7 @@ import { Transition } from 'react-spring'
 
 // components
 import { Header } from '../Header';
-import Home from '../Home';
+import {Home} from '../Home';
 import { About } from '../About';
 
 // styles
@@ -32,7 +32,7 @@ export const App = ({location}) => (
                 leave={{ transform: 'translateY(-100vh)', opacity: 0 }}>
                 {style => (
                   <Switch location={location}>
-                    <Route exact path="/" component={Home} />
+                    <Route exact path='/' render={props => <Home style={style} />} />
                     <Route exact path="/about" render={props => About({ ...style })} />
                     <Route render={() => <div>Not Found</div>} />
                   </Switch>
@@ -44,3 +44,4 @@ export const App = ({location}) => (
       />
     </Router>
   )
+debugger;
