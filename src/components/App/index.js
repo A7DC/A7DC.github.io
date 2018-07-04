@@ -4,14 +4,11 @@ import { Transition } from 'react-spring'
 
 // components
 import { Header } from '../Header';
-import {Home} from '../Home';
+import Home from '../Home';
 import { About } from '../About';
 
 // styles
 import './styles.css'
-
-
-
 
 export const App = ({location}) => (
     <Router>
@@ -44,4 +41,3 @@ export const App = ({location}) => (
       />
     </Router>
   )
-debugger;
