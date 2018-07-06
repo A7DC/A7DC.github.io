@@ -1,2 +1,4 @@
 _site
 .sass-cache
+.gitignore
+node_modules
