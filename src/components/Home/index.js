@@ -11,7 +11,7 @@ const classes = {
 const Content = Keyframes.Spring({
   // Slots can take arrays/chains,
   start: [
-    { delay: 400, from: { y:12, opacity: 0 }, to: { y: 0, opacity: 1 }, config: config.gentle },
+    { delay: 600, from: { y:12, opacity: 0 }, to: { y: 0, opacity: 1 }, config: config.gentle },
   ]
 })
 
