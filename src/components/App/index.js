@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
-import { Transition } from 'react-spring'
+import { Transition, config } from 'react-spring'
 
 // components
 import { Header } from '../Header';
@@ -23,7 +23,7 @@ export const App = ({location}) => (
           <div>
               <Transition
                 keys={location.pathname.split('/').filter(a => a)[0]}
-                config={{ tension: 3, friction: 12 }}
+                config={{ tension: 10, friction: 9 }}
                 from={{ transform: 'translateY(-100vh)', opacity: 0 }}
                 enter={{ transform: 'translateY(0px)', opacity: 1 }}
                 leave={{ transform: 'translateY(-100vh)', opacity: 0 }}>

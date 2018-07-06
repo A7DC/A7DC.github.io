@@ -11,8 +11,8 @@ const classes = {
 
 export const Header = () => (
   <header className="fixed w-100 z-max pa3 flex flex-row">
-    <Logo />
-    <Navigation />
+    {/* <Logo /> */}
+    {/* <Navigation /> */}
   </header>
 )
 
