@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import ContentContainer from '../ContentContainer'
-import { ArrowDown } from '../Icons'
 import { Keyframes, animated, config } from 'react-spring'
-import { TimingAnimation, Easing } from 'react-spring/dist/addons'
-
-import delay from 'delay'
 
 const classes = {
   h1: 'f1 fw6 lh-title ma0 pb3',
@@ -15,7 +11,7 @@ const classes = {
 const Content = Keyframes.Spring({
   // Slots can take arrays/chains,
   start: [
-    { delay: 200, from: { y:0, opacity: 0 }, to: { y: 0, opacity: 1 }, config: config.gentle },
+    { delay: 400, from: { y:12, opacity: 0 }, to: { y: 0, opacity: 1 }, config: config.gentle },
   ]
 })
 
@@ -48,10 +44,9 @@ class Home extends Component {
       }>
       <ContentContainer>
         <div className="mw8 pl6 absolute bottom-2">
-            <Content impl={TimingAnimation} native state={state}>
+            <Content native state={state}>
             {({ y, opacity }) => (
               <animated.div 
-                className="sidebar" 
                 style={{ 
                   transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                   opacity: opacity.interpolate(opacity => opacity)
@@ -62,7 +57,6 @@ class Home extends Component {
               </animated.div>
             )}
             </Content>
-          {/* <ArrowDown /> */}
         </div>
       </ContentContainer>
     </div>

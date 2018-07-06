@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
-import { Transition, config } from 'react-spring'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { Transition } from 'react-spring'
 
 // components
-import { Header } from '../Header';
+import Header from '../Header';
 import Home from '../Home';
 import { About } from '../About';
 
@@ -19,7 +19,7 @@ export const App = ({location}) => (
               exact 
               path="/" 
               />
-            <Header />
+            {/* <Header /> */}
           <div>
               <Transition
                 keys={location.pathname.split('/').filter(a => a)[0]}
