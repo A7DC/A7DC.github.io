@@ -3,8 +3,8 @@ import ContentContainer from '../ContentContainer'
 import { Keyframes, animated, config } from 'react-spring'
 
 const classes = {
-  h1: 'f1 fw6 lh-title ma0 pb3',
-  subtitle: 'f4 lh-copy ma0 mb4'
+  h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
+  subtitle: 'f4-ns f5 lh-copy ma0 mb4'
 }
 
 // Creates a spring with predefined animation slots
@@ -43,7 +43,7 @@ class Home extends Component {
         }
       }>
       <ContentContainer>
-        <div className="mw8 pl6 absolute bottom-2">
+          <div className="mw8 ph3 pl6-ns pr0-ns absolute bottom-2">
             <Content native state={state}>
             {({ y, opacity }) => (
               <animated.div 
