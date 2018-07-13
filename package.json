@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://A7DC.github.io/",
   "dependencies": {
     "delay": "^3.0.0",
     "react": "^16.3.2",
@@ -11,9 +12,14 @@
     "react-spring": "^5.3.19"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
   }
 }
