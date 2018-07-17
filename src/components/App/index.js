@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { Transition } from 'react-spring'
 
 // components
 import Header from '../Header';
@@ -21,20 +20,11 @@ export const App = ({location}) => (
               />
             {/* <Header /> */}
           <div>
-              <Transition
-                keys={location.pathname.split('/').filter(a => a)[0]}
-                config={{ tension: 10, friction: 9 }}
-                from={{ transform: 'translateY(-100vh)', opacity: 0 }}
-                enter={{ transform: 'translateY(0px)', opacity: 1 }}
-                leave={{ transform: 'translateY(-100vh)', opacity: 0 }}>
-                {style => (
-                  <Switch location={location}>
-                    <Route exact path='/' render={props => <Home style={style} />} />
-                    <Route exact path="/about" render={props => About({ ...style })} />
-                    <Route render={() => <div>Not Found</div>} />
-                  </Switch>
-                )}
-              </Transition>
+            <Switch location={location}>
+              <Route exact path='/' render={props => <Home />} />
+              <Route exact path="/about" render={props => About()} />
+              <Route render={() => <div>Not Found</div>} />
+            </Switch>
             </div>
           </div>
         )}
