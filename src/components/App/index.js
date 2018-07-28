@@ -13,7 +13,7 @@ export const App = ({location}) => (
     <Router>
       <Route
         render={({ location}) => (
-          <div className="fill">
+          <div>
             <Route 
               exact 
               path="/" 
