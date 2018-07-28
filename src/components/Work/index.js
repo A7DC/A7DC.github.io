@@ -1,5 +1,5 @@
 import React from 'react'
-const Background =  '../../images/bordellio-work-bg.png'
+let Background =  'images/bordellio-work-bg.png'
 
 const classes = {
   container: 'relative',
@@ -11,11 +11,11 @@ const classes = {
 const Work = () => (
   <div 
     className={`${classes.container}`}
-    styles={{
+    style={{
       backgroundImage: `url(${Background})`
     }}
     >
-    <div className="white z-max">
+    <div className="z-max">
       <h6 className={classes.h6}>Bordellio</h6>
       <p className={classes.subtitle}>A digitial transformation of the sex industry</p>
     </div>

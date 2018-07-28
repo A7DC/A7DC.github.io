@@ -23,15 +23,15 @@ class Hero extends Component {
             <div 
               className={classes.hero}
               style={{
-                backgroundColor: '#fff87a',
-                color: '#2b2b2b'
+                backgroundColor: '#FFF87A',
+                color: '#1B1B1C'
         }}>
               <div>
                 <Content native state={state}>
                   {styles => (
                     <animated.div style={styles} className={classes.content}>
-                      <h1 className={classes.h1}>I'm a title</h1>
-                      <p className={classes.subtitle}>And I'm a subtitle</p>
+                      <h1 className={classes.h1}>Daniel Caine is a full-stack <b className="db-ns w-100-ns fw6"> designer from England </b></h1>
+                      <p className={classes.subtitle}>Currently: Bordellio. Previously: SilverStripe, Levo and Reapit. <br /> Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
                     </animated.div>
                   )}
                 </Content>
