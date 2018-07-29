@@ -4,6 +4,13 @@ import Work from '../Work'
 
 class Home extends Component {
 
+  constructor(props) {
+    super(props)
+    this.handleScroll = this.handleScroll.bind(this)
+    this.state = {
+    }
+  }
+
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll)
   }
@@ -12,18 +19,16 @@ class Home extends Component {
     window.removeEventListener('scroll', this.handleScroll)
   }
 
-
   handleScroll(e) {
-    const windowScrollPosition = window.scrollY
-    console.log('windowScrollPosition', windowScrollPosition)
+    let windowScrollPosition = window.scrollY
+    this.setState({ windowScrollPosition: windowScrollPosition })
   }
-
 
   render() {
     return (
       <Fragment>
         <Hero />
-        <Work />
+        <Work windowScrollPosition={this.state.windowScrollPosition}  />
       </Fragment>
     )
   }

@@ -5,7 +5,7 @@ import { animated } from 'react-spring'
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
   subtitle: 'f4-ns f5 lh-copy ma0 mb4-ns mb6',
-  hero: 'w-100 vh-100 flex',
+  hero: 'w-100 vh-100 flex mb5',
   content: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2'
 }
 
