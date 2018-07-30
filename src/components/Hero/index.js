@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { createKeyFrames } from '../../functions'
-import { animated } from 'react-spring'
+import { Keyframes, config, animated } from 'react-spring'
 
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
@@ -9,8 +8,18 @@ const classes = {
   content: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2'
 }
 
-const Bg = createKeyFrames(600, 0, 12)
-const Content = createKeyFrames(1200, 0, 22)
+const createKeyFrames = (delay, from, to) =>
+  Keyframes.Spring({
+    start: {
+      delay,
+      from: { transform: `translate3d(0,${from}%,0)`, opacity: 0 },
+      to: { transform: `translate3d(0,${to}%,0)`, opacity: 1 },
+      config: config.slow
+    }
+  })
+
+const Bg = createKeyFrames(600, -20, 0)
+const Content = createKeyFrames(1100, 40, 0)
 
 class Hero extends Component {
   state = { open: 'start' }
