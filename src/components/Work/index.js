@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { createKeyFrames } from '../../functions'
+import { Keyframes, config, animated } from 'react-spring'
+
 let Background =  'images/bordellio-work-bg.png'
 
 const classes = {
@@ -10,36 +11,55 @@ const classes = {
   content: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2'
 }
 
-const Bg = createKeyFrames(600, 0, 12)
-const Content = createKeyFrames(1200, 0, 22)
+export const createKeyFrames = (delay, from, to) =>
+  Keyframes.Spring({
+    start: {
+      delay,
+      from: { transform: `translate3d(0,${to}%,0)` },
+      to: { transform: `translate3d(0,${from}%,0)` },
+      config: config.slow
+    }
+  })
+
+const Bg = createKeyFrames(0, 0, 100)
 class Work extends Component {
 
-state = { open: false }
+state = { open: undefined }
 
-componentDidUpdate(prevProps) {
-  if (this.props.windowScrollPosition !== prevProps.windowScrollPosition) {
-    if (this.props.windowScrollPosition > 40) {
-      console.log('trigger animation now')
-      this.setState({
-        open: true
-      })
+  componentDidUpdate(prevProps) {
+    if (prevProps.windowScrollPosition !== this.props.windowScrollPosition) {
+      //Perform some operation here
+      this.setState({ open: this.props.windowScrollPosition }, () => console.log('this.state.open', this.state.open))
     }
   }
-}
+
+  getDerivedStateFromProps(nextProps, prevState) {
+    if (nextProps.windowScrollPosition !== prevState.windowScrollPosition) {
+      return { windowScrollPosition: nextProps.windowScrollPosition }
+    }
+    else return null;
+  }
 
 render(){
-  return(
-  <div
-    className={`${classes.container}`}
-    style={{
-      backgroundImage: `url(${Background})`
-    }}
-  >
-    <div className={classes.content}>
-      <h6 className={classes.h6}>Bordellio</h6>
-      <p className={classes.subtitle}>A digitial transformation of the sex industry</p>
-    </div>
-  </div>
+  const state = this.state.open === undefined ? null : 'start'
+  return (
+    <Bg native state={state}>
+      {style => (
+        <animated.div style={style}>
+          <div
+            className={`${classes.container}`}
+            style={{
+              backgroundImage: `url(${Background})`
+            }}
+          >
+            <div className={classes.content}>
+              <h6 className={classes.h6}>Bordellio</h6>
+              <p className={classes.subtitle}>A digitial transformation of the sex industry</p>
+            </div>
+          </div>
+        </animated.div>
+      )}
+    </Bg>
   )
 }
 }

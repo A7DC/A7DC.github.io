@@ -5,7 +5,7 @@ import { animated } from 'react-spring'
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
   subtitle: 'f4-ns f5 lh-copy ma0 mb4-ns mb6',
-  hero: 'w-100 vh-100 flex mb5',
+  hero: 'w-100 vh-100 flex pb1',
   content: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2'
 }
 
@@ -24,7 +24,8 @@ class Hero extends Component {
               className={classes.hero}
               style={{
                 backgroundColor: '#FFF87A',
-                color: '#1B1B1C'
+                color: '#1B1B1C',
+                boxSizing: 'content-box'
         }}>
               <div>
                 <Content native state={state}>
