@@ -4,10 +4,6 @@ import WorkHero from '../WorkHero'
 
 import data from '../../db'
 
-// let Background = 'images/bordellio-work-bg.png'
-
-
-
 const Work = ({ windowScrollPosition }) => (
   <section className="relative flex flex-column">
     <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />

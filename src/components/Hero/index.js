@@ -34,8 +34,8 @@ class Hero extends Component {
             <section 
               className={classes.hero}
               style={{
-                backgroundColor: '#FFF87A',
-                color: '#1B1B1C',
+                backgroundColor: '#1B1B1C',
+                color: '#fff',
                 boxSizing: 'content-box'
         }}>
               <div>
