@@ -4,5 +4,5 @@ export const heading = {
 }
 
 export const content = {
-  container: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2',
+  container: 'mw8 ph3 pl5-ns pr0-ns absolute bottom-2',
 }

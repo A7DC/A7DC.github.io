@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-
-import { heading } from '../../tachyons-classes'
+import ContentContainer from '../ContentContainer'
+import { heading, content } from '../../tachyons-classes'
 
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
   subtitle: 'f4-ns f5 lh-copy ma0 mb4-ns mb6',
-  hero: 'w-100 vh-100 flex pb1',
-  content: 'mw8 ph3 pl6-ns pr0-ns absolute bottom-2'
+  hero: 'w-100 vh-100 flex pb1'
 }
 
 const createKeyFrames = (delay, from, to) =>
@@ -38,16 +37,16 @@ class Hero extends Component {
                 color: '#fff',
                 boxSizing: 'content-box'
         }}>
-              <div>
+              <ContentContainer>
                 <Content native state={state}>
                   {styles => (
-                    <animated.div style={styles} className={classes.content}>
+                    <animated.div style={styles}>
                       <h1 className={heading.title}>Daniel Caine is a full-stack <b className="db-ns w-100-ns fw6"> designer from England </b></h1>
                       <p className={heading.subtitle}>Currently: Bordellio. Previously: SilverStripe, Levo and Reapit. <br /> Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
                     </animated.div>
                   )}
                 </Content>
-              </div>
+              </ContentContainer>
             </section>
           </animated.div>
         )}
