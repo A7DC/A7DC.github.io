@@ -65,3 +65,18 @@ body {
 .vh-50 {
 	height: 50vh;
 }
+
+/* colours */
+
+.bg-black {
+	background-color: #1B1B1C;
+}
+
+/* ////// */
+
+/* headings */
+
+.font-smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
