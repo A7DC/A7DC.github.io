@@ -80,3 +80,11 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
+
+/* Padding */
+
+.pb0-lc:last-child {
+	padding-bottom: 0;
+}
+
+/* ////// */

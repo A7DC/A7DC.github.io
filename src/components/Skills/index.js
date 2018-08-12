@@ -6,7 +6,7 @@ import data from '../../db'
 
 
 export const Skills = (style) => (
-  <section className="bg-black vh-100 relative white pt6 flex flex-row">
+  <section className="bg-black relative white pv6 flex flex-row">
     <ContentContainer>
       <div className="w-30 fl">
         <h3 className={heading.title}>Skills</h3>
@@ -14,7 +14,7 @@ export const Skills = (style) => (
       <div className="w-70 fl">
         {data.skills.map((skill, index) => {
           return (
-            <div className="w-100 flex flex-row pb5">
+            <div className="w-100 flex flex-row pb5 pb0-lc">
               <span className='w-20'>
                 <h4 className={heading.t2}>{skill.title}</h4>
               </span>
