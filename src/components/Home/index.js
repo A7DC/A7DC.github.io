@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Hero from '../Hero'
 import Work from '../Work'
+import Skills from '../Skills'
 
 class Home extends Component {
 
@@ -29,6 +30,7 @@ class Home extends Component {
       <Fragment>
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition}  />
+        <Skills />
       </Fragment>
     )
   }

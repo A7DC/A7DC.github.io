@@ -67,7 +67,7 @@ class WorkTile extends Component {
                 backgroundImage: `url(${bg})`
               }}
             >
-              <ContentContainer>
+              <ContentContainer bottom>
                 <Content native state={content}>
                   {styles => (
                     <animated.div style={styles}>

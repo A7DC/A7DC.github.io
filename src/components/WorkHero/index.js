@@ -66,15 +66,17 @@ class Work extends Component {
                 backgroundImage: `url(${this.props.bg})`
               }}
             >
-              <ContentContainer>
-                <Content native state={content}>
-                  {styles => (
-                    <animated.div style={styles}>
-                        <h6 className={heading.subtitle}>{subtitle}</h6>
-                        <h2 className={heading.title}>{title}</h2>
-                    </animated.div>
-                  )}
-                </Content>
+              <ContentContainer bottom>
+                <div class="mw8">
+                  <Content native state={content}>
+                    {styles => (
+                      <animated.div style={styles}>
+                          <h6 className={heading.subtitle}>{subtitle}</h6>
+                          <h2 className={heading.title}>{title}</h2>
+                      </animated.div>
+                    )}
+                  </Content>
+                </div>
               </ContentContainer>
             </div>
           </animated.div>

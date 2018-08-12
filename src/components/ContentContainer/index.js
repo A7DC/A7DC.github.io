@@ -1,8 +1,8 @@
 import React from 'react'
 import { content } from '../../tachyons-classes'
 
-const ContentContainer = ({ children }) => (
-  <div className={content.container}>
+const ContentContainer = ({ children, bottom }) => (
+  <div className={bottom ? content.containerBottom : content.container}>
     {children}
   </div>
 )
