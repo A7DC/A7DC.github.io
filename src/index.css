@@ -87,4 +87,17 @@ body {
 	padding-bottom: 0;
 }
 
+.pl20pc {
+	padding-left: 20%;
+}
+
 /* ////// */
+
+
+/* Typescale */
+
+/* this needs to be changed in source https://github.com/tachyons-css/tachyons/issues/270 */
+
+.f4 {
+	font-size: 1.125rem;
+}

@@ -6,24 +6,26 @@ import data from '../../db'
 
 
 export const Skills = (style) => (
-  <section className="bg-black relative white pv6 flex flex-row">
+  <section className="bg-black relative white pv6">
     <ContentContainer>
-      <div className="w-30 fl">
-        <h3 className={heading.title}>Skills</h3>
-      </div>
-      <div className="w-70 fl">
-        {data.skills.map((skill, index) => {
-          return (
-            <div className="w-100 flex flex-row pb5 pb0-lc">
-              <span className='w-20'>
-                <h4 className={heading.t2}>{skill.title}</h4>
-              </span>
-              <span className='w-80'>
-                <p className={heading.subtitle}>{skill.content}</p>
-              </span>    
-            </div>
-          )
-        })}
+      <div className="flex flex-row items-baseline">
+        <div className="w-30 fl">
+          <h3 className={'f3 fw4 lh-title ma0 mb3-ns'}>Skills</h3>
+        </div>
+        <div className="w-70 fl">
+          {data.skills.map((skill, index) => {
+            return (
+              <div className="w-100 flex flex-row items-baseline pb5 pb0-lc">
+                <span className='w-20'>
+                  <h4 className={heading.t2}>{skill.title}</h4>
+                </span>
+                <span className='w-80'>
+                  <p className={heading.p}>{skill.content}</p>
+                </span>    
+              </div>
+            )
+          })}
+        </div>
       </div>
     </ContentContainer>
   </section>
