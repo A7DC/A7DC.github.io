@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
-import { heading } from '../../tachyons-classes'
+import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
   container: 'relative white cover vh-50',
@@ -67,15 +67,17 @@ class WorkTile extends Component {
                 backgroundImage: `url(${bg})`
               }}
             >
-              <ContentContainer bottom>
-                <Content native state={content}>
-                  {styles => (
-                    <animated.div style={styles}>
-                      <h6 className={heading.subtitle}>{subtitle}</h6>
-                      <h2 className={heading.title}>{title}</h2>
-                    </animated.div>
-                  )}
-                </Content>
+              <ContentContainer>
+                <div className={stucture.pullLeft}>
+                  <Content native state={content}>
+                    {styles => (
+                      <animated.div style={styles}>
+                        <h6 className={heading.subtitle}>{subtitle}</h6>
+                        <h2 className={heading.title}>{title}</h2>
+                      </animated.div>
+                    )}
+                  </Content>
+                </div>
               </ContentContainer>
             </div>
           </animated.div>

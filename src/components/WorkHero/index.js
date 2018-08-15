@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
-import { heading } from '../../tachyons-classes'
+import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
   container: 'relative white vh-100 cover',
@@ -66,8 +66,8 @@ class Work extends Component {
                 backgroundImage: `url(${this.props.bg})`
               }}
             >
-              <ContentContainer bottom>
-                <div class="mw8">
+              <ContentContainer>
+                <div className={stucture.pullLeft}>
                   <Content native state={content}>
                     {styles => (
                       <animated.div style={styles}>

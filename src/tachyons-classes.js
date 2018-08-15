@@ -6,7 +6,7 @@ export const heading = {
   t6: 'f6 ma0 fw6 '
 }
 
-export const content = {
-  container: 'ph3 ph5-ns pr0-ns',
-  containerBottom: 'ph3 ph5-ns pr0-ns absolute bottom-2',
+export const stucture = {
+  container: 'ph3 ph5-ns pr0-ns w-100 h-100 mw9 mla mra relative',
+  pullLeft: 'pl3 pl5-ns absolute left-0 bottom-2',
 }

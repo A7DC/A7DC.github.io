@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
-import { heading, content } from '../../tachyons-classes'
+import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
   subtitle: 'f4-ns f5 lh-copy ma0 mb4-ns mb6',
-  hero: 'w-100 vh-100 flex pb1'
+  hero: 'w-100 vh-100 flex pb1 bg-black white content-box'
 }
 
 const createKeyFrames = (delay, from, to) =>
@@ -31,21 +31,18 @@ class Hero extends Component {
         {style => (
           <animated.div style={style}>
             <section 
-              className={classes.hero}
-              style={{
-                backgroundColor: '#1B1B1C',
-                color: '#fff',
-                boxSizing: 'content-box'
-        }}>
-              <ContentContainer bottom>
-                <Content native state={state}>
-                  {styles => (
-                    <animated.div style={styles}>
-                      <h1 className={heading.title}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
-                      <p className={heading.subtitle}>Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
-                    </animated.div>
-                  )}
-                </Content>
+              className={classes.hero}>
+              <ContentContainer>
+                <div className={stucture.pullLeft}>
+                  <Content native state={state}>
+                    {styles => (
+                      <animated.div style={styles}>
+                        <h1 className={heading.title}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
+                        <p className={heading.subtitle}>Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+                      </animated.div>
+                    )}
+                  </Content>
+                </div>
               </ContentContainer>
             </section>
           </animated.div>
