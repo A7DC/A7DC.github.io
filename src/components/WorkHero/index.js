@@ -18,13 +18,13 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(0, 100, 0)
+const Bg = createKeyFrames(1200, 100, 0)
 const Content = createKeyFrames(0, 40, 0)
 
 class Work extends Component {
 
   state = {
-    open: undefined,
+    open: 'start',
     content: false
   }
 
@@ -34,9 +34,7 @@ class Work extends Component {
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      //Perform some operation here
-      this.setState({ open: windowScrollPosition }, () => { console.log('this.state.open', this.state.open) })
-      if (windowScrollPosition > 700) {
+      if (windowScrollPosition > 600) {
         this.setState({
           content: true
         })
@@ -52,7 +50,7 @@ class Work extends Component {
   }
 
   render() {
-    const state = this.state.open === undefined ? null : 'start'
+    const state = this.state.open
     const content = this.state.content ? 'start' : null
     const {title, subtitle} = this.props
     return (
