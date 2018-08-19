@@ -6,7 +6,7 @@ import data from '../../db'
 
 
 export const Skills = (style) => (
-  <section className="bg-black relative white pv6">
+  <section className="relative white pv6">
     <ContentContainer>
       <div className="flex flex-row items-baseline">
         <div className="w-50 fl">

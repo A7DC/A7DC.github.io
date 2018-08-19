@@ -6,7 +6,7 @@ import data from '../../db'
 
 
 export const Experience = (style) => (
-  <section className="bg-black relative white">
+  <section className="relative white">
     <ContentContainer>
       <div className="flex flex-row pv6  bt b--dark-gray">
         <div className="w-50 fl">

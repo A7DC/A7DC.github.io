@@ -6,7 +6,7 @@ import { heading, stucture } from '../../tachyons-classes'
 const classes = {
   h1: 'f1-ns f2 fw6 lh-title ma0 pb3',
   subtitle: 'f4-ns f5 lh-copy ma0 mb4-ns mb6',
-  hero: 'w-100 vh-100 flex pb1 bg-black white content-box'
+  hero: 'w-100 vh-100 flex pb1 white content-box'
 }
 
 const createKeyFrames = (delay, from, to) =>
@@ -33,7 +33,7 @@ class Hero extends Component {
             <section 
               className={classes.hero}>
               <ContentContainer>
-                <div className={stucture.pullLeft}>
+                <div className={'pl3 pl6-ns pb6-ns absolute left-0 bottom-0'}>
                   <Content native state={state}>
                     {styles => (
                       <animated.div style={styles}>
