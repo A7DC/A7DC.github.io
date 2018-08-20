@@ -31,10 +31,9 @@ class Work extends Component {
 
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    let height = this.container.offsetHeight;
-
+    let bottom = this.container.getBoundingClientRect().bottom;
     if (prevProps.windowScrollPosition !== windowScrollPosition) {      
-      if (windowScrollPosition > (height - 200)) {
+      if (windowScrollPosition > (bottom - 40)) {
         this.setState({
           content: true
         })        
