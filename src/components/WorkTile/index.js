@@ -13,52 +13,41 @@ const createKeyFrames = (delay, from, to) =>
   Keyframes.Spring({
     start: {
       delay,
-      from: { transform: `translate3d(0,${from}%,0)`, opacity: 0, width: 100 + "%" },
-      to: { transform: `translate3d(0,${to}%,0)`, opacity: 1 },
+      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0, width: 100 + "%" },
+      to: { transform: `translate3d(0,${to}px,0)`, opacity: 1 },
       config: config.slow
     }
   })
 
-const Bg = createKeyFrames(0, 1600, 0)
-const Content = createKeyFrames(0, 40, 0)
+const Bg = createKeyFrames(600, 1600, 0)
 
 class WorkTile extends Component {
 
   state = {
-    open: undefined,
-    content: false
+    animateContainer: false
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
+    console.log(windowScrollPosition)
+    
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      //Perform some operation here
-      this.setState({ open: windowScrollPosition }, () => { console.log('this.state.open', this.state.open) })
-      if (windowScrollPosition > 700) {
+      if (windowScrollPosition > 728) {
         this.setState({
-          content: true
+          animateContainer: 'start'
         })
       }
     }
   }
 
-  getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.windowScrollPosition !== prevState.windowScrollPosition) {
-      return { windowScrollPosition: nextProps.windowScrollPosition }
-    }
-    else return null;
-  }
-
   render() {
-    const state = this.state.open === undefined ? null : 'start'
-    const content = this.state.content ? 'start' : null
+    const state = this.state.animateContainer
     const { title, subtitle, bg, position } = this.props
     return (
       <Bg native state={state}>
         {style => (
           <animated.div style={style}>
             <div
-              ref={(el) => { this.container = el }}
               className={`${classes.container}`}
               style={{
                 backgroundImage: `url(${bg})`,
@@ -67,14 +56,8 @@ class WorkTile extends Component {
             >
               <ContentContainer>
                 <div className={stucture.pullLeft}>
-                  <Content native state={content}>
-                    {styles => (
-                      <animated.div style={styles}>
-                        <h6 className={heading.subtitle}>{subtitle}</h6>
-                        <h2 className={heading.title}>{title}</h2>
-                      </animated.div>
-                    )}
-                  </Content>
+                  <h6 className={heading.subtitle}>{subtitle}</h6>
+                  <h2 className={heading.title}>{title}</h2>
                 </div>
               </ContentContainer>
             </div>
