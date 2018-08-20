@@ -10,7 +10,7 @@ export const Experience = (style) => (
     <ContentContainer>
       <div className="flex flex-row pv6  bt b--dark-gray">
         <div className="w-50 fl">
-          <h3 className={heading.title}>Experience</h3>
+          <h3 className={heading.t2}>Experience</h3>
         </div>
         <div className="w-50 fl">
           <div className="w-100 pl20pc">

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
 import { heading, stucture } from '../../tachyons-classes'
@@ -28,25 +29,17 @@ class Work extends Component {
     content: false
   }
 
-  componentDidMount() {
-    console.log(this.container, 'this.container')
-  }
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, nextState) {
     let windowScrollPosition = this.props.windowScrollPosition
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      if (windowScrollPosition > 600) {
+    let height = this.container.offsetHeight;
+
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {      
+      if (windowScrollPosition > (height - 200)) {
         this.setState({
           content: true
-        })
+        })        
       }
     }
-  }
-
-  getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.windowScrollPosition !== prevState.windowScrollPosition) {
-      return { windowScrollPosition: nextProps.windowScrollPosition }
-    }
-    else return null;
   }
 
   render() {
@@ -56,9 +49,14 @@ class Work extends Component {
     return (
       <Bg native state={state}>
         {style => (
-          <animated.div style={style}>
+          <animated.div 
+            style={style}
+            ref={r => { 
+              this.container = ReactDOM.findDOMNode(r)
+            }}
+            // ref={r => { console.log(ReactDOM.findDOMNode(r)) }}
+            >
             <div
-              ref={(el) => { this.container = el }}
               className={`${classes.container}`}
               style={{
                 backgroundImage: `url(${this.props.bg})`

@@ -1,7 +1,7 @@
 export const heading = {
   title: 'f1 lh-title fw6 ma0 mb3-ns ls--039',
   subtitle: 'f4 fw4 ma0 ',
-  t2: 'f4 fw4 ma0 ',
+  t2: 'f5 fw4 ma0 ',
   p: 'f6 ma0 ',
   t6: 'f6 ma0 fw6 '
 }

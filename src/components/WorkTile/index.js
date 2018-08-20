@@ -4,7 +4,7 @@ import ContentContainer from '../ContentContainer'
 import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
-  container: 'relative white cover vh-50',
+  container: 'relative white cover vh-50 w-50 mb6',
   images: 'absolute left-0 right-0 bottom-0 top-0 z-0',
 }
 
@@ -29,9 +29,6 @@ class WorkTile extends Component {
     content: false
   }
 
-  componentDidMount() {
-    console.log(this.container, 'this.container WorkTile')
-  }
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
@@ -55,16 +52,17 @@ class WorkTile extends Component {
   render() {
     const state = this.state.open === undefined ? null : 'start'
     const content = this.state.content ? 'start' : null
-    const { title, subtitle, bg } = this.props
+    const { title, subtitle, bg, position } = this.props
     return (
       <Bg native state={state}>
         {style => (
           <animated.div style={style}>
             <div
               ref={(el) => { this.container = el }}
-              className={classes.container}
+              className={`${classes.container}`}
               style={{
-                backgroundImage: `url(${bg})`
+                backgroundImage: `url(${bg})`,
+                float: position
               }}
             >
               <ContentContainer>

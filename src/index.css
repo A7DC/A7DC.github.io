@@ -69,7 +69,7 @@ body {
 /* colours */
 
 .bg-black {
-	background-color: #1B1B1C;
+	background-color: #171717;
 }
 
 .vh-80 {
@@ -113,6 +113,9 @@ body {
 	font-size: 1.125rem;
 }
 
+.f5 {
+	font-size: 1.5625rem;
+}
 
 /* letter-spacing */
 
