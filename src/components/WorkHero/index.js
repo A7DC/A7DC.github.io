@@ -29,7 +29,7 @@ class Work extends Component {
     content: false
   }
 
-  componentDidUpdate(prevProps, nextState) {
+  componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     let height = this.container.offsetHeight;
 
@@ -51,10 +51,7 @@ class Work extends Component {
         {style => (
           <animated.div 
             style={style}
-            ref={r => { 
-              this.container = ReactDOM.findDOMNode(r)
-            }}
-            // ref={r => { console.log(ReactDOM.findDOMNode(r)) }}
+            ref={r => { this.container = ReactDOM.findDOMNode(r)}}
             >
             <div
               className={`${classes.container}`}
