@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Spring, Transition } from 'react-spring'
 
 const classes = {
-  container: 'relative white vh-100 cover mb6'
+  container: 'relative vh-100 cover mb6 overflow-hidden'
 }
 
 class ImageHover extends Component {
@@ -27,14 +27,20 @@ class ImageHover extends Component {
     return (
       <div 
         className={classes.container}
-        style={{
-          backgroundImage: `url(${bg})`
-        }}
         onMouseEnter={this.toggle}
         onMouseLeave={this.toggle}
         >
-        <Spring from={{ opacity: 0 }} to={{ opacity: toggle ? 0.5 : 1  }}>
-          {styles => <div style={styles}>{children}</div>}
+        <Spring from={{ transform: 'scale(1)', height: `${0}%` }} to={{ transform: toggle ? 'scale(1)' : 'scale(1.2)', height: `${100}%`  }}>
+          {styles => (
+            <div style={styles}>
+              <div 
+                className={'cover w-100 h-100'}
+                style={{
+                  backgroundImage: `url(${bg})`
+                }}>
+              </div>
+            </div>
+          )}
         </Spring>
       </div>
     )

@@ -53,18 +53,19 @@ class Work extends Component {
             style={style}
             ref={r => { this.container = ReactDOM.findDOMNode(r)}}
             >
-            <ImageHover bg={bg}>
-                <div className={stucture.pullLeft}>
-                  <Content native state={content}>
-                    {styles => (
-                      <animated.div style={styles}>
-                          <h6 className={heading.subtitle}>{subtitle}</h6>
-                          <h2 className={heading.title}>{title}</h2>
-                      </animated.div>
-                    )}
-                  </Content>
-                </div>
-            </ImageHover>
+            <div className={classes.container}>
+            <ImageHover bg={bg} />
+            <div className={stucture.pullLeft}>
+              <Content native state={content}>
+                {styles => (
+                  <animated.div style={styles}>
+                      <h6 className={heading.subtitle}>{subtitle}</h6>
+                      <h2 className={heading.title}>{title}</h2>
+                  </animated.div>
+                )}
+              </Content>
+            </div>
+            </div>
           </animated.div>
         )}
       </Bg>
