@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spring, Transition } from 'react-spring'
+import { Spring, config } from 'react-spring'
 
 const classes = {
   container: 'relative vh-100 cover mb6 overflow-hidden'
@@ -22,7 +22,7 @@ class ImageHover extends Component {
   }
 
   render() {
-    const { children, bg} = this.props
+    const { bg } = this.props
     const toggle = this.state.animate
     return (
       <div 
@@ -30,7 +30,7 @@ class ImageHover extends Component {
         onMouseEnter={this.toggle}
         onMouseLeave={this.toggle}
         >
-        <Spring from={{ transform: 'scale(1)', height: `${0}%` }} to={{ transform: toggle ? 'scale(1)' : 'scale(1.2)', height: `${100}%`  }}>
+        <Spring config={config.slow} from={{ transform: 'scale(1)', height: `${100}%` }} to={{ transform: toggle ? 'scale(1)' : 'scale(1.2)', height: `${100}%`  }}>
           {styles => (
             <div style={styles}>
               <div 
