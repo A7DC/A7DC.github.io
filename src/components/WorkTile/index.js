@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-import ContentContainer from '../ContentContainer'
+import ImageHover from '../ImageHover'
 import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
@@ -13,7 +13,7 @@ const createKeyFrames = (delay, from, to) =>
   Keyframes.Spring({
     start: {
       delay,
-      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0, width: 100 + "%" },
+      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0, width: 100 + "%", height: 100 + "%" },
       to: { transform: `translate3d(0,${to}px,0)`, opacity: 1 },
       config: config.slow
     }
@@ -44,26 +44,19 @@ class WorkTile extends Component {
     const state = this.state.animateContainer
     const { title, subtitle, bg, position } = this.props
     return (
-      <Bg native state={state}>
-        {style => (
-          <animated.div style={style}>
-            <div
-              className={`${classes.container}`}
-              style={{
-                backgroundImage: `url(${bg})`,
-                float: position
-              }}
-            >
-              <ContentContainer>
-                <div className={stucture.pullLeft}>
-                  <h6 className={heading.subtitle}>{subtitle}</h6>
-                  <h2 className={heading.title}>{title}</h2>
-                </div>
-              </ContentContainer>
-            </div>
-          </animated.div>
-        )}
-      </Bg>
+      <div className={classes.container} style={{ float: position }}>
+        <Bg native state={state}>
+          {style => (
+            <animated.div style={style}>
+              <ImageHover bg={bg} />
+              <div className={stucture.pullLeft}>
+                <h6 className={heading.subtitle}>{subtitle}</h6>
+                <h2 className={heading.title}>{title}</h2>
+              </div>
+            </animated.div>
+          )}
+        </Bg>
+      </div>
     )
   }
 }

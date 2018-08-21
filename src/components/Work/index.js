@@ -6,7 +6,7 @@ import ContentContainer from '../ContentContainer'
 import data from '../../db'
 
 const Work = ({ windowScrollPosition }) => (
-  <section className="relative flex flex-column">
+  <section className="relative flex flex-column white">
     <ContentContainer>
       <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
         {data.work.map((work, index) => {
