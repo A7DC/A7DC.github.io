@@ -18,7 +18,7 @@ class ImageHover extends Component {
   toggle() {
     this.setState({
       animate: !this.state.animate
-    }, () => console.log(this.state.animate, 'this.state.animate'))
+    })
   }
 
   render() {
