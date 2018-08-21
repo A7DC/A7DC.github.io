@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Spring, config } from 'react-spring'
+import { Spring } from 'react-spring'
 
 const classes = {
   container: 'relative vh-100 cover mb6 overflow-hidden'
@@ -30,7 +30,11 @@ class ImageHover extends Component {
         onMouseEnter={this.toggle}
         onMouseLeave={this.toggle}
         >
-        <Spring config={config.slow} from={{ transform: 'scale(1)', height: `${100}%` }} to={{ transform: toggle ? 'scale(1)' : 'scale(1.2)', height: `${100}%`  }}>
+        <Spring 
+            config={{ tension: 60, friction: 60}} 
+            from={{ transform: 'scale(1)', height: `${100}%` }} 
+            to={{ transform: toggle ? 'scale(1)' : 'scale(1.2)', height: `${100}%`  
+            }}>
           {styles => (
             <div style={styles}>
               <div 
