@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
+import ImageHover from '../ImageHover'
 import { heading, stucture } from '../../tachyons-classes'
 
 const classes = {
@@ -44,7 +45,7 @@ class Work extends Component {
   render() {
     const state = this.state.open
     const content = this.state.content ? 'start' : null
-    const {title, subtitle} = this.props
+    const {title, subtitle, bg} = this.props
     return (
       <Bg native state={state}>
         {style => (
@@ -52,13 +53,7 @@ class Work extends Component {
             style={style}
             ref={r => { this.container = ReactDOM.findDOMNode(r)}}
             >
-            <div
-              className={`${classes.container}`}
-              style={{
-                backgroundImage: `url(${this.props.bg})`
-              }}
-            >
-              <ContentContainer>
+            <ImageHover bg={bg}>
                 <div className={stucture.pullLeft}>
                   <Content native state={content}>
                     {styles => (
@@ -69,8 +64,7 @@ class Work extends Component {
                     )}
                   </Content>
                 </div>
-              </ContentContainer>
-            </div>
+            </ImageHover>
           </animated.div>
         )}
       </Bg>
