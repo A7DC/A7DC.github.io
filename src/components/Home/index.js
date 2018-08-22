@@ -30,7 +30,6 @@ class Home extends Component {
   render() {
     return (
       <Fragment>
-        <LoadingAnimation />
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition}  />
         <Skills />
