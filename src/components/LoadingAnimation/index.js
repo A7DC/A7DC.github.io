@@ -1,40 +1,40 @@
 import React, { Component } from 'react'
-import { Trail, animated, config } from 'react-spring'
+import { Keyframes, animated, config } from 'react-spring'
 import { heading } from '../../tachyons-classes'
 
 const classes = {
   container: 'w-100 vh-100 flex justify-center items-center bg-white content-box'
 }
 
+const createKeyFrames = () =>
+  Keyframes.Spring({
+    start: {
+      from: { transform: `translate3d(0,${0}%,0)`, opacity: 0 },
+      to: { transform: `translate3d(0,${100}%,0)`, opacity: 1 },
+      config: config.slow
+    }
+  })
+
+const Content = createKeyFrames()
+
 class LoadingAnimation extends Component {
   state = { 
-    toggle: true, 
+    start: undefined,
     items: ['Designer,', 'programmer,', 'founder.']
   }
 
   render() {
-    const { toggle, items } = this.state
     return (
-      <div className={classes.container}>
-        <Trail
-          config={config.gentle} 
-          native
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: toggle ? 1 : 0, y: toggle ? 0 : 40 }}
-          keys={items}>
-          {items.map((_, i) => ({ y, opacity }) => (
-            <animated.div
-              className="box"
-              style={{
-                opacity,
-                transform: y.interpolate(y => `translate3d(0,${y}%,0)`)
-              }}
-            >
-              <h2 className={`${heading.t2} fw6 pr2`}>{items[i]}</h2>
-            </animated.div>
-          ))}
-        </Trail>
-      </div>
+      <Content native state={'start'}>
+        {style => (
+          <div className={classes.container}>
+          <animated.div style={style}>
+              <h1>Hello world</h1>
+          </animated.div>
+            </div>
+        )}
+      </Content>
+
     )
   }
 
