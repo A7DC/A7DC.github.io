@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
-import { heading, stucture } from '../../tachyons-classes'
+import { heading } from '../../tachyons-classes'
 
 const classes = {
   hero: 'w-100 vh-80 flex pb1 white content-box'
@@ -36,7 +36,7 @@ class Hero extends Component {
                     {styles => (
                       <animated.div style={styles}>
                         <h1 className={heading.title}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
-                        <p className={heading.subtitle}>Send me an <a href="#" className="underline color-inherit">email</a>, check my <a href="#" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="#" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+                        <p className={heading.subtitle}>Send me an <a href="mailto: audaci7y@gmail.com" className="underline color-inherit">email</a>, check my <a href="linkedin.com" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="google.com" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
                       </animated.div>
                     )}
                   </Content>

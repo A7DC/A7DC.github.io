@@ -9,10 +9,10 @@ const Work = ({ windowScrollPosition }) => (
   <section className="relative flex flex-column white">
     <ContentContainer>
       <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
-        {data.work.map((work, index) => {
+        {data.work.map((work, i) => {
           return (
-            <div className="w-100 fl">
-              <WorkTile windowScrollPosition={windowScrollPosition} key={index} bg={work.bg} title={work.title} subtitle={work.subtitle} position={work.position} />
+            <div key={i} className="w-100 fl">
+              <WorkTile windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} position={work.position} />
             </div>
           )
         })}

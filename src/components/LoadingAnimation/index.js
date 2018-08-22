@@ -1,21 +1,13 @@
 import React, { Component } from 'react'
 import { Keyframes, animated, config } from 'react-spring'
-import { heading } from '../../tachyons-classes'
 
 const classes = {
   container: 'w-100 vh-100 flex justify-center items-center bg-white content-box'
 }
 
-const createKeyFrames = () =>
-  Keyframes.Spring({
-    start: {
-      from: { transform: `translate3d(0,${0}%,0)`, opacity: 0 },
-      to: { transform: `translate3d(0,${100}%,0)`, opacity: 1 },
-      config: config.slow
-    }
-  })
-
-const Content = createKeyFrames()
+const Content = Keyframes.Trail({
+  start: [{ delay: 600, from: { x: -100, opacity: 0 }, to: { x: 0, opacity: 1 } }, { to: { x: -100, opacity: 0 } }]
+})
 
 class LoadingAnimation extends Component {
   state = { 
@@ -24,21 +16,24 @@ class LoadingAnimation extends Component {
   }
 
   render() {
+    const {items} = this.state;
+    const state = this.state.start === undefined ? 'start' : null
     return (
-      <Content native state={'start'}>
-        {style => (
-          <div className={classes.container}>
-          <animated.div style={style}>
-              <h1>Hello world</h1>
-          </animated.div>
-            </div>
-        )}
-      </Content>
-
+        <div className={classes.container}>
+          <Content native keys={items.map((_, i) => i)} config={{ tension: 200, friction: 20 }} state={state}>
+            {items.map((item, i) => ({ x, ...props }) => (
+              <animated.div
+                style={{
+                  transform: x.interpolate(x => `translate3d(${x}%,0,0)`),
+                  ...props
+                }}>
+                {item}
+              </animated.div>
+            ))}
+          </Content>
+        </div>
     )
   }
-
-
 }
 
 export default LoadingAnimation;

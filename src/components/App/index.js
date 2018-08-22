@@ -2,7 +2,6 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 // components
-import Header from '../Header';
 import Home from '../Home';
 import { About } from '../About';
 
