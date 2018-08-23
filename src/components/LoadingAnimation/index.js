@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { withRouter } from "react-router-dom";
 import { Keyframes, animated, config } from 'react-spring'
 import { heading } from '../../tachyons-classes';
 
@@ -9,10 +10,10 @@ const classes = {
 
 const Bg = Keyframes.Spring({
   start: {
-    delay: 2400,
+    delay: 2000,
     from: { transform: `translate3d(0,-${200}%,0)`},
     to: { transform: `translate3d(0,-${100}%,0)`},
-    config: config.slow
+    config: config.default
   }
 })
 
@@ -31,7 +32,7 @@ class LoadingAnimation extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => this.props.router.push({ pathname: '/' }), 3000);
+    setTimeout(() => this.props.history.push('/'), 2400);
   }
 
   render() {
@@ -52,7 +53,7 @@ class LoadingAnimation extends Component {
             ))}
           </Content>
           </div>
-          <Bg native state={state} config={config.slow}>
+          <Bg native state={state}>
             {style => (
             <animated.div style={style} className={classes.bg}></animated.div>
             )}
@@ -62,5 +63,5 @@ class LoadingAnimation extends Component {
   }
 }
 
-export default LoadingAnimation;
+export default withRouter(LoadingAnimation);
 

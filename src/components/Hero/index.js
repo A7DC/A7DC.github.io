@@ -17,35 +17,28 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(600, -20, 0)
-const Content = createKeyFrames(1100, 40, 0)
+const Content = createKeyFrames(0, 40, 0)
 
 class Hero extends Component {
   state = { open: 'start' }
   render() {
     const state = this.state.open
     return (
-      <Bg native state={state}>
-        {style => (
-          <animated.div style={style}>
-            <section 
-              className={classes.hero}>
-              <ContentContainer>
-                <div className={'pl3 pl6-ns pb6-ns absolute left-0 bottom-0'}>
-                  <Content native state={state}>
-                    {styles => (
-                      <animated.div style={styles}>
-                        <h1 className={heading.title}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
-                        <p className={heading.subtitle}>Send me an <a href="mailto: audaci7y@gmail.com" className="underline color-inherit">email</a>, check my <a href="linkedin.com" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="google.com" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
-                      </animated.div>
-                    )}
-                  </Content>
-                </div>
-              </ContentContainer>
-            </section>
-          </animated.div>
-        )}
-      </Bg>
+      <section
+        className={classes.hero}>
+        <ContentContainer>
+          <div className={'pl3 pl6-ns pb6-ns absolute left-0 bottom-0'}>
+            <Content native state={state}>
+              {styles => (
+                <animated.div style={styles}>
+                  <h1 className={heading.title}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
+                  <p className={heading.subtitle}>Send me an <a href="mailto: audaci7y@gmail.com" className="underline color-inherit">email</a>, check my <a href="linkedin.com" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="google.com" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+                </animated.div>
+              )}
+            </Content>
+          </div>
+        </ContentContainer>
+      </section>
     )
   }
 }
