@@ -7,17 +7,14 @@ const classes = {
   hero: 'w-100 vh-80 flex pb1 white content-box'
 }
 
-const createKeyFrames = (delay, from, to) =>
-  Keyframes.Spring({
-    start: {
-      delay,
-      from: { transform: `translate3d(0,${from}%,0)`, opacity: 0 },
-      to: { transform: `translate3d(0,${to}%,0)`, opacity: 1 },
-      config: config.slow
-    }
-  })
-
-const Content = createKeyFrames(600, 40, 0)
+const Content = Keyframes.Spring({
+  start: {
+    delay: 600,
+    from: { transform: `translate3d(0,40px,0)`, opacity: 0 },
+    to: { transform: `translate3d(0,0,0)`, opacity: 1 },
+    config: config.slow
+  }
+})
 
 class Hero extends Component {
   state = { open: 'start' }
