@@ -17,7 +17,7 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Content = createKeyFrames(0, 40, 0)
+const Content = createKeyFrames(600, 40, 0)
 
 class Hero extends Component {
   state = { open: 'start' }

@@ -8,15 +8,6 @@ const classes = {
   bg: 'w-100 vh-100 bg-black'
 }
 
-const Bg = Keyframes.Spring({
-  start: {
-    delay: 2000,
-    from: { transform: `translate3d(0,-${200}%,0)`},
-    to: { transform: `translate3d(0,-${100}%,0)`},
-    config: config.default
-  }
-})
-
 const Content = Keyframes.Trail({
   start: [{ delay: 600, from: { y: 100, opacity: 0 }, to: { y: 0, opacity: 1 } }, { to: { y: 100, opacity: 0 } }]
 })
@@ -31,8 +22,9 @@ class LoadingAnimation extends Component {
     }
   }
 
+  // need to find out when the animation finishes really
   componentDidMount() {
-    setTimeout(() => this.props.history.push('/'), 2400);
+    setTimeout(() => this.props.history.push('/'), 2000);
   }
 
   render() {
@@ -53,11 +45,6 @@ class LoadingAnimation extends Component {
             ))}
           </Content>
           </div>
-          <Bg native state={state}>
-            {style => (
-            <animated.div style={style} className={classes.bg}></animated.div>
-            )}
-          </Bg>
         </div>
     )
   }

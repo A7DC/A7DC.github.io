@@ -3,7 +3,7 @@ import Hero from '../Hero'
 import Work from '../Work'
 import Skills from '../Skills'
 import Experience from '../Experience'
-import LoadingAnimation from '../LoadingAnimation';
+import Background from '../Background';
 
 class Home extends Component {
 
@@ -30,6 +30,7 @@ class Home extends Component {
   render() {
     return (
       <Fragment>
+        <Background />
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition}  />
         <Skills />
