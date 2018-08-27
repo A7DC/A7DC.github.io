@@ -32,14 +32,19 @@ class Home extends Component {
     this.setState({ skillsThreshold: threshold })
   }
 
+  getSkillsRef = payload => {
+    const threshold = payload.getBoundingClientRect().bottom;
+    this.setState({ experienceThreshold: threshold })
+  }
+
   render() {
     return (
       <Fragment>
         <Background />
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef}  />
-        <Skills threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} />
-        <Experience threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} />
+        <Skills threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
+        <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
       </Fragment>
     )
   }
