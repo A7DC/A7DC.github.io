@@ -22,7 +22,7 @@ const createKeyFrames = (delay, from, to) =>
 const Bg = createKeyFrames(800, 100, 0)
 const Content = createKeyFrames(0, 40, 0)
 
-class Work extends Component {
+class WorkHero extends Component {
 
   state = {
     open: 'start',
@@ -73,5 +73,5 @@ class Work extends Component {
 }
 
 
-export default Work;
+export default WorkHero;
 

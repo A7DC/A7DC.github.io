@@ -32,10 +32,10 @@ class WorkTile extends Component {
 
   componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
-    console.log('this.container', this.container)
+    const threshold = (this.props.heroPosition.getBoundingClientRect().bottom - window.innerHeight)
     
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      if (windowScrollPosition > 728) {
+      if (windowScrollPosition > threshold) {
         this.setState({
           animateContainer: 'start'
         })
