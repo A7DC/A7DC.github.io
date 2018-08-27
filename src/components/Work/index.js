@@ -11,9 +11,7 @@ const Work = ({ windowScrollPosition }) => (
       <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
         {data.work.map((work, i) => {
           return (
-            <div key={i} className="w-100 fl">
-              <WorkTile windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} position={work.position} />
-            </div>
+            <WorkTile windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} key={i} />
           )
         })}
 
