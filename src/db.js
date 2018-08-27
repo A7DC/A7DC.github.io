@@ -1,8 +1,8 @@
 const data = {
   workHero: { title: 'A digitial transformation of the sex industry', subtitle: 'Bordellio', bg: 'images/bordellio-work-bg.png' },
   work: [
-    { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png'},
-    { title: 'Medium.com', subtitle: 'Writing', bg: 'images/medium-bg.png'}
+    { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png', padding: 'pr4'},
+    { title: 'Medium.com', subtitle: 'Writing', bg: 'images/medium-bg.png', padding: 'pl4'}
   ],
   workExperience: [
     { employer: 'Levo', jobTitle: 'Junior designer', datesWorked: 'February 2013 - February 2014' },
