@@ -22,7 +22,7 @@ const createKeyFrames = (delay, from, to) =>
   })
 
 const Bg = createKeyFrames(600, 1600, 0)
-const Content = createKeyFrames(0, 40, 0)
+const Content = createKeyFrames(1200, 40, 0)
 
 class WorkTile extends Component {
 
@@ -53,7 +53,6 @@ class WorkTile extends Component {
           {style => (
             <animated.div 
               style={style}
-              ref={r => { this.container = ReactDOM.findDOMNode(r) }}
               className={'w-100 h-100'}
               >
               <ImageHover bg={bg} />
