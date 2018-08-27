@@ -8,7 +8,7 @@ const classes = {
   bg: 'w-100 vh-100 bg-black'
 }
 
-const Content = Keyframes.Trail({
+const Background = Keyframes.Trail({
   start: [{ delay: 600, from: { y: 100, opacity: 0 }, to: { y: 0, opacity: 1 } }, { to: { y: 100, opacity: 0 } }]
 })
 
@@ -24,7 +24,7 @@ class LoadingAnimation extends Component {
 
   // need to find out when the animation finishes really
   componentDidMount() {
-    setTimeout(() => this.props.history.push('/'), 2000);
+    setTimeout(() => this.props.history.push('/'), 2600);
   }
 
   render() {
@@ -33,7 +33,7 @@ class LoadingAnimation extends Component {
     return (
         <div className={classes.container}>
         <div className={'flex justify-center items-center w-100 vh-100  '}>
-        <Content native keys={items.map((_, i) => i)} state={state} config={config.gentle}>
+        <Background native keys={items.map((_, i) => i)} state={state} config={config}>
             {items.map((item) => ({ y, ...props }) => (
               <animated.div
                 style={{
@@ -43,7 +43,7 @@ class LoadingAnimation extends Component {
               <h2 className={`${heading.t2} fw6 pr2`}>{item}</h2>
               </animated.div>
             ))}
-          </Content>
+          </Background>
           </div>
         </div>
     )
