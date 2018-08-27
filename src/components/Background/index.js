@@ -1,7 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-import ContentContainer from '../ContentContainer'
-import { heading } from '../../tachyons-classes'
 
 const classes = {
   bg: 'w-100 vh-100 bg-white absolute'
