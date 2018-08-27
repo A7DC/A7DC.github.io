@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
 import { heading, stucture } from '../../tachyons-classes'

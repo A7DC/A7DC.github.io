@@ -39,7 +39,7 @@ class Home extends Component {
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef}  />
         <Skills threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} />
-        <Experience />
+        <Experience threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} />
       </Fragment>
     )
   }
