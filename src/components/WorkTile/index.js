@@ -6,7 +6,7 @@ import { heading, stucture } from '../../tachyons-classes'
 import { ArrowRight } from '../Icons';
 
 const classes = {
-  container: 'relative white cover vh-50 w-50 mb6 fl',
+  container: 'relative white cover vh-50 w-50 fl',
   images: 'absolute left-0 right-0 bottom-0 top-0 z-0',
 }
 

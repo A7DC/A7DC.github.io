@@ -13,6 +13,13 @@ const Container = Keyframes.Trail({
 
 class Work extends Component {
 
+  componentDidUpdate(prevProps) {
+    let windowScrollPosition = this.props.windowScrollPosition
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      this.props.getWorkRef(this.container)
+    }
+  }
+
   constructor(props) {
     super(props)
     this.state = {
