@@ -65,7 +65,6 @@ class WorkTile extends Component {
                         <h2 className={`${heading.title} pr2`}>{title}</h2>
                         <ArrowRight />
                       </div>
-                      <ArrowRight />
                     </animated.div>
                   )}
                 </Content>
