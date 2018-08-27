@@ -72,6 +72,10 @@ body {
 	background-color: #171717;
 }
 
+.bg-near-white {
+	background-color: #F4F4F4;
+}
+
 .vh-80 {
 	height: 80vh;
 }
