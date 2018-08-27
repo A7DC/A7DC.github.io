@@ -15,7 +15,7 @@ const createKeyFrames = (delay, from, to) =>
   Keyframes.Spring({
     start: {
       delay,
-      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0, width: 100 + "%", height: 100 + "%" },
+      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0},
       to: { transform: `translate3d(0,${to}px,0)`, opacity: 1 },
       config: config.slow
     }
@@ -54,6 +54,7 @@ class WorkTile extends Component {
             <animated.div 
               style={style}
               ref={r => { this.container = ReactDOM.findDOMNode(r) }}
+              className={'w-100 h-100'}
               >
               <ImageHover bg={bg} />
               <div className={stucture.pullLeft}>
