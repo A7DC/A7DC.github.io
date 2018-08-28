@@ -13,12 +13,8 @@ const navItems = [
   },
   {
     text: 'case studies',
-    url: '/case-studies'
-  },
-  {
-    text: 'experiments',
-    url: '/experiments'
-  },
+    url: '/about'
+  }
 ];
 
 export const Navigation = () => (

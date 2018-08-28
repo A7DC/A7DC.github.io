@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-ro
 import { Transition } from 'react-spring'
 
 // components
-import { Header } from '../Header';
 import Home from '../Home';
-import { About } from '../About';
+import About from '../About';
 
 // styles
 import './styles.css'
@@ -19,14 +18,13 @@ export const App = ({location}) => (
               exact 
               path="/" 
               />
-            <Header />
           <div>
               <Transition
                 keys={location.pathname.split('/').filter(a => a)[0]}
                 config={{ tension: 3, friction: 12 }}
-                from={{ transform: 'translateY(-100vh)', opacity: 0 }}
+                from={{ transform: 'translateY(-100%)', opacity: 0 }}
                 enter={{ transform: 'translateY(0px)', opacity: 1 }}
-                leave={{ transform: 'translateY(-100vh)', opacity: 0 }}>
+                leave={{ transform: 'translateY(-100%)', opacity: 0 }}>
                 {style => (
                   <Switch location={location}>
                     <Route exact path='/' render={props => <Home style={style} />} />

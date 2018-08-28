@@ -12,4 +12,11 @@ export const ArrowDown = () => (
   </svg>
 )
 
+export const ArrowRight = () => (
+  <svg width="40" height="16" viewBox="0 0 40 16">
+    <polygon fill="#FFF" points="234.595 349.851 199 349.851 199 352.149 234.595 352.149 229.364 357.373 230.993 359 239 351 230.993 343 229.364 344.627" transform="translate(-199 -343)" />
+  </svg>
+)
+
+
 
