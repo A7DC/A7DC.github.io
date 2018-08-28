@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
 import { heading, stucture } from '../../tachyons-classes'
@@ -52,19 +53,22 @@ class WorkHero extends Component {
             style={style}
             ref={r => { this.container = ReactDOM.findDOMNode(r)}}
             >
-            <div className={classes.container}>
-              <ImageHover bg={bg} />
-              <div className={stucture.pullLeft}>
-                <Content native state={content}>
-                  {styles => (
-                    <animated.div style={styles}>
+          
+          <Link to='/about'>
+              <div className={classes.container}>
+                <ImageHover bg={bg} />
+                <div className={stucture.pullLeft}>
+                  <Content native state={content}>
+                    {styles => (
+                      <animated.div style={styles}>
                         <h6 className={heading.subtitle}>{subtitle}</h6>
                         <h2 className={heading.title}>{title}</h2>
-                    </animated.div>
-                  )}
-                </Content>
+                      </animated.div>
+                    )}
+                  </Content>
+                </div>
               </div>
-            </div>
+          </Link>
           </animated.div>
         )}
       </Bg>
