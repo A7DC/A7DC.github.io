@@ -12,19 +12,22 @@ const Container = Keyframes.Trail({
 
 
 class Work extends Component {
+  
+    constructor(props) {
+      super(props)
+      this.state = {
+        start: undefined
+      }
+    }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     let windowScrollPosition = this.props.windowScrollPosition
+    const { link } = this.state
+    
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       this.props.getWorkRef(this.container)
     }
-  }
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      start: undefined
-    }
   }
 
   render() {
@@ -33,7 +36,7 @@ class Work extends Component {
     return (
       <section ref={ r => this.container = r} className="relative flex flex-column white">
         <ContentContainer>
-          <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
+          <WorkHero heroLinkClicked={this.props.heroLinkClicked} windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
               return (

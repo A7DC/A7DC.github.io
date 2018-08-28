@@ -24,21 +24,38 @@ const Content = createKeyFrames(0, 40, 0)
 
 class WorkHero extends Component {
 
-  state = {
-    open: 'start',
-    content: false
+  constructor(props) {
+    super(props)
+    this.onClick = this.onClick.bind(this)
+    this.state = {
+      open: 'start',
+      content: false
+    }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     let windowScrollPosition = this.props.windowScrollPosition
     let bottom = this.container.getBoundingClientRect().bottom;
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {      
+    const { link } = this.state
+
+    if (prevProps.windowScrollPosition !== windowScrollPosition) { 
       if (windowScrollPosition > (bottom - 40)) {
         this.setState({
           content: true
         })        
       }
     }
+
+    if (link !== prevState.link) {
+      this.props.heroLinkClicked(link)
+    }
+  
+  }
+
+  onClick() {
+    this.setState({
+      link: 'active'
+    })
   }
 
   render() {
@@ -51,6 +68,7 @@ class WorkHero extends Component {
           <animated.div 
             style={style}
             ref={r => { this.container = ReactDOM.findDOMNode(r)}}
+            onClick={this.onClick}
             >
             <div className={classes.container}>
               <ImageHover bg={bg} />
@@ -58,8 +76,8 @@ class WorkHero extends Component {
                 <Content native state={content}>
                   {styles => (
                     <animated.div style={styles}>
-                        <h6 className={heading.subtitle}>{subtitle}</h6>
-                        <h2 className={heading.title}>{title}</h2>
+                      <h6 className={heading.subtitle}>{subtitle}</h6>
+                      <h2 className={heading.title}>{title}</h2>
                     </animated.div>
                   )}
                 </Content>
