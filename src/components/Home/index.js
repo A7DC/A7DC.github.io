@@ -48,7 +48,7 @@ class Home extends Component {
         color: '#fff'
         }
       }>
-      <div className={'relative w-100 bg-black'}>
+        <div className={'relative w-100 bg-black overflow-scroll'}>
         <Hero />
         <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
       </div>
