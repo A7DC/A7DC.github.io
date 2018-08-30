@@ -23,7 +23,7 @@ class Home extends Component {
 
   handleScroll(e) {
     let windowScrollPosition = window.scrollY
-    this.setState({ windowScrollPosition: windowScrollPosition })
+    this.setState({ windowScrollPosition: windowScrollPosition }, () => console.log(this.state.windowScrollPosition, 'this.state.windowScrollPosition'))
   }
 
   getWorkRef = payload => {
@@ -42,15 +42,15 @@ class Home extends Component {
     return (
     <div 
         className='mainRoute flex flex-column'
-    style={
-      { ...style, 
-        backgroundColor: '#171717',
-        color: '#fff'
-        }
+        style={
+          { ...style, 
+            backgroundColor: '#171717',
+            color: '#fff'
+            }
       }>
-        <div className={'relative w-100 bg-black overflow-scroll'}>
-        <Hero />
-        <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
+        <div className={'relative w-100 bg-black'} onScroll={this.handleScroll}>
+          <Hero />
+          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
       </div>
     </div>
     )

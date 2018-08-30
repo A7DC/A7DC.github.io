@@ -1,9 +1,10 @@
 import React from 'react'
+import { stucture } from '../../tachyons-classes'
 
-const ContentContainer = ({ children }) => (
-  <container className='flex flex-column'>
+const ContentContainer = ({ children, styles }) => (
+  <div className={`${stucture.container} ${styles}`}>
     {children}
-  </container>
+  </div>
 )
 
 export default ContentContainer

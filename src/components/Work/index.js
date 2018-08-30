@@ -31,8 +31,8 @@ class Work extends Component {
     const {windowScrollPosition} = this.props;
     const state = this.state.start === undefined ? 'start' : null
     return (
-      <section ref={ r => this.container = r} className="relative flex flex-column white">
-        <ContentContainer>
+      <section ref={r => this.container = r} className="relative flex flex-column white overflow-hidden">
+        <ContentContainer styles={'pb6'}>
           <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
