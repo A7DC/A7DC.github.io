@@ -30,7 +30,7 @@ const App = () => (
               leave={{ transform: 'translateX(-250px)', opacity: 0 }}>
               {style => (
                 <Switch location={location}>
-                  <Route path="/red" render={props => Home({ ...props, style })} />
+                  <Route path="/red" render={props => <Home {...props} style={style} />} />
                   <Route path="/green" render={props => About({ ...props, style })} />
                   <Route render={() => <div>Not Found</div>} />
                 </Switch>

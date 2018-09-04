@@ -4,7 +4,7 @@ import ContentContainer from '../ContentContainer'
 import { heading } from '../../tachyons-classes'
 
 const classes = {
-  hero: 'w-100 flex pb1 white content-box'
+  hero: 'w-100 vh-80 flex pb1 white content-box'
 }
 
 const Content = Keyframes.Spring({
