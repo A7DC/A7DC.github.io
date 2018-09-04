@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Transition } from 'react-spring'
+import { Transition, config } from 'react-spring'
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
 
 import './styles.css'
@@ -21,7 +21,7 @@ const App = () => (
           <div className="content">
             <Transition
               native
-              config={{ tension: 1, friction: 10 }}
+              config={config.slow}
               keys={location.pathname.split('/').filter(a => a)[0]}
               from={{ willChange: 'transform,opacity', transform: 'translateY(500px)', opacity: 0 }}
               enter={{ transform: 'translateY(0px)', opacity: 1 }}
