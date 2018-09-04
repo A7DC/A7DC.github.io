@@ -23,8 +23,8 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    let windowScrollPosition = window.scrollY
-    this.setState({ windowScrollPosition: windowScrollPosition })
+    let windowScrollPosition = this.container.scrollTop
+    this.setState({ windowScrollPosition: windowScrollPosition }, () => console.log(this.state.windowScrollPosition, 'windowScrollPosition'))
   }
 
   getWorkRef = payload => {
@@ -36,9 +36,9 @@ class Home extends Component {
     const { style } = this.props
     return (
       <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C` }}>
-        <div className='vh-100 overflow-y-scroll relative'>
-        <Hero />
-        <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
+        <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
+          <Hero />
+          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
         </div>
       </animated.div>
     )

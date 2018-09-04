@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Transition, config, animated } from 'react-spring'
-import { HashRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import { Transition } from 'react-spring'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
 import './styles.css'
 import './extend-tachyons.css'
 
