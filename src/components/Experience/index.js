@@ -23,11 +23,7 @@ class Experience extends Component {
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     let threshold = this.props.threshold
-    console.log(threshold, 'threshold')
-    console.log(windowScrollPosition, 'windowScrollPosition')
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      console.log('this.props.threshold', this.props.threshold)
-      console.log('windowScrollPosition', windowScrollPosition)
       if (windowScrollPosition > (threshold + 100)) {
         this.setState({
           content: 'start'
@@ -40,7 +36,7 @@ class Experience extends Component {
   render() {
     const state = this.state.content
     return (
-      <section className="relative white pv6">
+      <section className="relative white pv4">
         <ContentContainer>
           <Content native state={state}>
             {styles => (

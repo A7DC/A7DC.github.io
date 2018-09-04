@@ -32,7 +32,6 @@ class WorkTile extends Component {
   componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
     const threshold = (this.props.heroPosition.getBoundingClientRect().bottom - window.innerHeight)
-    
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition > threshold) {
         this.setState({

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Transition, config } from 'react-spring'
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import './styles.css'
 import './extend-tachyons.css'
@@ -17,7 +17,7 @@ const App = () => (
     <Route
       render={({ location, ...rest }) => (
         <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
-          <Route exact path="/" render={() => <Redirect to="/red" />} />
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
           <div className="content">
             <Transition
               native
@@ -28,7 +28,7 @@ const App = () => (
               leave={{ transform: 'translateX(-250px)', opacity: 0 }}>
               {style => (
                 <Switch location={location}>
-                  <Route path="/red" render={props => <Home {...props} style={style} />} />
+                  <Route path="/home" render={props => <Home {...props} style={style} />} />
                   <Route path={urls.about} render={props => About({ ...props, style })} />
                   <Route render={() => <div>Not Found</div>} />
                 </Switch>
