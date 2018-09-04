@@ -25,13 +25,17 @@ const Content = createKeyFrames(1200, 40, 0)
 
 class WorkTile extends Component {
 
-  state = {
-    animateContainer: false
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      animateContainer: false
+    }
   }
 
   componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
-    const threshold = (this.props.heroPosition.getBoundingClientRect().bottom - window.innerHeight)
+    const threshold = this.props.heroPosition
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition > threshold) {
         this.setState({

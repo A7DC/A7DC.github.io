@@ -12,14 +12,7 @@ const Container = Keyframes.Trail({
 
 
 class Work extends Component {
-
-  componentDidUpdate(prevProps) {
-    let windowScrollPosition = this.props.windowScrollPosition
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      this.props.getWorkRef(this.container)
-    }
-  }
-
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -28,12 +21,17 @@ class Work extends Component {
   }
 
   render() {
-    const { windowScrollPosition } = this.props;
+    const { windowScrollPosition, getWorkHeroRef } = this.props;
     const state = this.state.start === undefined ? 'start' : null
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
-          <WorkHero windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
+          <WorkHero 
+            windowScrollPosition={windowScrollPosition} 
+            getWorkHeroRef={getWorkHeroRef} 
+            bg={data.workHero.bg} 
+            title={data.workHero.title} 
+            subtitle={data.workHero.subtitle} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
               return (
@@ -42,7 +40,7 @@ class Work extends Component {
                     transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                     ...props
                   }}>
-                  <WorkTile heroPosition={this.container} windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} padding={work.padding} key={i} />
+                  <WorkTile heroPosition={this.state.WorkTileThreshold} windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} padding={work.padding} key={i} />
                 </animated.div>
               )
             })}

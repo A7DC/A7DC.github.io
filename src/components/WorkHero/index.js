@@ -26,10 +26,22 @@ const Content = createKeyFrames(0, 40, 0)
 
 class WorkHero extends Component {
 
-  state = {
-    open: 'start',
-    content: false
+  constructor(props) {
+    debugger
+    super(props)
+    this.state = {
+      open: 'start',
+      content: false
+    }
   }
+
+  componentDidUpdate(prevProps) {
+    let windowScrollPosition = this.props.windowScrollPosition
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      this.props.getWorkHeroRef(this.container)
+    }
+  }
+
 
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
@@ -38,7 +50,7 @@ class WorkHero extends Component {
       if (windowScrollPosition > (bottom - 40)) {
         this.setState({
           content: true
-        }, () => console.log('this.state.content', this.state.content))        
+        })        
       }
     }
   }
@@ -52,7 +64,8 @@ class WorkHero extends Component {
         {style => (
           <animated.div 
             style={style}
-            ref={r => { this.container = ReactDOM.findDOMNode(r)}}
+            // ref={r => { this.container = ReactDOM.findDOMNode(r)}}
+            ref={r => this.container = r}
             >
             <Link to={urls.about}>
               <div className={classes.container}>

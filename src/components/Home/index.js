@@ -32,7 +32,7 @@ class Home extends Component {
   getWorkRef = payload => {
     // this is the <Work> containers height
     const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
-    this.setState({ skillsThreshold: threshold }, () => console.log(this.state.skillsThreshold, 'work ref threshold'))
+    this.setState({ skillsThreshold: threshold }, console.log(this.state.skillsThreshold, 'skillsThreshold'))
   }
 
   getSkillsRef = payload => {
