@@ -27,18 +27,10 @@ const Content = createKeyFrames(0, 40, 0)
 class WorkHero extends Component {
 
   constructor(props) {
-    debugger
     super(props)
     this.state = {
       open: 'start',
       content: false
-    }
-  }
-
-  componentDidUpdate(prevProps) {
-    let windowScrollPosition = this.props.windowScrollPosition
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      this.props.getWorkHeroRef(this.container)
     }
   }
 
@@ -48,6 +40,7 @@ class WorkHero extends Component {
     let bottom = this.container.getBoundingClientRect().bottom;
     if (prevProps.windowScrollPosition !== windowScrollPosition) {      
       if (windowScrollPosition > (bottom - 40)) {
+        this.props.getWorkHeroRef(this.container)
         this.setState({
           content: true
         })        
@@ -60,31 +53,31 @@ class WorkHero extends Component {
     const content = this.state.content ? 'start' : null
     const {title, subtitle, bg} = this.props
     return (
-      <Bg native state={state}>
-        {style => (
-          <animated.div 
-            style={style}
-            // ref={r => { this.container = ReactDOM.findDOMNode(r)}}
-            ref={r => this.container = r}
-            >
-            <Link to={urls.about}>
-              <div className={classes.container}>
-                <ImageHover bg={bg} />
-                <div className={stucture.pullLeft}>
-                    <Content native state={content}>
-                      {styles => (
-                        <animated.div style={styles}>
-                          <h6 className={heading.subtitle}>{subtitle}</h6>
-                          <h2 className={heading.title}>{title}</h2>
-                        </animated.div>
-                      )}
-                    </Content>
-                  </div>
-              </div>
-            </Link>
-          </animated.div>
-        )}
-      </Bg>
+      <div ref={r => this.container = r}>
+        <Bg native state={state}>
+          {style => (
+            <animated.div 
+              style={style}
+              >
+              <Link to={urls.about}>
+                <div className={classes.container}>
+                  <ImageHover bg={bg} />
+                  <div className={stucture.pullLeft}>
+                      <Content native state={content}>
+                        {styles => (
+                          <animated.div style={styles}>
+                            <h6 className={heading.subtitle}>{subtitle}</h6>
+                            <h2 className={heading.title}>{title}</h2>
+                          </animated.div>
+                        )}
+                      </Content>
+                    </div>
+                </div>
+              </Link>
+            </animated.div>
+          )}
+        </Bg>
+      </div>
     )
   }
 }

@@ -29,7 +29,7 @@ class Home extends Component {
     this.setState({ windowScrollPosition: windowScrollPosition })
   }
 
-  getWorkRef = payload => {
+  getWorkHeroRef = payload => {
     // this is the <Work> containers height
     const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
     this.setState({ skillsThreshold: threshold }, console.log(this.state.skillsThreshold, 'skillsThreshold'))
@@ -46,7 +46,7 @@ class Home extends Component {
       <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C` }}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero />
-          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} />
+          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} />
           <Skills threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
           {/* <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} /> */}
         </div>
