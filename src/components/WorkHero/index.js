@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
 import { heading, stucture } from '../../tachyons-classes'
+import urls from '../../urls'
 
 const classes = {
   container: 'relative white vh-100 cover mb5',
@@ -52,19 +54,21 @@ class WorkHero extends Component {
             style={style}
             ref={r => { this.container = ReactDOM.findDOMNode(r)}}
             >
-            <div className={classes.container}>
-              <ImageHover bg={bg} />
-              <div className={stucture.pullLeft}>
-                <Content native state={content}>
-                  {styles => (
-                    <animated.div style={styles}>
-                        <h6 className={heading.subtitle}>{subtitle}</h6>
-                        <h2 className={heading.title}>{title}</h2>
-                    </animated.div>
-                  )}
-                </Content>
+            <Link to={urls.about}>
+              <div className={classes.container}>
+                <ImageHover bg={bg} />
+                <div className={stucture.pullLeft}>
+                    <Content native state={content}>
+                      {styles => (
+                        <animated.div style={styles}>
+                          <h6 className={heading.subtitle}>{subtitle}</h6>
+                          <h2 className={heading.title}>{title}</h2>
+                        </animated.div>
+                      )}
+                    </Content>
+                  </div>
               </div>
-            </div>
+            </Link>
           </animated.div>
         )}
       </Bg>
