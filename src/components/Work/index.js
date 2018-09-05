@@ -16,13 +16,27 @@ class Work extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      start: undefined
+      start: 'start', 
+      threshold: undefined
     }
   }
 
+  componentDidUpdate(prevProps) {
+    let windowScrollPosition = this.props.windowScrollPosition
+    const threshold = this.props.workTileThreshold
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      if (windowScrollPosition > threshold) {
+        this.setState({
+          threshold: threshold
+        })
+      }
+    }
+  }
+
+
   render() {
-    const { windowScrollPosition, getWorkHeroRef } = this.props;
-    const state = this.state.start === undefined ? 'start' : null
+    const { windowScrollPosition, getWorkHeroRef, workTileThreshold } = this.props;
+    const state = this.state.start
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
@@ -40,7 +54,14 @@ class Work extends Component {
                     transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                     ...props
                   }}>
-                  <WorkTile heroPosition={this.state.WorkTileThreshold} windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} padding={work.padding} key={i} />
+                  <WorkTile 
+                    workTileThreshold={workTileThreshold} 
+                    windowScrollPosition={windowScrollPosition} 
+                    bg={work.bg} 
+                    title={work.title} 
+                    subtitle={work.subtitle} 
+                    padding={work.padding} 
+                    key={i} />
                 </animated.div>
               )
             })}

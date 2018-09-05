@@ -27,6 +27,7 @@ const Content = createKeyFrames(0, 40, 0)
 class WorkHero extends Component {
 
   constructor(props) {
+  
     super(props)
     this.state = {
       open: 'start',

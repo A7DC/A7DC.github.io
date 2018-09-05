@@ -28,15 +28,18 @@ class WorkTile extends Component {
 
   constructor(props) {
     super(props)
+
     this.state = {
-      animateContainer: false
+      animateContainer: false,
+      workTileThreshold: undefined
     }
   }
 
   componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
-    const threshold = this.props.heroPosition
+    const threshold = this.props.workTileThreshold
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      console.log(threshold, 'threshold from worktile')
       if (windowScrollPosition > threshold) {
         this.setState({
           animateContainer: 'start'
