@@ -31,6 +31,7 @@ class Work extends Component {
         })
       }
     }
+  }
 
 
   render() {

@@ -39,7 +39,6 @@ class WorkHero extends Component {
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     let bottom = this.container.getBoundingClientRect().bottom;
-    const { link } = this.state
 
     if (prevProps.windowScrollPosition !== windowScrollPosition) { 
       if (windowScrollPosition > (bottom - 40)) {
@@ -49,11 +48,6 @@ class WorkHero extends Component {
         })        
       }
     }
-
-    if (link !== prevState.link) {
-      this.props.heroLinkClicked(link)
-    }
-  
   }
 
   onClick() {
