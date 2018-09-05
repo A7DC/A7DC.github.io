@@ -21,7 +21,7 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(800, 100, 0)
+const Bg = createKeyFrames(800, 120, 0)
 const Content = createKeyFrames(0, 40, 0)
 
 class WorkHero extends Component {

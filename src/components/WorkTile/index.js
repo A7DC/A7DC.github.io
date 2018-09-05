@@ -20,7 +20,7 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(600, 1600, 0)
+const Bg = createKeyFrames(600, 120, 0)
 const Content = createKeyFrames(1200, 40, 0)
 
 class WorkTile extends Component {
