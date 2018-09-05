@@ -5,7 +5,7 @@ import { animated } from 'react-spring'
 import Hero from '../Hero'
 import Work from '../Work'
 import Skills from '../Skills'
-// import Experience from '../Experience'
+import Experience from '../Experience'
 
 class Home extends Component {
 
@@ -37,12 +37,12 @@ class Home extends Component {
 
   getWorkTileRef = payload => {
     const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);;
-    this.setState({ skillThreshold: threshold }, () => console.log(`the threshold is ${threshold}`))
+    this.setState({ skillThreshold: threshold })
   }
 
   getSkillsRef = payload => {
     const threshold = payload.getBoundingClientRect().bottom;
-    this.setState({ experienceThreshold: threshold })
+    this.setState({ experienceThreshold: threshold }, () => console.log(`the threshold is ${threshold}`))
   }
 
   render() {
@@ -53,7 +53,7 @@ class Home extends Component {
           <Hero />
           <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} getWorkTileRef={this.getWorkTileRef} workTileThreshold={this.state.workTileThreshold}  />
           <Skills threshold={this.state.skillThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
-          {/* <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} /> */}
+          <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
         </div>
       </animated.div>
     )
