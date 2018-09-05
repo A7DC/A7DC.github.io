@@ -39,7 +39,7 @@ class WorkTile extends Component {
     let windowScrollPosition = this.props.windowScrollPosition
     const threshold = this.props.workTileThreshold
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      console.log(threshold, 'threshold from worktile')
+      this.props.getWorkTileRef(this.container)
       if (windowScrollPosition > threshold) {
         this.setState({
           animateContainer: 'start'
@@ -53,7 +53,10 @@ class WorkTile extends Component {
     const { title, subtitle, bg, padding } = this.props
     const content = this.state.animateContainer ? 'start' : null
     return (
-      <div className={`${classes.container} ${padding}`}>
+      <div 
+        ref={r => this.container = r}
+        className={`${classes.container} ${padding}`
+        }>
         <Bg native state={state}>
           {style => (
             <animated.div 

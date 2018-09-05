@@ -55,6 +55,7 @@ class Work extends Component {
                     ...props
                   }}>
                   <WorkTile 
+                    getWorkTileRef={this.props.getWorkTileRef}
                     workTileThreshold={workTileThreshold} 
                     windowScrollPosition={windowScrollPosition} 
                     bg={work.bg} 
