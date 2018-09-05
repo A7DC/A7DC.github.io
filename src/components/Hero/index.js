@@ -41,4 +41,3 @@ class Hero extends Component {
 }
 
 export default Hero;
-

@@ -25,15 +25,21 @@ const Content = createKeyFrames(1200, 40, 0)
 
 class WorkTile extends Component {
 
-  state = {
-    animateContainer: false
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      animateContainer: false,
+      workTileThreshold: undefined
+    }
   }
 
   componentDidUpdate(prevProps) {    
     let windowScrollPosition = this.props.windowScrollPosition
-    const threshold = (this.props.heroPosition.getBoundingClientRect().bottom - window.innerHeight)
-    
+    const threshold = this.props.workTileThreshold
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      this.props.getWorkTileRef(this.container)
       if (windowScrollPosition > threshold) {
         this.setState({
           animateContainer: 'start'
@@ -47,7 +53,10 @@ class WorkTile extends Component {
     const { title, subtitle, bg, padding } = this.props
     const content = this.state.animateContainer ? 'start' : null
     return (
-      <div className={`${classes.container} ${padding}`}>
+      <div 
+        ref={r => this.container = r}
+        className={`${classes.container} ${padding}`
+        }>
         <Bg native state={state}>
           {style => (
             <animated.div 

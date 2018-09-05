@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import { animated } from 'react-spring'
+
+// components
 import Hero from '../Hero'
 import Work from '../Work'
 import Skills from '../Skills'
 import Experience from '../Experience'
-import Background from '../Background';
 
 class Home extends Component {
 
@@ -23,29 +25,37 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    let windowScrollPosition = window.scrollY
+    let windowScrollPosition = this.container.scrollTop
     this.setState({ windowScrollPosition: windowScrollPosition })
   }
 
-  getWorkRef = payload => {
-    const threshold = payload.getBoundingClientRect().bottom;
-    this.setState({ skillsThreshold: threshold })
+  getWorkHeroRef = payload => {
+    // this is the <Work> containers height
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
+    this.setState({ workTileThreshold: threshold })
+  }
+
+  getWorkTileRef = payload => {
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);;
+    this.setState({ skillThreshold: threshold })
   }
 
   getSkillsRef = payload => {
     const threshold = payload.getBoundingClientRect().bottom;
-    this.setState({ experienceThreshold: threshold })
+    this.setState({ experienceThreshold: threshold }, () => console.log(`the threshold is ${threshold}`))
   }
 
   render() {
+    const { style } = this.props
     return (
-      <Fragment>
-        <Background />
-        <Hero />
-        <Work windowScrollPosition={this.state.windowScrollPosition} getWorkRef={this.getWorkRef} heroLinkClicked={this.props.heroLinkClicked}  />
-        <Skills threshold={this.state.skillsThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
-        <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
-      </Fragment>
+      <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C` }}>
+        <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
+          <Hero />
+          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} getWorkTileRef={this.getWorkTileRef} workTileThreshold={this.state.workTileThreshold}  />
+          <Skills threshold={this.state.skillThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
+          <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
+        </div>
+      </animated.div>
     )
   }
 }

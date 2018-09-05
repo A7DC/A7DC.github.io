@@ -1,0 +1,92 @@
+/* extend tachyons */
+
+.no-scrollbar::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+/* margins  */
+
+.mla {
+  margin-left: auto;
+}
+
+.mra {
+  margin-right: auto;
+}
+
+
+.circular-typeface {
+  font-family: 'Circular Std';
+}
+
+.black {
+  color: #1B1B1C;
+}
+
+/* height */
+
+.vh-50 {
+	height: 50vh;
+}
+
+.vh-80 {
+	height: 80vh;
+}
+
+/* .min-h-4000 {
+	min-height: calc(100vh * 4)
+} */
+
+/* colours */
+
+.bg-black {
+	background-color: #171717;
+}
+/* ////// */
+
+/* headings */
+
+.font-smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Padding */
+
+.pb0-lc:last-child {
+	padding-bottom: 0;
+}
+
+.pl20pc {
+	padding-left: 20%;
+}
+
+.mw9 {
+	max-width: 90rem;
+}
+
+/* ////// */
+
+
+/* Typescale */
+
+/* this needs to be changed in source https://github.com/tachyons-css/tachyons/issues/270 */
+
+.f1 {
+	font-size: 2.375rem;
+}
+
+.f4 {
+	font-size: 1.125rem;
+}
+
+.f5 {
+	font-size: 1.5625rem;
+}
+
+/* letter-spacing */
+
+.ls--039 {
+	letter-spacing: -0.03rem;
+}

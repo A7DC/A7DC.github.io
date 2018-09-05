@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { Keyframes, animated, config } from 'react-spring'
 import WorkTile from '../WorkTile'
 import WorkHero from '../WorkHero'
@@ -13,30 +13,38 @@ const Container = Keyframes.Trail({
 
 class Work extends Component {
   
-    constructor(props) {
-      super(props)
-      this.state = {
-        start: undefined
-      }
+  constructor(props) {
+    super(props)
+    this.state = {
+      start: 'start', 
+      threshold: undefined
     }
+  }
 
   componentDidUpdate(prevProps, prevState) {
     let windowScrollPosition = this.props.windowScrollPosition
-    const { link } = this.state
-    
+    const threshold = this.props.workTileThreshold
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      this.props.getWorkRef(this.container)
+      if (windowScrollPosition > threshold) {
+        this.setState({
+          threshold: threshold
+        })
+      }
     }
 
-  }
 
   render() {
-    const {windowScrollPosition} = this.props;
-    const state = this.state.start === undefined ? 'start' : null
+    const { windowScrollPosition, getWorkHeroRef, workTileThreshold } = this.props;
+    const state = this.state.start
     return (
-      <section ref={ r => this.container = r} className="relative flex flex-column white">
+      <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
-          <WorkHero heroLinkClicked={this.props.heroLinkClicked} windowScrollPosition={windowScrollPosition} bg={data.workHero.bg} title={data.workHero.title} subtitle={data.workHero.subtitle} />
+          <WorkHero 
+            windowScrollPosition={windowScrollPosition} 
+            getWorkHeroRef={getWorkHeroRef} 
+            bg={data.workHero.bg} 
+            title={data.workHero.title} 
+            subtitle={data.workHero.subtitle} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
               return (
@@ -45,7 +53,15 @@ class Work extends Component {
                     transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                     ...props
                   }}>
-                  <WorkTile heroPosition={this.container} windowScrollPosition={windowScrollPosition} bg={work.bg} title={work.title} subtitle={work.subtitle} padding={work.padding} key={i} />
+                  <WorkTile 
+                    getWorkTileRef={this.props.getWorkTileRef}
+                    workTileThreshold={workTileThreshold} 
+                    windowScrollPosition={windowScrollPosition} 
+                    bg={work.bg} 
+                    title={work.title} 
+                    subtitle={work.subtitle} 
+                    padding={work.padding} 
+                    key={i} />
                 </animated.div>
               )
             })}

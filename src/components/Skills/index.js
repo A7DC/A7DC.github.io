@@ -23,9 +23,10 @@ class Skills extends Component {
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     let threshold = this.props.threshold
+    console.log('windowScrollPosition', windowScrollPosition)
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       this.props.getSkillsRef(this.container)
-      if (windowScrollPosition > (threshold + 200)) {
+      if (windowScrollPosition >= threshold) {
         this.setState({
           content: 'start'
         })
