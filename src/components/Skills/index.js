@@ -7,7 +7,7 @@ import data from '../../db'
 
 const Content = Keyframes.Spring({
     start: {
-      delay: 600,
+      delay: 400,
       from: { transform: `translate3d(0,120px,0)`, opacity: 0 },
       to: { transform: `translate3d(0,0,0)`, opacity: 1 },
       config: config.slow
@@ -26,7 +26,7 @@ class Skills extends Component {
     console.log('windowScrollPosition', windowScrollPosition)
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       this.props.getSkillsRef(this.container)
-      if (windowScrollPosition >= threshold) {
+      if (windowScrollPosition > threshold) {
         this.setState({
           content: 'start'
         })

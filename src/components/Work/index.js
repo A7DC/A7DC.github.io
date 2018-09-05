@@ -7,7 +7,7 @@ import ContentContainer from '../ContentContainer'
 import data from '../../db'
 
 const Container = Keyframes.Trail({
-  start: [{ delay: 0, from: { y: 100, opacity: 0 }, to: { y: 0, opacity: 1 } }]
+  start: [{ delay: 400, from: { y: 100, opacity: 0 }, to: { y: 0, opacity: 1 } }]
 })
 
 
@@ -16,23 +16,9 @@ class Work extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      start: 'start', 
-      threshold: undefined
+      start: 'start'
     }
   }
-
-  componentDidUpdate(prevProps, prevState) {
-    let windowScrollPosition = this.props.windowScrollPosition
-    const threshold = this.props.workTileThreshold
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      if (windowScrollPosition > threshold) {
-        this.setState({
-          threshold: threshold
-        })
-      }
-    }
-  }
-
 
   render() {
     const { windowScrollPosition, getWorkHeroRef, workTileThreshold } = this.props;

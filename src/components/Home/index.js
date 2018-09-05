@@ -26,7 +26,7 @@ class Home extends Component {
 
   handleScroll(e) {
     let windowScrollPosition = this.container.scrollTop
-    this.setState({ windowScrollPosition: windowScrollPosition })
+    this.setState({ windowScrollPosition: windowScrollPosition }, console.log(this.state.windowScrollPosition, 'windowScrollPosition'))
   }
 
   getWorkHeroRef = payload => {
@@ -41,7 +41,7 @@ class Home extends Component {
   }
 
   getSkillsRef = payload => {
-    const threshold = payload.getBoundingClientRect().bottom;
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
     this.setState({ experienceThreshold: threshold }, () => console.log(`the threshold is ${threshold}`))
   }
 
