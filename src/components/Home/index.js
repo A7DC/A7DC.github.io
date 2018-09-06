@@ -47,7 +47,7 @@ class Home extends Component {
   render() {
     const { style } = this.props
     return (
-      <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C` }}>
+      <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C`, color: '#fff' }}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero />
           <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} getWorkTileRef={this.getWorkTileRef} workTileThreshold={this.state.workTileThreshold}  />

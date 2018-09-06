@@ -11,6 +11,7 @@ import urls from  './urls.js'
 // components
 import Home from './components/Home'
 import About from './components/About'
+import LoadingAnimation from './components/LoadingAnimation'
 
 const App = () => (
   <Router>
@@ -29,6 +30,7 @@ const App = () => (
               {style => (
                 <Switch location={location}>
                   <Route path="/home" render={props => <Home {...props} style={style} />} />
+                  <Route exact path='/loading' render={() => <LoadingAnimation />} />
                   <Route path={urls.about} render={props => About({ ...props, style })} />
                   <Route render={() => <div>Not Found</div>} />
                 </Switch>
