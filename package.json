@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "https://codesandbox.io/s/new",
+  "homepage": "http://A7DC.github.io/A7DC",
   "main": "src/index.js",
   "dependencies": {
     "react": "16.4.2",
@@ -13,11 +13,15 @@
     "react-spring": "5.6.12",
     "tachyons": "4.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gh-pages": "^1.2.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }
