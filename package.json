@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "keywords": [],
-  "homepage": "http://A7DC.github.io/A7DC",
+  "homepage": "http://a7dc.github.io/a7dc",
   "main": "src/index.js",
   "dependencies": {
     "react": "16.4.2",

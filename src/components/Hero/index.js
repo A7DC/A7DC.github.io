@@ -59,7 +59,7 @@ const CaseStudyContent = ({ title, state, imageState}) => (
   <section
     className={'w-100 flex flex-column content-box pt6'}>
     <ContentContainer>
-      <div className={`${structure.pullTextLeft} pb6 pt6 ph6 mw8 `}>
+      <div className={`${structure.pullTextLeft} pb6 pt6 pl5 pr6 mw8`}>
         <Content native state={state}>
           {styles => (
             <animated.div style={styles}>
