@@ -7,6 +7,8 @@ import Container from '../Container'
 import ContentContainer from '../ContentContainer'
 import ImageHover from '../ImageHover'
 
+import data from '../../db'
+
 const classes = {
   section: 'pb4'
 }
@@ -90,10 +92,87 @@ class Bordellio extends Component {
             </section>
           </div>
         </ContentContainer>
+        <div className='vh-100'>
+            <ImageHover bg={'https://lh3.googleusercontent.com/3weHspjNdkavYs2OpJvE_nFQiJTVEgZzZdBROBNSCxfr_83G0GKWnoVuWwhFNTCc2JwtjTPLKJE_ajxiDBpXa8PTMh_OcBteoMTwlwdLUquQ5Bq6LrEL4GoDAlb1Ccc-s-2Fox9IpVarFKJTz8FnZk6f1Mo9nAgWgoQuZgQWiVAeNYqyBsid3oHFwHBD6p4OFNe1uhiTn-4L1zQoc-CwXhsZGNK4iucW4D3P6Gig4kEDJSDybNVf-1MB4EVSxJ4OAY2E6wQwwbNDfch0cyAQ_asW6mrJIEt7r912OPJBCQQGaFR-6dcazJk71NwnzRBxBRO-972lD__qhP2qX2Rxcp43ipwP4vzj62LqAgankuLwdYRkDie6q9jMDKRzZHuOxCBF4CivjeaJB9U6IuSHgkx_aMCEUEcZcrLGT4nrkPICaMiMlE1Su-FLXbgDAqGWkk4DAYeM9ZS1WBnJMiEMhnyoAppGmxe77DvOP7TOzL5pEVfTPabTGSzHFr_o5DS-GQQHeqD_iPCNBbX8VGelWiKys1egVnGpRrfat4p-cSSrsESd60kQteUJFb_xUIIle4Lo-dUaKoJjEbOkCYYBG7s2Cip237CI_Dc55CT7mhdWzRhumksr6clElwVk3FU=w2080-h1560-no'} />
+        </div>
+        <ContentContainer>
+          <div className='pb6 pt6 pl5 pr6 mw8'>
+            <section className={classes.section}>
+              <p className={`${heading.pLead} pb5`}>Throughout the course of these interviews, the following problems kept coming up:</p>
+              <section className={classes.section}>
+                <h2 className={`${heading.subtitle} pb3`}><b>Advertisers</b></h2>
+                <ul className={`${heading.pLead}${lists.ul}`}>
+                  <li className={lists.li}>None of the review boards or directories (which allowed user-submitted reviews) could be verified, so reviews are open to abuse. </li>
+                  <li className={lists.li}>Can’t verify clients identity easily beforehand </li>
+                  <li className={lists.li}>Time wasting (either people taking too long to book, or never booking)</li>
+                  <li className={lists.li}>No rating of clients prior to the meet - “Not interested whether they’re good in bed, just would like to know whether they’re respectful”</li>
+                </ul>
+              </section>
+              <section className={classes.section}>
+                <h2 className={`${heading.subtitle} pb3`}><b>Clients</b></h2>
+                <ul className={`${heading.pLead}${lists.ul}`}>
+                  <li className={lists.li}>Advertisers aren’t available at the time of request</li>
+                  <li className={lists.li}>Contact number doesn’t work</li>
+                  <li className={lists.li}>Fake ads / person not the same as their photos</li>
+                  <li className={lists.li}>Poor service</li>
+                  <li className={lists.li}>They enjoy reading reviews</li>
+                </ul>
+              </section>
+            </section>
+            <section className={classes.section}>
+                <h1 className={heading.title}>The discovery</h1>
+                <p className={`${heading.pLead}`}>The biggest takeaway from talking to users was that we should be focusing on bookings in the future, not ‘right now’. If we hadn’t learned this early on we may have committed a lot of time developing a product which didn’t suit our users needs.</p>
+                <p className={`${heading.pLead}`}>It became clear that advertisers were incredibly interested in reducing the amount of time they spent organising bookings, and focused instead on the work itself. They wanted to reduce the amount of time it took to organise a booking, and have those bookings actually go through smoothly.</p>
+                <p className={`${heading.pLead}`}>For the clients; they were frustrated that advertisers were often not available at the time of request, along with being annoyed with fake profiles and/or receiving poor service during the date.</p>
+            </section>
+            <section className={classes.section}>
+                <h1 className={heading.title}>Reducing time wasting</h1>
+                <p className={`${heading.pLead}`}>We believe that encouraging users to provide ID and including reciprocal ratings between the client and provider will reduce time being wasted for both parties.</p>
+                <p className={`${heading.pLead}`}>We will know that we are right or wrong once we see the following feedback from the market:</p>
+                <ul className={`${heading.pLead}${lists.ul}`}>
+                  <li className={lists.li}>qualitative feedback from users saying that less of their time is wasted using our service </li>
+                  <li className={lists.li}> 35% of conversations resulting in completed bookings*.</li>
+                </ul>
+                <p className={`${heading.p} pb4`}>*Our research tells us that booking requests occur at a 5%-10% success rate. </p>
+            </section>
+            <section className={classes.section}>
+                <h1 className={heading.title}>Increasing listing quality and the service received</h1>
+                <p className={`${heading.pLead}`}>We believe that encouraging clients to rate advertisers and publishing an average of ratings on an advertisers profile -- as well as moderating the platform based on these ratings (e.g removing profiles listed at X star rating and below after N amount of ratings) -- that we will increase the quality of adverts on the platform.</p>
+                <p className={`${heading.pLead}`}>We will have succeeded in this once we see the following feedback from clients:</p>
+                <ul className={`${heading.pLead}${lists.ul}`}>
+                  <li className={lists.li}>Qualitative feedback from users saying the quality of the profiles on the service was high</li>
+                </ul>
+            </section>
+            <section className={classes.section}>
+              <h1 className={heading.title}>Introducing Bordellio</h1>
+              <p className={`${heading.pLead}`}>In this age we’ve came to expect more from our apps. Bordellio gives sex professionals and their clients the ability to connect and be free. Bordellio makes it easy for clients to find advertisers, to communicate with one another, and ultimately, to have fun.</p>
+            </section>
+              {data.caseStudy[0].bordellio.features.map((feature, i) => {
+                return (
+                  <Feature title={feature.title} content={feature.content} key={i} />
+                )
+              })}
+              <section className={classes.section}>
+                <h1 className={heading.title}>Final thoughts</h1>
+                <p className={`${heading.pLead}`}>In the course of this project I have matured greatly as a designer, due in large part to my role as a co-founder, and the various different hats I’ve had to wear because of this (founder, designer, engineer).  </p>
+                <p className={`${heading.pLead}`}>The biggest difficulty has been the business side of things. The fact this industry exists (most places) in a legal grey area has made this project a challenge, especially when it comes to launching. </p>
+                <p className={`${heading.pLead}`}>While this project is a work in progress, so too is this case study. As we continue to learn and build more this post will be updated to reflect those changes.</p>
+              </section>
+          </div>
+        </ContentContainer>
       </div>
     </Container>
     )
   }
 }
 
+
 export default Bordellio
+
+const Feature = ({title, content, image}) => (
+  <section className={classes.section}>
+    <h1 className={heading.title}>{title}</h1>
+    <img src={image || 'https://cdn.dribbble.com/users/555342/screenshots/3748101/escort-request-dribbble.png'}/>
+    <p className={`${heading.pLead}`}>{content}</p>
+  </section>
+)
