@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
-import { heading, stucture } from '../../tachyons-classes'
+import { heading, structure } from '../../tachyons-classes'
 import { ArrowRight } from '../Icons';
 
 const classes = {
@@ -64,7 +64,7 @@ class WorkTile extends Component {
               className={'w-100 h-100'}
               >
               <ImageHover bg={bg} />
-              <div className={stucture.pullLeft}>
+              <div className={structure.pullLeft}>
                 <Content native state={content}>
                   {styles => (
                     <animated.div style={styles}>

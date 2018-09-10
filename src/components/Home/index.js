@@ -6,6 +6,7 @@ import Hero from '../Hero'
 import Work from '../Work'
 import Skills from '../Skills'
 import Experience from '../Experience'
+import Container from '../Container'
 class Home extends Component {
 
   constructor(props) {
@@ -47,14 +48,14 @@ class Home extends Component {
   render() {
     const { style } = this.props
     return (
-      <animated.div className="mainRoute" style={{ ...style, background: `#1B1B1C`, color: '#fff' }}>
+      <Container background={`#1B1B1C`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
-          <Hero />
+          <Hero home />
           <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} getWorkTileRef={this.getWorkTileRef} workTileThreshold={this.state.workTileThreshold}  />
           <Skills threshold={this.state.skillThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
           <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
         </div>
-      </animated.div>
+      </Container>
     )
   }
 }

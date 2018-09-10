@@ -10,7 +10,7 @@ import urls from  './urls.js'
 
 // components
 import Home from './components/Home'
-import About from './components/About'
+import Bordellio from './components/Bordellio'
 import LoadingAnimation from './components/LoadingAnimation'
 
 const App = () => (
@@ -24,14 +24,15 @@ const App = () => (
               native
               config={config.slow}
               keys={location.pathname.split('/').filter(a => a)[0]}
-              from={{ willChange: 'transform,opacity', transform: 'translateY(500px)', opacity: 0 }}
+              from={{ willChange: 'transform,opacity', 
+                       transform: 'translateY(500px)', opacity: 0 }}
               enter={{ transform: 'translateY(0px)', opacity: 1 }}
-              leave={{ transform: 'translateX(-250px)', opacity: 0 }}>
+              leave={{ transform: 'translateX(-500px)', opacity: 0 }}>
               {style => (
                 <Switch location={location}>
                   <Route path="/home" render={props => <Home {...props} style={style} />} />
                   <Route exact path='/loading' render={() => <LoadingAnimation />} />
-                  <Route path={urls.about} render={props => About({ ...props, style })} />
+                  <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
                   <Route render={() => <div>Not Found</div>} />
                 </Switch>
               )}

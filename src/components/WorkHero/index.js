@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Link} from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
-import { heading, stucture } from '../../tachyons-classes'
+import { heading, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
 const classes = {
@@ -21,7 +21,7 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(800, 120, 0)
+const Bg = createKeyFrames(1200, 120, 0)
 const Content = createKeyFrames(0, 40, 0)
 
 class WorkHero extends Component {
@@ -67,10 +67,10 @@ class WorkHero extends Component {
             <animated.div 
               style={style}
               >
-              <Link to={urls.about}>
+              <Link to={urls.bordellio}>
                 <div className={classes.container}>
                   <ImageHover bg={bg} />
-                  <div className={stucture.pullLeft}>
+                  <div className={structure.pullLeft}>
                       <Content native state={content}>
                         {styles => (
                           <animated.div style={styles}>

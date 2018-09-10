@@ -1,6 +1,6 @@
 const urls = {
   home: '/',
-  about: '/about'
+  bordellio: '/bordellio'
 }
 
 export default urls

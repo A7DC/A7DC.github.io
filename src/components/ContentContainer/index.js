@@ -1,8 +1,8 @@
 import React from 'react'
-import { stucture } from '../../tachyons-classes'
+import { structure } from '../../tachyons-classes'
 
 const ContentContainer = ({ children, bottom }) => (
-  <div className={stucture.container}>
+  <div className={structure.container}>
     {children}
   </div>
 )
