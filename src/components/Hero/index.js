@@ -5,6 +5,8 @@ import { heading, structure } from '../../tachyons-classes'
 
 import data from '../../db'
 
+import ImageHover from '../ImageHover'
+
 const createKeyFrames = (delay, from, to) =>
   Keyframes.Spring({
     start: {
@@ -80,7 +82,9 @@ const CaseStudyContent = ({ title, state, imageState}) => (
     <Image native state={imageState}>
       {styles => (
         <animated.div style={styles}>
-          <img className='w-100 vh-100 mt4' src='https://images.unsplash.com/photo-1536466528142-f752ae7bdd0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a18f8b2fac38ab1fad42682f6ef7f65&auto=format&fit=crop&w=1950&q=80' />
+          <div className='vh-100'>
+            <ImageHover bg={'https://images.unsplash.com/photo-1536466528142-f752ae7bdd0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a18f8b2fac38ab1fad42682f6ef7f65&auto=format&fit=crop&w=1950&q=80'} />
+          </div>
         </animated.div>
       )}
     </Image>
