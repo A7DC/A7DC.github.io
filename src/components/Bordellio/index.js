@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import { structure, heading } from '../../tachyons-classes'
+// import { structure, heading } from '../../tachyons-classes'
 
 // components
 import Hero from '../Hero'
 import Container from '../Container'
+import ContentContainer from '../ContentContainer'
 
 class Bordellio extends Component {
 
@@ -31,19 +32,8 @@ class Bordellio extends Component {
     const {style} = this.props
     return (
     <Container style={style} background={`#F9F9F9`} color={'#1B1B1C'}>
-      <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
+      <div className='overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
         <Hero />
-        <div className={structure.container}>
-          <div className='ph5'>
-            <p className={heading.subtitle}>
-              In 2017, advertising websites which catered for independent escorts were poorly designed, lacked features that we’ve come to expect from modern apps in terms of experience and security, and the space seemed stagnant in its pursuit of innovation. 
-
-              I was part of a project which aimed to make paid dating easier, safer, and more fun for those involved.
-
-              Due to the privacy of our users (and for obvious competitive reasons) some details have been omitted and obfuscated from this case study. 
-            </p>
-          </div>
-        </div>
       </div>
     </Container>
     )

@@ -42,6 +42,7 @@ class Experience extends Component {
             {styles => (
               <animated.div style={styles}>
                 <div className="flex flex-row pv6  bt b--dark-gray">
+                  <ContentContainer>
                   <div className="w-50 fl">
                     <h3 className={heading.t2}>Experience</h3>
                   </div>
@@ -58,6 +59,7 @@ class Experience extends Component {
                       })}
                     </div>
                   </div>
+                  </ContentContainer>
                 </div>
               </animated.div>
             )}
