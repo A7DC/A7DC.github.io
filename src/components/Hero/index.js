@@ -36,7 +36,7 @@ const HomeContent = ({state}) => (
   <section
     className={structure.heroContainer}>
     <ContentContainer>
-      <div className={structure.pullTextLeft}>
+      <div className={`${structure.pullTextLeft} pb6-ns`}>
         <Content native state={state}>
           {styles => (
             <animated.div style={styles}>
@@ -52,9 +52,9 @@ const HomeContent = ({state}) => (
 
 const CaseStudyContent = ({title, state}) => (
   <section
-    className={structure.heroContainer}>
+    className={'w-100 vh-50 flex content-box'}>
     <ContentContainer>
-      <div className={structure.pullTextLeft}>
+      <div className={`${structure.pullTextLeft} pb4`}>
         <Content native state={state}>
           {styles => (
             <animated.div style={styles}>
