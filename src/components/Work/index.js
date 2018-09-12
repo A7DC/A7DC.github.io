@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Keyframes, animated, config } from 'react-spring'
 import WorkTile from '../WorkTile'
-import WorkHero from '../WorkHero'
 import ContentContainer from '../ContentContainer'
 
 import data from '../../db'
@@ -26,12 +25,6 @@ class Work extends Component {
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
-          <WorkHero 
-            windowScrollPosition={windowScrollPosition} 
-            getWorkHeroRef={getWorkHeroRef} 
-            bg={data.workHero.bg} 
-            title={data.workHero.title} 
-            subtitle={data.workHero.subtitle} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
               return (

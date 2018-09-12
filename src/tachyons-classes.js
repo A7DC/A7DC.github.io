@@ -10,6 +10,7 @@ export const heading = {
 
 export const structure = {
   container: 'ph2 ph5-ns w-100 h-100 mw9 mla mra relative',
+  containerFull: 'ph5-ns w-100 h-100 mw9 mla mra relative',
   pullLeft: 'pl3 pl5-ns absolute left-0 bottom-2',
   heroContainer: 'w-100 vh-80-ns vh-60 pv6-ns ph3 pl5-ns flex content-box'
 }

@@ -1,82 +1,87 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import {Link} from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
 import { heading, structure } from '../../tachyons-classes'
-import { ArrowRight } from '../Icons';
+import urls from '../../urls'
 
 const classes = {
-  container: 'relative white cover vh-50 w-50 fl',
-  images: 'absolute left-0 right-0 bottom-0 top-0 z-0',
+  container: 'relative white vh-80 cover mb6',
+  images: 'absolute left-0 right-0 bottom-0 top-0 z-0'
 }
-
 
 const createKeyFrames = (delay, from, to) =>
   Keyframes.Spring({
     start: {
       delay,
-      from: { transform: `translate3d(0,${from}px,0)`, opacity: 0},
-      to: { transform: `translate3d(0,${to}px,0)`, opacity: 1 },
+      from: { transform: `translate3d(0,${from}%,0)`, opacity: 0 },
+      to: { transform: `translate3d(0,${to}%,0)`, opacity: 1 },
       config: config.slow
     }
   })
 
-const Bg = createKeyFrames(600, 120, 0)
-const Content = createKeyFrames(1200, 40, 0)
+const Bg = createKeyFrames(1200, 120, 0)
+const Content = createKeyFrames(0, 40, 0)
 
 class WorkTile extends Component {
 
-
   constructor(props) {
+  
     super(props)
-
     this.state = {
-      animateContainer: false,
-      workTileThreshold: undefined
+      open: 'start',
+      content: false
     }
   }
 
-  componentDidUpdate(prevProps) {    
+
+  componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    const threshold = this.props.workTileThreshold
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      this.props.getWorkTileRef(this.container)
-      if (windowScrollPosition > threshold) {
+    let bottom = this.container.getBoundingClientRect().bottom;
+
+    if (prevProps.windowScrollPosition !== windowScrollPosition) { 
+      if (windowScrollPosition > (bottom - 40)) {
+        this.props.getWorkTileRef(this.container)
         this.setState({
-          animateContainer: 'start'
-        })
+          content: true
+        })        
       }
     }
   }
 
+  onClick() {
+    this.setState({
+      link: 'active'
+    })
+  }
+
   render() {
-    const state = this.state.animateContainer
-    const { title, subtitle, bg, padding } = this.props
-    const content = this.state.animateContainer ? 'start' : null
+    const state = this.state.open
+    const content = this.state.content ? 'start' : null
+    const {title, subtitle, bg} = this.props
     return (
-      <div 
-        ref={r => this.container = r}
-        className={`${classes.container} ${padding}`
-        }>
+      <div ref={r => this.container = r}>
         <Bg native state={state}>
           {style => (
             <animated.div 
               style={style}
-              className={'w-100 h-100'}
               >
-              <ImageHover bg={bg} />
-              <div className={structure.pullLeft}>
-                <Content native state={content}>
-                  {styles => (
-                    <animated.div style={styles}>
-                      <h6 className={heading.subtitle}>{subtitle}</h6>
-                      <div className='flex flex-row items-baseline'>
-                        <h2 className={`${heading.title} pr2`}>{title}</h2>
-                        <ArrowRight />
-                      </div>
-                    </animated.div>
-                  )}
-                </Content>
-              </div>
+              <Link to={urls.bordellio}>
+                <div className={classes.container}>
+                  <ImageHover bg={bg} />
+                  <div className={structure.pullLeft}>
+                      <Content native state={content}>
+                        {styles => (
+                          <animated.div style={styles}>
+                            <h6 className={heading.subtitle}>{subtitle}</h6>
+                            <h2 className={heading.title}>{title}</h2>
+                          </animated.div>
+                        )}
+                      </Content>
+                    </div>
+                </div>
+              </Link>
             </animated.div>
           )}
         </Bg>
@@ -84,6 +89,7 @@ class WorkTile extends Component {
     )
   }
 }
+
 
 export default WorkTile;
 

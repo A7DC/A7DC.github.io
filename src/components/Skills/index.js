@@ -43,11 +43,11 @@ class Skills extends Component {
             {styles => (
               <animated.div style={styles}>
                 <ContentContainer>
-                  <div className="flex flex-row items-baseline">
-                    <div className="w-50 fl">
+                  <div className="flex flex-row-ns flex-column items-baseline">
+                    <div className="w-100 w-50-ns fl mb0-ns mb3">
                       <h3 className={heading.t2}>Skills</h3>
                     </div>
-                    <div className="w-50 fl">
+                    <div className="w-100 w-50-ns fl">
                       {data.skills.map((skill, i) => {
                         return (
                           <div key={i} className="w-100 flex flex-row items-baseline pb5 pb0-lc">

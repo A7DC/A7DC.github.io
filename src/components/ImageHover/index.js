@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Spring } from 'react-spring'
 
 const classes = {
-  container: 'relative h-100 cover mb6 overflow-hidden'
+  container: 'relative h-100 cover overflow-hidden'
 }
 
 class ImageHover extends Component {

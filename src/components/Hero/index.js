@@ -30,7 +30,7 @@ class Hero extends Component {
       <Fragment>
         {home ?
           <HomeContent state={state}/> :
-          <CaseStudyContent state={state} imageState={imageState} title={data.workHero.title}/>
+          <CaseStudyContent state={state} imageState={imageState} title={data.work[0].title}/>
         }
       </Fragment>
     )
