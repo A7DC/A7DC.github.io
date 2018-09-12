@@ -24,14 +24,25 @@
   color: #1B1B1C;
 }
 
-/* height */
+/* display */
 
-.vh-50 {
-	height: 50vh;
+.dv {
+	display: visible;
 }
 
-.vh-80 {
-	height: 80vh;
+
+/* //// */
+
+/* height */
+
+.vh-60 {
+	height: 60vh;
+}
+
+@media (min-width: 48em) {
+		.vh-80-ns {
+			height: 80vh;
+		}
 }
 
 /* .min-h-4000 {
