@@ -19,12 +19,24 @@ class Work extends Component {
     }
   }
 
+  componentDidMount() {
+    console.log(data.workMain, 'data.workMain')
+  }
+
   render() {
     const { windowScrollPosition, getWorkHeroRef, workTileThreshold } = this.props;
     const state = this.state.start
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
+          <WorkTile
+            animation={'start'}
+            workTileThreshold={workTileThreshold}
+            windowScrollPosition={windowScrollPosition}
+            bg={data.workMain.bg}
+            title={data.workMain.title}
+            subtitle={data.workMain.subtitle}
+            padding={data.workMain.padding} />
           <Container native keys={data.work.map((_, i) => i)} state={state} config={config}>
             {data.work.map((work, i) => ({ y, ...props }) => {
               return (
@@ -32,9 +44,11 @@ class Work extends Component {
                   style={{
                     transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                     ...props
-                  }}>
+                  }}
+                  className={'flex flex-column'}
+                  >
                   <WorkTile 
-                    getWorkTileRef={this.props.getWorkTileRef}
+                    animation={undefined}
                     workTileThreshold={workTileThreshold} 
                     windowScrollPosition={windowScrollPosition} 
                     bg={work.bg} 

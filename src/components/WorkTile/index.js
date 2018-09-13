@@ -30,23 +30,27 @@ class WorkTile extends Component {
   
     super(props)
     this.state = {
-      open: 'start',
+      animation: this.props.animation,
       content: false
     }
   }
 
 
+  componentDidMount() {
+    const bottom = this.container.getBoundingClientRect().top;
+    console.log('bottom', bottom)
+  }
+  
+  
+  
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    let bottom = this.container.getBoundingClientRect().bottom;
-
-    if (prevProps.windowScrollPosition !== windowScrollPosition) { 
-      if (windowScrollPosition > (bottom - 40)) {
-        this.props.getWorkTileRef(this.container)
-        this.setState({
-          content: true
-        })        
+    const bottom = this.container.getBoundingClientRect().top;
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      if (windowScrollPosition >= bottom) {
+        this.setState({ animation: 'start'})
       }
+      console.log('bottom', bottom)
     }
   }
 
@@ -57,11 +61,11 @@ class WorkTile extends Component {
   }
 
   render() {
-    const state = this.state.open
+    const state = this.state.animation
     const content = this.state.content ? 'start' : null
     const {title, subtitle, bg} = this.props
     return (
-      <div ref={r => this.container = r}>
+      <div ref={r => this.container = r} className='min-vh-100'>
         <Bg native state={state}>
           {style => (
             <animated.div 
