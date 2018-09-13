@@ -42,12 +42,12 @@ class Skills extends Component {
           <Content native state={state}>
             {styles => (
               <animated.div style={styles}>
-                <ContentContainer>
+                <div className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
                   <div className="flex flex-row-ns flex-column items-baseline">
-                    <div className="w-100 w-50-ns fl mb0-ns mb3">
+                    <div className="w-100 w-40-ns fl mb0-ns mb3">
                       <h3 className={heading.t2}>Skills</h3>
                     </div>
-                    <div className="w-100 w-50-ns fl">
+                    <div className="w-100 w-60-ns fl">
                       {data.skills.map((skill, i) => {
                         return (
                           <div key={i} className="w-100 flex flex-row items-baseline pb5 pb0-lc">
@@ -62,7 +62,7 @@ class Skills extends Component {
                       })}
                     </div>
                   </div>
-                </ContentContainer>
+                </div>
               </animated.div>
             )}
           </Content>

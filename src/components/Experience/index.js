@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-import { heading } from '../../tachyons-classes'
+import { heading, structure } from '../../tachyons-classes'
 import ContentContainer from '../ContentContainer'
 
 import data from '../../db'
@@ -42,11 +42,11 @@ class Experience extends Component {
             {styles => (
               <animated.div style={styles}>
                 <div className="flex flex-row pv6  bt b--dark-gray">
-                  <ContentContainer>
-                  <div className="w-50 fl">
+                  <div className={structure.containerInner}>
+                  <div className="w-40 fl">
                     <h3 className={heading.t2}>Experience</h3>
                   </div>
-                  <div className="w-50 fl">
+                  <div className="w-60 fl">
                     <div className="w-100 pl20pc">
                       {data.workExperience.map((work, i) => {
                         return (
@@ -59,7 +59,7 @@ class Experience extends Component {
                       })}
                     </div>
                   </div>
-                  </ContentContainer>
+                  </div>
                 </div>
               </animated.div>
             )}
