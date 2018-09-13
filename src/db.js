@@ -21,7 +21,7 @@ const data = {
     },
     {
       title: 'Code',
-      content: 'I am a component developer, with experience using React and Framer. I’ve also dabbled in virtual reality development.'
+      content: 'I am a component developer, with experience using React and Framer. I enjoy trying out new things. One of the recent things I have tried is virtual reality development.'
     },
   ],
   caseStudy: [
