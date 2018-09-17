@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { Keyframes, animated, config } from 'react-spring'
+
+// components
 import WorkTile from '../WorkTile'
+import WorkHero from '../WorkHero'
 import ContentContainer from '../ContentContainer'
 
 import data from '../../db'
@@ -19,18 +22,13 @@ class Work extends Component {
     }
   }
 
-  componentDidMount() {
-    console.log(data.workMain, 'data.workMain')
-  }
-
   render() {
-    const { windowScrollPosition, getWorkHeroRef, workTileThreshold } = this.props;
+    const { windowScrollPosition, workTileThreshold } = this.props;
     const state = this.state.start
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
-          <WorkTile
-            animation={'start'}
+          <WorkHero
             workTileThreshold={workTileThreshold}
             windowScrollPosition={windowScrollPosition}
             bg={data.workMain.bg}
@@ -48,7 +46,6 @@ class Work extends Component {
                   className={'flex flex-column'}
                   >
                   <WorkTile 
-                    animation={undefined}
                     workTileThreshold={workTileThreshold} 
                     windowScrollPosition={windowScrollPosition} 
                     bg={work.bg} 
