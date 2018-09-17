@@ -22,7 +22,7 @@ const createKeyFrames = (delay, from, to) =>
   })
 
 const Bg = createKeyFrames(400, 120, 0)
-const Content = createKeyFrames(800, 40, 0)
+const Content = createKeyFrames(400, 40, 0)
 
 class WorkHero extends Component {
 
@@ -41,7 +41,7 @@ class WorkHero extends Component {
 
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    const top = (this.container.getBoundingClientRect().top + windowScrollPosition) - 80;
+    const top = (this.container.getBoundingClientRect().top + windowScrollPosition) - 160;
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition >= top) {
         this.setState({ content: 'start' })
