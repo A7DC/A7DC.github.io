@@ -7,7 +7,7 @@ import { heading, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
 const classes = {
-  container: 'relative white vh-80 cover mb6',
+  container: 'relative white vh-80 cover',
   images: 'absolute left-0 right-0 bottom-0 top-0 z-0'
 }
 
@@ -21,8 +21,8 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(1200, 120, 0)
-const Content = createKeyFrames(0, 40, 0)
+const Bg = createKeyFrames(400, 120, 0)
+const Content = createKeyFrames(800, 40, 0)
 
 class WorkHero extends Component {
 
@@ -35,9 +35,13 @@ class WorkHero extends Component {
     }
   }
 
+  componentDidMount() {
+    this.props.getWorkHeroRef(this.container)
+  }
+
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    const top = this.container.getBoundingClientRect().top + windowScrollPosition;
+    const top = (this.container.getBoundingClientRect().top + windowScrollPosition) - 80;
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition >= top) {
         this.setState({ content: 'start' })

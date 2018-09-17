@@ -31,7 +31,7 @@ class Home extends Component {
 
   getWorkHeroRef = payload => {
     // this is the <Work> containers height
-    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
+    const threshold = payload.getBoundingClientRect().top
     this.setState({ workTileThreshold: threshold })
   }
 

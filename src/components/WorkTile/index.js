@@ -21,8 +21,8 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(200, 120, 0)
-const Content = createKeyFrames(1200, 40, 0)
+const Bg = createKeyFrames(0, 120, 0)
+const Content = createKeyFrames(400, 40, 0)
 
 class WorkTile extends Component {
 
@@ -37,9 +37,8 @@ class WorkTile extends Component {
 
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
-    const top = this.container.getBoundingClientRect().top - window.scrollY;
-    // console.log(top, 'top')
-    const bottom = this.container.getBoundingClientRect().bottom - window.scrollY
+    const top = this.props.workTileThreshold;
+    console.log(top, 'top')
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition >= top) {
         this.setState({ animation: 'start' })

@@ -23,12 +23,14 @@ class Work extends Component {
   }
 
   render() {
-    const { windowScrollPosition, workTileThreshold } = this.props;
+    const { windowScrollPosition, workTileThreshold, getWorkHeroRef } = this.props;
     const state = this.state.start
+    const workTilethresholds = [workTileThreshold, workTileThreshold + window.innerHeight]
     return (
       <section ref={r => this.container = r} className="relative flex flex-column white pv4">
         <ContentContainer>
           <WorkHero
+            getWorkHeroRef={getWorkHeroRef}
             workTileThreshold={workTileThreshold}
             windowScrollPosition={windowScrollPosition}
             bg={data.workMain.bg}
@@ -46,7 +48,7 @@ class Work extends Component {
                   className={'flex flex-column'}
                   >
                   <WorkTile 
-                    workTileThreshold={workTileThreshold} 
+                    workTileThreshold={workTilethresholds[i]} 
                     windowScrollPosition={windowScrollPosition} 
                     bg={work.bg} 
                     title={work.title} 
