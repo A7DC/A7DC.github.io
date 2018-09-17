@@ -35,9 +35,16 @@ class Home extends Component {
     this.setState({ workTileThreshold: threshold })
   }
 
+  getWorkRef = payload => {
+    // this is the <Work> containers height
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
+    this.setState({ skillThreshold: threshold })
+  }
+
+
   getSkillsRef = payload => {
     const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
-    this.setState({ experienceThreshold: threshold }, () => console.log(`the threshold is ${threshold}`))
+    this.setState({ experienceThreshold: threshold })
   }
 
   render() {
@@ -46,8 +53,15 @@ class Home extends Component {
       <Container style={style} background={`#1B1B1C`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero home />
-          <Work windowScrollPosition={this.state.windowScrollPosition} getWorkHeroRef={this.getWorkHeroRef} workTileThreshold={this.state.workTileThreshold}  />
-          <Skills threshold={this.state.skillThreshold} windowScrollPosition={this.state.windowScrollPosition} getSkillsRef={this.getSkillsRef} />
+          <Work 
+            windowScrollPosition={this.state.windowScrollPosition} 
+            getWorkHeroRef={this.getWorkHeroRef} 
+            getWorkRef={this.getWorkRef} 
+            workTileThreshold={this.state.workTileThreshold}  />
+          <Skills 
+            threshold={this.state.skillThreshold} 
+            windowScrollPosition={this.state.windowScrollPosition} 
+            getSkillsRef={this.getSkillsRef} />
           <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
         </div>
       </Container>

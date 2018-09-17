@@ -7,7 +7,7 @@ import data from '../../db'
 
 const Content = Keyframes.Spring({
   start: {
-    delay: 400,
+    delay: 600,
     from: { transform: `translate3d(0,120px,0)`, opacity: 0 },
     to: { transform: `translate3d(0,0,0)`, opacity: 1 },
     config: config.slow
@@ -16,8 +16,11 @@ const Content = Keyframes.Spring({
 
 class Experience extends Component {
 
-  state = {
-    content: undefined
+  constructor(props) {
+    super(props)
+    this.state = {
+      content: undefined
+    }
   }
 
   componentDidUpdate(prevProps) {

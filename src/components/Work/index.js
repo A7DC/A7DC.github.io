@@ -22,6 +22,13 @@ class Work extends Component {
     }
   }
 
+  componentDidUpdate(prevProps) {
+    let windowScrollPosition = this.props.windowScrollPosition
+    if (prevProps.windowScrollPosition !== windowScrollPosition) {
+      this.props.getWorkRef(this.container)
+    }
+  }
+
   render() {
     const { windowScrollPosition, workTileThreshold, getWorkHeroRef } = this.props;
     const state = this.state.start

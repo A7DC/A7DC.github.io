@@ -38,7 +38,6 @@ class WorkTile extends Component {
   componentDidUpdate(prevProps) {
     let windowScrollPosition = this.props.windowScrollPosition
     const top = this.props.workTileThreshold;
-    console.log(top, 'top')
     if (prevProps.windowScrollPosition !== windowScrollPosition) {
       if (windowScrollPosition >= top) {
         this.setState({ animation: 'start' })
