@@ -39,7 +39,7 @@ class Experience extends Component {
   render() {
     const state = this.state.content
     return (
-      <section className="relative white pv4">
+      <section className="relative white pt4">
         <ContentContainer>
           <Content native state={state}>
             {styles => (

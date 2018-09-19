@@ -39,7 +39,7 @@ class Skills extends Component {
   render() {
     const state = this.state.content
     return (
-      <section ref={r => this.container = r} className="relative white pv6">
+      <section ref={r => this.container = r} className="relative pb6">
         <ContentContainer>
           <Content native state={state}>
             {styles => (
