@@ -69,9 +69,15 @@
 	padding-bottom: 0;
 }
 
-.pl20pc {
-	padding-left: 20%;
+
+@media (min-width: 48em) {
+		.pl20pc-ns {
+			padding-left: 20%;
+		}
 }
+
+
+/* //// */
 
 .mw9 {
 	max-width: 90rem;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { animated } from 'react-spring'
 
 // components
 import Hero from '../Hero'

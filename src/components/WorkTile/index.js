@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
 import { heading, structure } from '../../tachyons-classes'
@@ -27,7 +27,7 @@ const Content = createKeyFrames(400, 40, 0)
 class WorkTile extends Component {
 
   constructor(props) {
-  
+
     super(props)
     this.state = {
       animation: undefined,
@@ -54,27 +54,27 @@ class WorkTile extends Component {
   render() {
     const state = this.state.animation
     const content = this.state.animation ? this.state.animation : undefined
-    const {title, subtitle, bg} = this.props
+    const { title, subtitle, bg } = this.props
     return (
       <div ref={r => this.container = r} className='min-vh-100'>
         <Bg native state={state}>
           {style => (
-            <animated.div 
+            <animated.div
               style={style}
-              >
+            >
               <Link to={urls.bordellio}>
                 <div className={classes.container}>
                   <ImageHover bg={bg} />
                   <div className={structure.pullLeft}>
-                      <Content native state={content}>
-                        {styles => (
-                          <animated.div style={styles}>
-                            <h6 className={heading.subtitle}>{subtitle}</h6>
-                            <h2 className={heading.title}>{title}</h2>
-                          </animated.div>
-                        )}
-                      </Content>
-                    </div>
+                    <Content native state={content}>
+                      {styles => (
+                        <animated.div style={styles}>
+                          <h6 className={heading.subtitle}>{subtitle}</h6>
+                          <h2 className={heading.title}>{title}</h2>
+                        </animated.div>
+                      )}
+                    </Content>
+                  </div>
                 </div>
               </Link>
             </animated.div>
@@ -87,4 +87,3 @@ class WorkTile extends Component {
 
 
 export default WorkTile;
-

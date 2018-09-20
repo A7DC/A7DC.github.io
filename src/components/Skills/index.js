@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-import { heading } from '../../tachyons-classes'
+import { heading, structure } from '../../tachyons-classes'
 import ContentContainer from '../ContentContainer'
 
 import data from '../../db'
@@ -44,10 +44,10 @@ class Skills extends Component {
           <Content native state={state}>
             {styles => (
               <animated.div style={styles}>
-                <div className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
+                <div className={structure.containerInner}>
                   <div className="flex flex-row-ns flex-column items-baseline">
-                    <div className="w-100 w-40-ns fl mb0-ns mb3">
-                      <h3 className={heading.t2}>Skills</h3>
+                    <div className="w-100 w-40-ns fl mb2">
+                      <h3 className={`${heading.t2} pb4 pb0-ns`}>Skills</h3>
                     </div>
                     <div className="w-100 w-60-ns fl">
                       {data.skills.map((skill, i) => {

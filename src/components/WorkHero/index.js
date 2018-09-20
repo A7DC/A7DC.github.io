@@ -91,4 +91,3 @@ class WorkHero extends Component {
 
 
 export default WorkHero;
-

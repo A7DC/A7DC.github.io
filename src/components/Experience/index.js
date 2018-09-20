@@ -44,16 +44,16 @@ class Experience extends Component {
           <Content native state={state}>
             {styles => (
               <animated.div style={styles}>
-                <div className="flex flex-row pv6  bt b--dark-gray">
+                <div className="flex flex-row pv6 bt b--dark-gray">
                   <div className={structure.containerInner}>
-                  <div className="w-40 fl">
-                    <h3 className={heading.t2}>Experience</h3>
+                  <div className="w-100 w-40-ns fl mb2">
+                    <h3 className={`${heading.t2} pb4 pb0-ns`}>Experience</h3>
                   </div>
-                  <div className="w-60 fl">
-                    <div className="w-100 pl20pc">
+                  <div className="w-100 w-60-ns fl">
+                    <div className="w-100 pl20pc-ns">
                       {data.workExperience.map((work, i) => {
                         return (
-                          <div key={i} className="w-50 fl flex flex-column items-baseline pb5 pt2 pb0-lc">
+                          <div key={i} className="w-100 w-50-ns fl flex flex-column items-baseline pb5-ns pb4 pt2-ns pb0-lc">
                             <h6 className={heading.t6}>{work.employer}</h6>
                             <span className={heading.p}>{work.jobTitle}</span>
                             <span className={heading.p}>{work.datesWorked}</span>
