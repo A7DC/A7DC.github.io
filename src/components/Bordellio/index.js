@@ -10,7 +10,8 @@ import ImageHover from '../ImageHover'
 import data from '../../db'
 
 const classes = {
-  section: 'pb4'
+  section: 'pb4',
+  container: 'pb6 pt6 ph5 pl5-l pr6-l mw8'
 }
 
 class Bordellio extends Component {
@@ -42,7 +43,7 @@ class Bordellio extends Component {
       <div className='overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
         <Hero />
         <ContentContainer>
-          <div className='pb6 pt6 pl5 pr6 mw8'>
+          <div className={classes.container}>
             <section className={classes.section}>
               <h1 className={heading.title}>Our goal</h1>
               <p className={`${heading.pLead}`}>The goal of the project was to find out ways in which we could help improve the process of finding and organising dates. We envisioned an Uber-like service where a client could browse a directory of advertisers and request a booking with them, pay a deposit and/or securely hand over an ID, go on the date, and give a rating afterwards. </p>
@@ -66,7 +67,7 @@ class Bordellio extends Component {
             <ImageHover bg={'https://lh3.googleusercontent.com/301SQHGeMAkLl8k4KTLn1uiXC2xxnrRAT0SCe4R8QZJmZ64ELqMjcDzP-AohQSH5YhWBsqLItpS63JELmc_MoMl6TdKESkcBTeD4jwJdBNkD-YI0m_bGsO4KIlizeW1NkxB0ymEZtpDtm5pVqK4yuKLc5plXukFdyAlBII5z-ofRv7I7XdXVa9f75094rUz4PWscTBwTxSEYcSngAZK4Z3ZdqI1liNGL8jX_OCb091zmxPAomDmvw0USrnyAI44i5Qm63L5m0kPpKOYKjytq9FGrvFWtDZauJhLafTdfewvN9-7aIAIDFE6jPEaovGwssRIles4W4sXylIMJnv3Rqqb_cypcFf0oDSaeL6pzxCHKEr6v4wt8CYcuFuq3zguplLmVr_nheXHkVmQUkRjXQ4UpL127gpg24Uv7WtX-8yQvhj0ISu47bhi4wzi6ao-7qJjTr1XSZ2iYo6calKsTqh0pPA0eTz3-prds1w5i1xjmLujESx3lksMDM61YvBXueyxUSvydsjC10okRLy3atq2WIdbWqFZ3sPjZPVIht8NGA0j9ByK_ea5QOq9clzvfk46L5zqWmjM79R8eWBi18U2g5qnZRwmiNJU2nVbdm6ra7PpiLHWiCjLyk-Y00CE=w2080-h1560-no'} />
         </div>
         <ContentContainer>
-          <div className='pb6 pt6 pl5 pr6 mw8'>
+          <div className={classes.container}>
             <section className={classes.section}>
               <p className={`${heading.pLead}`}>After discussing with the team, we believed the biggest problems were:</p>
               <ul className={`${heading.pLead} ${lists.ul}`}>
@@ -96,7 +97,7 @@ class Bordellio extends Component {
             <ImageHover bg={'https://lh3.googleusercontent.com/3weHspjNdkavYs2OpJvE_nFQiJTVEgZzZdBROBNSCxfr_83G0GKWnoVuWwhFNTCc2JwtjTPLKJE_ajxiDBpXa8PTMh_OcBteoMTwlwdLUquQ5Bq6LrEL4GoDAlb1Ccc-s-2Fox9IpVarFKJTz8FnZk6f1Mo9nAgWgoQuZgQWiVAeNYqyBsid3oHFwHBD6p4OFNe1uhiTn-4L1zQoc-CwXhsZGNK4iucW4D3P6Gig4kEDJSDybNVf-1MB4EVSxJ4OAY2E6wQwwbNDfch0cyAQ_asW6mrJIEt7r912OPJBCQQGaFR-6dcazJk71NwnzRBxBRO-972lD__qhP2qX2Rxcp43ipwP4vzj62LqAgankuLwdYRkDie6q9jMDKRzZHuOxCBF4CivjeaJB9U6IuSHgkx_aMCEUEcZcrLGT4nrkPICaMiMlE1Su-FLXbgDAqGWkk4DAYeM9ZS1WBnJMiEMhnyoAppGmxe77DvOP7TOzL5pEVfTPabTGSzHFr_o5DS-GQQHeqD_iPCNBbX8VGelWiKys1egVnGpRrfat4p-cSSrsESd60kQteUJFb_xUIIle4Lo-dUaKoJjEbOkCYYBG7s2Cip237CI_Dc55CT7mhdWzRhumksr6clElwVk3FU=w2080-h1560-no'} />
         </div>
         <ContentContainer>
-          <div className='pb6 pt6 pl5 pr6 mw8'>
+          <div className={classes.container}>
             <section className={classes.section}>
               <p className={`${heading.pLead} pb5`}>Throughout the course of these interviews, the following problems kept coming up:</p>
               <section className={classes.section}>
@@ -149,7 +150,7 @@ class Bordellio extends Component {
             </section>
               {data.caseStudy[0].bordellio.features.map((feature, i) => {
                 return (
-                  <Feature title={feature.title} content={feature.content} key={i} />
+                  <Feature title={feature.title} content={feature.content} video={feature.video} key={i} />
                 )
               })}
               <section className={classes.section}>
@@ -169,10 +170,17 @@ class Bordellio extends Component {
 
 export default Bordellio
 
-const Feature = ({title, content, image}) => (
+const Feature = ({title, content, video}) => (
   <section className={classes.section}>
     <h1 className={heading.subtitletest}>{title}</h1>
-    <img src={image || 'https://cdn.dribbble.com/users/555342/screenshots/3748101/escort-request-dribbble.png'}/>
+    <video 
+      className="w-100"
+      autoplay="true"
+      loop="true"
+      muted
+      src={video}>
+      Sorry, your browser doesn't support embedded videos.
+    </video>
     <p className={`${heading.pLead}`}>{content}</p>
   </section>
 )
