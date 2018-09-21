@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
-import { heading, structure } from '../../tachyons-classes'
+import { typography, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
 const classes = {
@@ -73,8 +73,8 @@ class WorkHero extends Component {
                     <Content native state={content}>
                       {styles => (
                         <animated.div style={styles}>
-                          <h6 className={heading.subtitle}>{subtitle}</h6>
-                          <h2 className={heading.title}>{title}</h2>
+                          <h6 className={typography.p}>{subtitle}</h6>
+                          <h2 className={typography.t1}>{title}</h2>
                         </animated.div>
                       )}
                     </Content>

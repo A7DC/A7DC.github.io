@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
-import { heading, structure } from '../../tachyons-classes'
+import { typography, structure } from '../../tachyons-classes'
 
 import data from '../../db'
 
@@ -39,13 +39,13 @@ class Hero extends Component {
 
 export default Hero;
 
-const HomeContent = ({state}) => (
+const HomeContent = () => (
   <section
     className={structure.heroContainer}>
     <ContentContainer>
       <div className={`${structure.pullTextLeft} pb6-ns`}>
-        <h1 className={`${heading.title} pt6`}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
-        <p className={heading.subtitle}>Send me an <a href="mailto: audaci7y@gmail.com" className="underline color-inherit">email</a>, check my <a href="linkedin.com" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="google.com" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
+        <h1 className={`${typography.t1} pt6`}>Daniel Caine is a product <b className="db-ns w-100-ns fw6">designer from England </b></h1>
+        <p className={typography.p}>Send me an <a href="mailto: audaci7y@gmail.com" className="underline color-inherit">email</a>, check my <a href="linkedin.com" className="underline color-inherit">LinkedIn</a> profile, or download my <a href="google.com" className="underline color-inherit">CV</a>. <br /> Below is a selection of my work.</p>
       </div>
     </ContentContainer>
   </section>
@@ -59,9 +59,9 @@ const CaseStudyContent = ({ title, state, imageState}) => (
         <Content native state={state}>
           {styles => (
             <animated.div style={styles}>
-              <p className={heading.subtitle}>Case study</p>
-              <h1 className={`${heading.title} pb3`}>{title}</h1>
-              <p className={heading.subtitle}>
+              <p className={typography.p}>Case study</p>
+              <h1 className={`${typography.t1} pb3`}>{title}</h1>
+              <p className={typography.pLead}>
                   In 2017, advertising websites which catered for independent escorts were poorly designed, lacked features that we’ve come to expect from modern apps in terms of experience and security, and the space seemed stagnant in its pursuit of innovation.
     
                   I was part of a project which aimed to make paid dating easier, safer, and more fun for those involved.

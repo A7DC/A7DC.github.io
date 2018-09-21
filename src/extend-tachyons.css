@@ -90,17 +90,40 @@
 
 /* this needs to be changed in source https://github.com/tachyons-css/tachyons/issues/270 */
 
+.lh-copy {
+	line-height: 1.5rem;
+}
+
 .f1 {
-	font-size: 2.375rem;
+	font-size: 2.5rem;
+	letter-spacing: -0.016rem;
+	line-height: 3rem;
+}
+
+.f2 {
+	font-size: 1.5rem;
+	letter-spacing: -0.013rem;
+	line-height: 3rem;
+}
+
+.f3 {
+	font-size: 1.125rem;
+	letter-spacing: -0.008rem;
+	line-height: 2rem;
 }
 
 .f4 {
+	font-size: 0.875rem;
+	letter-spacing: 0.001rem;
+}
+
+/* .f4 {
 	font-size: 1.125rem;
 }
 
 .f5 {
 	font-size: 1.5625rem;
-}
+} */
 
 /* letter-spacing */
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { withRouter } from "react-router-dom";
 import { Keyframes, animated, config } from 'react-spring'
-import { heading } from '../../tachyons-classes';
+import { typography } from '../../tachyons-classes';
 
 const classes = {
   container: 'bg-white content-box',
@@ -40,7 +40,7 @@ class LoadingAnimation extends Component {
                 transform: y.interpolate(y => `translate3d(0,${y}%,0)`),
                   ...props
                 }}>
-              <h2 className={`${heading.t2} fw6 pr2`}>{item}</h2>
+              <h2 className={`${typography.t2} fw6 pr2`}>{item}</h2>
               </animated.div>
             ))}
           </Content>
