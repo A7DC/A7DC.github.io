@@ -75,4 +75,6 @@ class Skills extends Component {
 
 }
 
-export default Skills;
+const SkillsAnimated = AnimationContainer(Skills)
+
+export default SkillsAnimated;
