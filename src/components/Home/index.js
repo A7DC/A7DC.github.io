@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { animated } from 'react-spring'
 
 // components
+import Container from '../Container'
 import Hero from '../Hero'
 import WorkHero from '../WorkHero'
 import WorkTile from '../WorkTile'
-import Container from '../Container'
+import Skills from '../Skills'
 
 import data from '../../db'
 class Home extends Component {
@@ -26,8 +26,8 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    let windowScrollPosition = this.container.scrollTop
-    this.setState({ windowScrollPosition: windowScrollPosition })
+    const scrollY = this.container.scrollTop
+    this.setState({ scrollY: scrollY })
   }
 
   getWorkHeroRef = payload => {
@@ -38,13 +38,13 @@ class Home extends Component {
 
   getWorkRef = payload => {
     // this is the <Work> containers height
-    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.scrollY - window.innerHeight);
     this.setState({ skillThreshold: threshold })
   }
 
 
   getSkillsRef = payload => {
-    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
+    const threshold = payload.getBoundingClientRect().bottom + (this.state.scrollY - window.innerHeight);
     this.setState({ experienceThreshold: threshold })
   }
 
@@ -57,18 +57,21 @@ class Home extends Component {
           <WorkHero
             getWorkHeroRef={this.getWorkHeroRef}
             workTileThreshold={workTileThreshold}
-            windowScrollPosition={this.state.windowScrollPosition}
+            scrollY={this.state.scrollY}
             bg={data.workMain.bg}
             title={data.workMain.title}
             subtitle={data.workMain.subtitle}
             padding={data.workMain.padding} />
           <WorkTile
             threshold={1000}
-            windowScrollPosition={this.state.windowScrollPosition}
+            scrollY={this.state.scrollY}
             bg={data.work[0].bg}
             title={data.work[0].title}
             subtitle={data.work[0].subtitle}
             padding={data.work[0].padding} />
+          <Skills
+            threshold={1500}
+            scrollY={this.state.scrollY} />
         </div>
       </Container>
     )

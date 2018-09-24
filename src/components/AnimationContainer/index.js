@@ -8,15 +8,15 @@ const AnimationContainer = WrappedComponent => {
   
       super(props)
       this.state = {
-        animation: undefined,
-        content: undefined
+        animation: undefined
       }
     }
   
     componentDidUpdate(prevProps) {
-      let windowScrollPosition = this.props.windowScrollPosition
-      if (prevProps.windowScrollPosition !== windowScrollPosition) {
-        if (windowScrollPosition >= threshold) {
+      const scrollY = this.props.scrollY
+      const threshold = this.props.threshold
+      if (prevProps.scrollY !== scrollY) {
+        if (scrollY >= threshold) {
           this.setState({ animation: 'start' })
         }
       }
