@@ -63,11 +63,6 @@ class Home extends Component {
             title={data.workMain.title}
             subtitle={data.workMain.subtitle}
             padding={data.workMain.padding} />
-          <Skills 
-            threshold={this.state.skillThreshold} 
-            windowScrollPosition={this.state.windowScrollPosition} 
-            getSkillsRef={this.getSkillsRef} />
-          <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
         </div>
       </Container>
     )
