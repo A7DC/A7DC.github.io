@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
+import ContentContainer from '../ContentContainer'
 import { typography, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
@@ -35,15 +36,11 @@ class WorkHero extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.getWorkHeroRef(this.container)
-  }
-
   componentDidUpdate(prevProps) {
-    let windowScrollPosition = this.props.windowScrollPosition
-    const top = (this.container.getBoundingClientRect().top + windowScrollPosition) - 160;
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      if (windowScrollPosition >= top) {
+    const scrollY = this.props.scrollY
+    const top = (this.container.getBoundingClientRect().top + scrollY) - 160;
+    if (prevProps.scrollY !== scrollY) {
+      if (scrollY >= top) {
         this.setState({ content: 'start' })
       }
     }
@@ -61,29 +58,31 @@ class WorkHero extends Component {
     const { title, subtitle, bg } = this.props
     return (
       <div ref={r => this.container = r} className='min-vh-100'>
-        <Bg native state={state}>
-          {style => (
-            <animated.div
-              style={style}
-            >
-              <Link to={urls.bordellio}>
-                <div className={classes.container}>
-                  <ImageHover bg={bg} />
-                  <div className={structure.pullLeft}>
-                    <Content native state={content}>
-                      {styles => (
-                        <animated.div style={styles}>
-                          <h6 className={typography.p}>{subtitle}</h6>
-                          <h2 className={typography.t1}>{title}</h2>
-                        </animated.div>
-                      )}
-                    </Content>
+        <ContentContainer>
+          <Bg native state={state}>
+            {style => (
+              <animated.div
+                style={style}
+              >
+                <Link to={urls.bordellio}>
+                  <div className={classes.container}>
+                    <ImageHover bg={bg} />
+                    <div className={structure.pullLeft}>
+                      <Content native state={content}>
+                        {styles => (
+                          <animated.div style={styles}>
+                            <h6 className={typography.p}>{subtitle}</h6>
+                            <h2 className={typography.t1}>{title}</h2>
+                          </animated.div>
+                        )}
+                      </Content>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </animated.div>
-          )}
-        </Bg>
+                </Link>
+              </animated.div>
+            )}
+          </Bg>
+        </ContentContainer>
       </div>
     )
   }

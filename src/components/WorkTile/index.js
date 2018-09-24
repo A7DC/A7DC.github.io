@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import { Link } from 'react-router-dom'
+import React, { Component, Fragment } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-import ImageHover from '../ImageHover'
+
 import { typography, structure } from '../../tachyons-classes'
-import urls from '../../urls'
+
+// components
+import AnimationContainer from '../AnimationContainer';
+import ContentContainer from '../ContentContainer'
+import ImageHover from '../ImageHover';
 
 const classes = {
   container: 'relative white vh-80 cover mb6',
@@ -21,7 +23,6 @@ const createKeyFrames = (delay, from, to) =>
     }
   })
 
-const Bg = createKeyFrames(0, 120, 0)
 const Content = createKeyFrames(400, 40, 0)
 
 class WorkTile extends Component {
@@ -45,45 +46,30 @@ class WorkTile extends Component {
     }
   }
 
-  onClick() {
-    this.setState({
-      link: 'active'
-    })
-  }
-
   render() {
-    const state = this.state.animation
-    const content = this.state.animation ? this.state.animation : undefined
-    const { title, subtitle, bg } = this.props
+    const state = this.props.animation
+    const {title, subtitle, bg} = this.props
     return (
-      <div ref={r => this.container = r} className='min-vh-100'>
-        <Bg native state={state}>
-          {style => (
-            <animated.div
-              style={style}
-            >
-              <Link to={urls.bordellio}>
-                <div className={classes.container}>
-                  <ImageHover bg={bg} />
-                  <div className={structure.pullLeft}>
-                    <Content native state={content}>
-                      {styles => (
-                        <animated.div style={styles}>
-                          <h6 className={typography.p}>{subtitle}</h6>
-                          <h2 className={typography.t1}>{title}</h2>
-                        </animated.div>
-                      )}
-                    </Content>
-                  </div>
-                </div>
-              </Link>
-            </animated.div>
-          )}
-        </Bg>
-      </div>
+      <ContentContainer>
+        <div className={classes.container}>
+          <ImageHover bg={bg} />
+          <div className={structure.pullLeft}>
+            <Content native state={state}>
+              {styles => (
+                <animated.div style={styles}>
+                  <h6 className={typography.p}>{subtitle}</h6>
+                  <h2 className={typography.t1}>{title}</h2>
+                </animated.div>
+              )}
+            </Content>
+          </div>
+        </div>
+      </ContentContainer>
     )
   }
 }
 
+const WorkTileAnimated = AnimationContainer(WorkTile)
 
-export default WorkTile;
+export default WorkTileAnimated;
+

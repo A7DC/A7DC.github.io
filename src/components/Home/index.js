@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
 // components
-import Hero from '../Hero'
-import Work from '../Work'
-import Skills from '../Skills'
-import Experience from '../Experience'
 import Container from '../Container'
+import Hero from '../Hero'
+import WorkHero from '../WorkHero'
+import WorkTile from '../WorkTile'
+import Skills from '../Skills'
+import About from '../About'
+import Experience from '../Experience'
+
+import data from '../../db'
 class Home extends Component {
 
   constructor(props) {
@@ -24,44 +28,54 @@ class Home extends Component {
   }
 
   handleScroll(e) {
-    let windowScrollPosition = this.container.scrollTop
-    this.setState({ windowScrollPosition: windowScrollPosition }, console.log(this.state.windowScrollPosition, 'windowScrollPosition'))
-  }
-
-  getWorkHeroRef = payload => {
-    // this is the <Work> containers height
-    const threshold = payload.getBoundingClientRect().top
-    this.setState({ workTileThreshold: threshold })
-  }
-
-  getWorkRef = payload => {
-    // this is the <Work> containers height
-    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
-    this.setState({ skillThreshold: threshold })
-  }
-
-
-  getSkillsRef = payload => {
-    const threshold = payload.getBoundingClientRect().bottom + (this.state.windowScrollPosition - window.innerHeight);
-    this.setState({ experienceThreshold: threshold })
+    const scrollY = this.container.scrollTop
+    this.setState({ scrollY: scrollY })
   }
 
   render() {
-    const { style } = this.props
+    const { style, workTileThreshold } = this.props
+    const { scrollY } = this.state
     return (
       <Container style={style} background={`#1B1B1C`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero home />
-          <Work 
-            windowScrollPosition={this.state.windowScrollPosition} 
-            getWorkHeroRef={this.getWorkHeroRef} 
-            getWorkRef={this.getWorkRef} 
-            workTileThreshold={this.state.workTileThreshold}  />
-          <Skills 
-            threshold={this.state.skillThreshold} 
-            windowScrollPosition={this.state.windowScrollPosition} 
-            getSkillsRef={this.getSkillsRef} />
-          <Experience threshold={this.state.experienceThreshold} windowScrollPosition={this.state.windowScrollPosition} />
+          <WorkHero
+            workTileThreshold={workTileThreshold}
+            scrollY={scrollY}
+            bg={data.workMain.bg}
+            title={data.workMain.title}
+            subtitle={data.workMain.subtitle}
+            padding={data.workMain.padding} />
+          <WorkTile
+            threshold={1000}
+            scrollY={scrollY}
+            bg={data.work[0].bg}
+            title={data.work[0].title}
+            subtitle={data.work[0].subtitle}
+            padding={data.work[0].padding} />
+          <Skills
+            threshold={1500}
+            scrollY={scrollY} />
+          <WorkTile
+            threshold={1000}
+            scrollY={scrollY}
+            bg={data.work[1].bg}
+            title={data.work[1].title}
+            subtitle={data.work[1].subtitle}
+            padding={data.work[1].padding} />
+          <About
+            threshold={1700}
+            scrollY={scrollY} />
+          <WorkTile
+            threshold={2000}
+            scrollY={scrollY}
+            bg={data.work[2].bg}
+            title={data.work[2].title}
+            subtitle={data.work[2].subtitle}
+            padding={data.work[2].padding} />
+          <Experience 
+            threshold={2200} 
+            scrollY={scrollY} />
         </div>
       </Container>
     )
