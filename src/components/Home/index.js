@@ -6,6 +6,7 @@ import Hero from '../Hero'
 import WorkHero from '../WorkHero'
 import WorkTile from '../WorkTile'
 import Skills from '../Skills'
+import About from '../About'
 
 import data from '../../db'
 class Home extends Component {
@@ -72,6 +73,23 @@ class Home extends Component {
           <Skills
             threshold={1500}
             scrollY={this.state.scrollY} />
+          <WorkTile
+            threshold={1000}
+            scrollY={this.state.scrollY}
+            bg={data.work[1].bg}
+            title={data.work[1].title}
+            subtitle={data.work[1].subtitle}
+            padding={data.work[1].padding} />
+          <About
+            threshold={1700}
+            scrollY={this.state.scrollY} />
+          <WorkTile
+            threshold={1000}
+            scrollY={this.state.scrollY}
+            bg={data.work[2].bg}
+            title={data.work[2].title}
+            subtitle={data.work[2].subtitle}
+            padding={data.work[2].padding} />
         </div>
       </Container>
     )

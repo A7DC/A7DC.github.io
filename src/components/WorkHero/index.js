@@ -41,10 +41,10 @@ class WorkHero extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    let windowScrollPosition = this.props.windowScrollPosition
-    const top = (this.container.getBoundingClientRect().top + windowScrollPosition) - 160;
-    if (prevProps.windowScrollPosition !== windowScrollPosition) {
-      if (windowScrollPosition >= top) {
+    const scrollY = this.props.scrollY
+    const top = (this.container.getBoundingClientRect().top + scrollY) - 160;
+    if (prevProps.scrollY !== scrollY) {
+      if (scrollY >= top) {
         this.setState({ content: 'start' })
       }
     }
