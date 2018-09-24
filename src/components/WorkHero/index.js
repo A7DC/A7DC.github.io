@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import ImageHover from '../ImageHover'
+import ContentContainer from '../ContentContainer'
 import { heading, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
@@ -61,29 +62,31 @@ class WorkHero extends Component {
     const { title, subtitle, bg } = this.props
     return (
       <div ref={r => this.container = r} className='min-vh-100'>
-        <Bg native state={state}>
-          {style => (
-            <animated.div
-              style={style}
-            >
-              <Link to={urls.bordellio}>
-                <div className={classes.container}>
-                  <ImageHover bg={bg} />
-                  <div className={structure.pullLeft}>
-                    <Content native state={content}>
-                      {styles => (
-                        <animated.div style={styles}>
-                          <h6 className={heading.subtitle}>{subtitle}</h6>
-                          <h2 className={heading.title}>{title}</h2>
-                        </animated.div>
-                      )}
-                    </Content>
+        <ContentContainer>
+          <Bg native state={state}>
+            {style => (
+              <animated.div
+                style={style}
+              >
+                <Link to={urls.bordellio}>
+                  <div className={classes.container}>
+                    <ImageHover bg={bg} />
+                    <div className={structure.pullLeft}>
+                      <Content native state={content}>
+                        {styles => (
+                          <animated.div style={styles}>
+                            <h6 className={heading.subtitle}>{subtitle}</h6>
+                            <h2 className={heading.title}>{title}</h2>
+                          </animated.div>
+                        )}
+                      </Content>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </animated.div>
-          )}
-        </Bg>
+                </Link>
+              </animated.div>
+            )}
+          </Bg>
+        </ContentContainer>
       </div>
     )
   }

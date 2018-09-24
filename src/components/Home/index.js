@@ -3,10 +3,12 @@ import { animated } from 'react-spring'
 
 // components
 import Hero from '../Hero'
-import Work from '../Work'
+import WorkHero from '../WorkHero'
 import Skills from '../Skills'
 import Experience from '../Experience'
 import Container from '../Container'
+
+import data from '../../db'
 class Home extends Component {
 
   constructor(props) {
@@ -26,7 +28,7 @@ class Home extends Component {
 
   handleScroll(e) {
     let windowScrollPosition = this.container.scrollTop
-    this.setState({ windowScrollPosition: windowScrollPosition }, console.log(this.state.windowScrollPosition, 'windowScrollPosition'))
+    this.setState({ windowScrollPosition: windowScrollPosition })
   }
 
   getWorkHeroRef = payload => {
@@ -48,16 +50,19 @@ class Home extends Component {
   }
 
   render() {
-    const { style } = this.props
+    const { style, workTileThreshold } = this.props
     return (
       <Container style={style} background={`#1B1B1C`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero home />
-          <Work 
-            windowScrollPosition={this.state.windowScrollPosition} 
-            getWorkHeroRef={this.getWorkHeroRef} 
-            getWorkRef={this.getWorkRef} 
-            workTileThreshold={this.state.workTileThreshold}  />
+          <WorkHero
+            getWorkHeroRef={this.getWorkHeroRef}
+            workTileThreshold={workTileThreshold}
+            windowScrollPosition={this.state.windowScrollPosition}
+            bg={data.workMain.bg}
+            title={data.workMain.title}
+            subtitle={data.workMain.subtitle}
+            padding={data.workMain.padding} />
           <Skills 
             threshold={this.state.skillThreshold} 
             windowScrollPosition={this.state.windowScrollPosition} 
