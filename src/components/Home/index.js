@@ -4,8 +4,7 @@ import { animated } from 'react-spring'
 // components
 import Hero from '../Hero'
 import WorkHero from '../WorkHero'
-import Skills from '../Skills'
-import Experience from '../Experience'
+import WorkTile from '../WorkTile'
 import Container from '../Container'
 
 import data from '../../db'
@@ -63,6 +62,13 @@ class Home extends Component {
             title={data.workMain.title}
             subtitle={data.workMain.subtitle}
             padding={data.workMain.padding} />
+          <WorkTile
+            threshold={1000}
+            windowScrollPosition={this.state.windowScrollPosition}
+            bg={data.work[0].bg}
+            title={data.work[0].title}
+            subtitle={data.work[0].subtitle}
+            padding={data.work[0].padding} />
         </div>
       </Container>
     )
