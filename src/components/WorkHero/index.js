@@ -36,10 +36,6 @@ class WorkHero extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.getWorkHeroRef(this.container)
-  }
-
   componentDidUpdate(prevProps) {
     const scrollY = this.props.scrollY
     const top = (this.container.getBoundingClientRect().top + scrollY) - 160;
