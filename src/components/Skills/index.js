@@ -10,7 +10,7 @@ const Skills = () => {
     <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
       <ContentContainer>
         <section ref={r => this.container = r} className="relative white pv6">
-            <section className='pb6'>
+            <section className='pb5'>
                 <h3 className={`${typography.t2} mb4`}>Skills</h3>
                 <div className="flex flex-row-ns flex-row justify-between items-baseline">
                   {data.skills.map((skill, i) => {
