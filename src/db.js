@@ -25,6 +25,11 @@ const data = {
       content: 'I am a component developer, with experience using React and Framer. I enjoy trying out new things. One of the recent things I have tried is virtual reality development.'
     },
   ],
+  skillsExpanded: [
+    { content: ['UI design', 'Research', 'Testing', 'Interviewing', 'Competitor research'] },
+    { content: ['UX design', 'reactjs', 'Animation', 'Javascript', 'Framer'] },
+    { content: ['HTML / CSS', 'SASS / LESS', 'Grunt / Gulp', 'Babel', 'Social'] }
+  ],
   caseStudy: [
     {
       bordellio: {

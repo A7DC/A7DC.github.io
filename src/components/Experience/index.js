@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import { Keyframes, config, animated } from 'react-spring'
+import React from 'react'
 import { typography, structure } from '../../tachyons-classes'
 import ContentContainer from '../ContentContainer'
 import AnimationContainer from '../AnimationContainer'
@@ -7,7 +6,7 @@ import AnimationContainer from '../AnimationContainer'
 import data from '../../db'
 
 const Experience = () => (
-  <section className="relative white pv4">
+  <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
     <ContentContainer>
       <div className="flex flex-row pv6">
         <div className={structure.containerInner}>
