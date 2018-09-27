@@ -16,6 +16,7 @@ class Home extends Component {
     super(props)
     this.handleScroll = this.handleScroll.bind(this)
     this.state = {
+      viewportHeight: document.body.clientHeight
     }
   }
 
@@ -33,41 +34,39 @@ class Home extends Component {
   }
 
   render() {
-    const { style, workTileThreshold } = this.props
-    const { scrollY } = this.state
+    const { style } = this.props
+    const { scrollY, viewportHeight } = this.state
     return (
       <Container style={style} background={`#1B1B1C`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero home />
           <WorkHero
-            workTileThreshold={workTileThreshold}
             scrollY={scrollY}
             bg={data.workMain.bg}
             title={data.workMain.title}
             subtitle={data.workMain.subtitle}
             padding={data.workMain.padding} />
           <WorkTile
-            threshold={1000}
-            scrollY={scrollY}
+            threshold={viewportHeight}
             bg={data.work[0].bg}
             title={data.work[0].title}
             subtitle={data.work[0].subtitle}
             padding={data.work[0].padding} />
           <Skills
-            threshold={1500}
+            threshold={viewportHeight * 2}
             scrollY={scrollY} />
           <WorkTile
-            threshold={1000}
+            threshold={viewportHeight * 3}
             scrollY={scrollY}
             bg={data.work[1].bg}
             title={data.work[1].title}
             subtitle={data.work[1].subtitle}
             padding={data.work[1].padding} />
           <About
-            threshold={1700}
+            threshold={viewportHeight * 4}
             scrollY={scrollY} />
           <WorkTile
-            threshold={2000}
+            threshold={viewportHeight * 5}
             scrollY={scrollY}
             bg={data.work[2].bg}
             title={data.work[2].title}
