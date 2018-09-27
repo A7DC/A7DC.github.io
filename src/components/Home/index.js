@@ -52,7 +52,8 @@ class Home extends Component {
             bg={data.work[0].bg}
             title={data.work[0].title}
             subtitle={data.work[0].subtitle}
-            padding={data.work[0].padding} />
+            padding={data.work[0].padding}
+            arrow />
           <Skills
             threshold={viewportHeight * 2}
             scrollY={scrollY} />
@@ -63,6 +64,7 @@ class Home extends Component {
             title={data.work[1].title}
             subtitle={data.work[1].subtitle}
             padding={data.work[1].padding}
+            arrow
              />
           <About
             threshold={viewportHeight * 4}
@@ -73,7 +75,8 @@ class Home extends Component {
             bg={data.work[2].bg}
             title={data.work[2].title}
             subtitle={data.work[2].subtitle}
-            padding={data.work[2].padding} />
+            padding={data.work[2].padding}
+            arrow />
           <Experience 
             threshold={2200} 
             scrollY={scrollY} />

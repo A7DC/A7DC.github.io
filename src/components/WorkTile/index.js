@@ -7,6 +7,7 @@ import { typography, structure } from '../../tachyons-classes'
 import AnimationContainer from '../AnimationContainer';
 import ContentContainer from '../ContentContainer'
 import ImageHover from '../ImageHover';
+import {ArrowRight} from '../Icons';
 
 const classes = {
   container: 'relative white vh-100 cover',
@@ -48,7 +49,7 @@ class WorkTile extends Component {
 
   render() {
     const state = this.props.animation
-    const {title, subtitle, bg, margin} = this.props
+    const { title, subtitle, bg, arrow} = this.props
     return (
       <ContentContainer>
         <div className={classes.container}>
@@ -58,7 +59,7 @@ class WorkTile extends Component {
               {styles => (
                 <animated.div style={styles}>
                   <h6 className={typography.p}>{subtitle}</h6>
-                  <h2 className={typography.t1}>{title}</h2>
+                  <h2 className={typography.t1}>{title} {arrow ? <ArrowRight /> : null} </h2>
                 </animated.div>
               )}
             </Content>
