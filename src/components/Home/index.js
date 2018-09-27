@@ -37,7 +37,7 @@ class Home extends Component {
     const { style } = this.props
     const { scrollY, viewportHeight } = this.state
     return (
-      <Container style={style} background={`#1B1B1C`} color={'#fff'}>
+      <Container style={style} background={`#121212`} color={'#fff'}>
         <div className='vh-100 overflow-y-scroll relative' onScroll={this.handleScroll} ref={r => this.container = r}>
           <Hero home />
           <WorkHero
