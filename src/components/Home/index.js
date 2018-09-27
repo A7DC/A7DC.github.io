@@ -47,7 +47,7 @@ class Home extends Component {
             subtitle={data.workMain.subtitle}
             padding={data.workMain.padding} />
           <WorkTile
-            threshold={20}
+            threshold={viewportHeight}
             scrollY={scrollY}
             bg={data.work[0].bg}
             title={data.work[0].title}
@@ -62,7 +62,9 @@ class Home extends Component {
             bg={data.work[1].bg}
             title={data.work[1].title}
             subtitle={data.work[1].subtitle}
-            padding={data.work[1].padding} />
+            padding={data.work[1].padding}
+            margin
+             />
           <About
             threshold={viewportHeight * 4}
             scrollY={scrollY} />
@@ -72,7 +74,8 @@ class Home extends Component {
             bg={data.work[2].bg}
             title={data.work[2].title}
             subtitle={data.work[2].subtitle}
-            padding={data.work[2].padding} />
+            padding={data.work[2].padding}
+            margin />
           <Experience 
             threshold={2200} 
             scrollY={scrollY} />

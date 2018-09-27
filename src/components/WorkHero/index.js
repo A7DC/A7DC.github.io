@@ -8,7 +8,7 @@ import { typography, structure } from '../../tachyons-classes'
 import urls from '../../urls'
 
 const classes = {
-  container: 'relative white vh-100 cover',
+  container: 'relative white vh-100 cover mb6',
   images: 'absolute left-0 right-0 bottom-0 top-0 z-0'
 }
 
