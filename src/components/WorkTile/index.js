@@ -51,7 +51,7 @@ class WorkTile extends Component {
     const {title, subtitle, bg, margin} = this.props
     return (
       <ContentContainer>
-        <div className={margin ? "mb6 " + classes.container : classes.container}>
+        <div className={classes.container}>
           <ImageHover bg={bg} />
           <div className={structure.pullLeft}>
             <Content native state={state}>

@@ -47,8 +47,8 @@ const AnimationContainer = WrappedComponent => {
 
 const Bg = Keyframes.Spring({
   start: {
-    delay: 0,
-    from: { transform: `translate3d(0,120%,0)`, opacity: 0 },
+    delay: 600,
+    from: { transform: `translate3d(0,240px,0)`, opacity: 0 },
     to: { transform: `translate3d(0,0%,0)`, opacity: 1 },
     config: config.slow
   }
