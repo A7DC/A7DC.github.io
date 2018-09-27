@@ -10,13 +10,13 @@ const classes = {
 }
 
 const Experience = () => (
-  <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
+  <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra'>
     <ContentContainer>
       <div className="flex flex-column flex-row-l">
           <div className={classes.col}>
             <h3 className={`${typography.t2} mb4 mb0-l`}>Experience</h3>
           </div>
-          <div className={classes.col}>
+          <div className={`${classes.col} pt3-l`}>
             <div className="w-100 pl20pc">
               {data.workExperience.map((work, i) => {
                 return (
