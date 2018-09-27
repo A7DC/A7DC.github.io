@@ -38,7 +38,7 @@ class ImageHover extends Component {
           {styles => (
             <div style={styles}>
               <div 
-                className={'cover w-100 h-100 pt-100'}
+                className={'cover w-100 h-100'}
                 style={{
                   backgroundImage: `url(${bg})`
                 }}>
