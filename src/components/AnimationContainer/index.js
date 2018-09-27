@@ -25,11 +25,12 @@ const AnimationContainer = WrappedComponent => {
     render() {
       const state = this.state.animation
       return (
-        <div ref={r => this.container = r} className='min-vh-100'>
+        <div ref={r => this.container = r} className='min-vh-100 flex items-center justify-center'>
           <Bg native state={state}>
             {style => (
               <animated.div
                 style={style}
+                className="w-100"
               >
                 <WrappedComponent {...this.props} {...this.state} />
               </animated.div>

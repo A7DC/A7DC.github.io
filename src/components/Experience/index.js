@@ -12,7 +12,7 @@ const classes = {
 const Experience = () => (
   <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
     <ContentContainer>
-      <div className="flex flex-column flex-row-l  pv6">
+      <div className="flex flex-column flex-row-l">
           <div className={classes.col}>
             <h3 className={`${typography.t2} mb4 mb0-l`}>Experience</h3>
           </div>
