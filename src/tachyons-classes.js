@@ -14,6 +14,6 @@ export const structure = {
 }
 
 export const lists = {
-  ul: 'list pa0 ma0',
+  ul: 'pa0 ma0',
   li: 'mb4 inline-block w-100 fl'
 }
