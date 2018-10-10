@@ -18,11 +18,11 @@ const data = {
     },
     {
       title: 'UX',
-      content: 'I involve end users throughout the design and development process of my projects to ensure we’re always creating value for our customers. I aim to test assumptions early to minimise risk.'
+      content: 'I constantly seek validation of my work by testing it with users as much as possible.  I try to keep my testing lean.'
     },
     {
       title: 'Code',
-      content: 'I am a component developer, with experience using React and Framer. I enjoy trying out new things. One of the recent things I have tried is virtual reality development.'
+      content: 'I am a component developer, with experience using React and Framer. VR is a new technology I’ve been playing with.'
     },
   ],
   skillsExpanded: [
