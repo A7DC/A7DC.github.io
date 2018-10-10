@@ -2,7 +2,7 @@ const data = {
   workMain: { title: 'A nifty, free app for paid dates', subtitle: 'Bordellio', bg: 'images/bordellio-work-bg.png' },
   work: [
     { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png' },
-    { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png' },
+    { title: 'WebVR - coming soon', subtitle: 'Experiments', bg: 'images/vr.jpg' },
     { title: 'Medium.com', subtitle: 'Writing', bg: 'images/medium-bg.png' }
   ],
   workExperience: [
