@@ -10,8 +10,9 @@ import ImageHover from '../ImageHover'
 import data from '../../db'
 
 const classes = {
-  section: 'pb4',
-  container: 'pb6 pt6 ph5 pl5-l pr6-l mw8'
+  section: 'pb4 fl',
+  container: 'pb6 pt6 ph5 pl5-l pr6-l mw8',
+  imageContainer: 'vh-100 w-100 fl pb6'
 }
 
 class Bordellio extends Component {
@@ -63,7 +64,7 @@ class Bordellio extends Component {
               </section>
             </div>
           </ContentContainer>
-          <div className='vh-100'>
+          <div className={classes.imageContainer}>
             <ImageHover bg={'https://lh3.googleusercontent.com/301SQHGeMAkLl8k4KTLn1uiXC2xxnrRAT0SCe4R8QZJmZ64ELqMjcDzP-AohQSH5YhWBsqLItpS63JELmc_MoMl6TdKESkcBTeD4jwJdBNkD-YI0m_bGsO4KIlizeW1NkxB0ymEZtpDtm5pVqK4yuKLc5plXukFdyAlBII5z-ofRv7I7XdXVa9f75094rUz4PWscTBwTxSEYcSngAZK4Z3ZdqI1liNGL8jX_OCb091zmxPAomDmvw0USrnyAI44i5Qm63L5m0kPpKOYKjytq9FGrvFWtDZauJhLafTdfewvN9-7aIAIDFE6jPEaovGwssRIles4W4sXylIMJnv3Rqqb_cypcFf0oDSaeL6pzxCHKEr6v4wt8CYcuFuq3zguplLmVr_nheXHkVmQUkRjXQ4UpL127gpg24Uv7WtX-8yQvhj0ISu47bhi4wzi6ao-7qJjTr1XSZ2iYo6calKsTqh0pPA0eTz3-prds1w5i1xjmLujESx3lksMDM61YvBXueyxUSvydsjC10okRLy3atq2WIdbWqFZ3sPjZPVIht8NGA0j9ByK_ea5QOq9clzvfk46L5zqWmjM79R8eWBi18U2g5qnZRwmiNJU2nVbdm6ra7PpiLHWiCjLyk-Y00CE=w2080-h1560-no'} />
           </div>
           <ContentContainer>
@@ -93,7 +94,7 @@ class Bordellio extends Component {
               </section>
             </div>
           </ContentContainer>
-          <div className='vh-100'>
+          <div className={classes.imageContainer}>
             <ImageHover bg={'https://lh3.googleusercontent.com/3weHspjNdkavYs2OpJvE_nFQiJTVEgZzZdBROBNSCxfr_83G0GKWnoVuWwhFNTCc2JwtjTPLKJE_ajxiDBpXa8PTMh_OcBteoMTwlwdLUquQ5Bq6LrEL4GoDAlb1Ccc-s-2Fox9IpVarFKJTz8FnZk6f1Mo9nAgWgoQuZgQWiVAeNYqyBsid3oHFwHBD6p4OFNe1uhiTn-4L1zQoc-CwXhsZGNK4iucW4D3P6Gig4kEDJSDybNVf-1MB4EVSxJ4OAY2E6wQwwbNDfch0cyAQ_asW6mrJIEt7r912OPJBCQQGaFR-6dcazJk71NwnzRBxBRO-972lD__qhP2qX2Rxcp43ipwP4vzj62LqAgankuLwdYRkDie6q9jMDKRzZHuOxCBF4CivjeaJB9U6IuSHgkx_aMCEUEcZcrLGT4nrkPICaMiMlE1Su-FLXbgDAqGWkk4DAYeM9ZS1WBnJMiEMhnyoAppGmxe77DvOP7TOzL5pEVfTPabTGSzHFr_o5DS-GQQHeqD_iPCNBbX8VGelWiKys1egVnGpRrfat4p-cSSrsESd60kQteUJFb_xUIIle4Lo-dUaKoJjEbOkCYYBG7s2Cip237CI_Dc55CT7mhdWzRhumksr6clElwVk3FU=w2080-h1560-no'} />
           </div>
           <ContentContainer>
@@ -101,7 +102,7 @@ class Bordellio extends Component {
               <section className={classes.section}>
                 <p className={`${typography.pLead} pb5`}>Throughout the course of these interviews, the following problems kept coming up:</p>
                 <section className={classes.section}>
-                  <h2 className={`${typography.t2} pb3`}><b>Advertisers</b></h2>
+                  <h2 className={`${typography.t2} fw6 pb3`}><b>Advertisers</b></h2>
                   <ul className={`${typography.pLead} ${lists.ul}`}>
                     <li className={lists.li}>None of the review boards or directories (which allowed user-submitted reviews) could be verified, so reviews are open to abuse. </li>
                     <li className={lists.li}>Can’t verify clients identity easily beforehand </li>
@@ -109,8 +110,8 @@ class Bordellio extends Component {
                     <li className={lists.li}>No rating of clients prior to the meet - “Not interested whether they’re good in bed, just would like to know whether they’re respectful”</li>
                   </ul>
                 </section>
-                <section className={classes.section}>
-                  <h2 className={`${typography.t2} pb3`}><b>Clients</b></h2>
+                <section className={`${classes.section} pb5`}>
+                  <h2 className={`${typography.t2} fw6 pb3`}><b>Clients</b></h2>
                   <ul className={`${typography.pLead} ${lists.ul}`}>
                     <li className={lists.li}>Advertisers aren’t available at the time of request</li>
                     <li className={lists.li}>Contact number doesn’t work</li>
@@ -120,14 +121,14 @@ class Bordellio extends Component {
                   </ul>
                 </section>
               </section>
-              <section className={classes.section}>
+              <section className={`${classes.section}`}>
                 <h1 className={typography.t1}>The discovery</h1>
                 <p className={`${typography.pLead}`}>The biggest takeaway from talking to users was that we should be focusing on bookings in the future, not ‘right now’. If we hadn’t learned this early on we may have committed a lot of time developing a product which didn’t suit our users needs.</p>
                 <p className={`${typography.pLead}`}>It became clear that advertisers were incredibly interested in reducing the amount of time they spent organising bookings, and focused instead on the work itself. They wanted to reduce the amount of time it took to organise a booking, and have those bookings actually go through smoothly.</p>
                 <p className={`${typography.pLead}`}>For the clients; they were frustrated that advertisers were often not available at the time of request, along with being annoyed with fake profiles and/or receiving poor service during the date.</p>
               </section>
               <section className={classes.section}>
-                <h1 className={typography.t2}>Reducing time wasting</h1>
+                <h1 className={typography.t2} fw6>Reducing time wasting</h1>
                 <p className={`${typography.pLead}`}>We believe that encouraging users to provide ID and including reciprocal ratings between the client and provider will reduce time being wasted for both parties.</p>
                 <p className={`${typography.pLead}`}>We will know that we are right or wrong once we see the following feedback from the market:</p>
                 <ul className={`${typography.pLead} ${lists.ul}`}>
@@ -137,11 +138,11 @@ class Bordellio extends Component {
                 <p className={`${typography.pLead} pb4`}>*Our research tells us that booking requests occur at a 5%-10% success rate. </p>
               </section>
               <section className={classes.section}>
-                <h1 className={typography.t2}>Increasing listing quality and the service received</h1>
+                <h1 className={typography.t2} fw6>Increasing listing quality and the service received</h1>
                 <p className={`${typography.pLead}`}>We believe that encouraging clients to rate advertisers and publishing an average of ratings on an advertisers profile -- as well as moderating the platform based on these ratings (e.g removing profiles listed at X star rating and below after N amount of ratings) -- that we will increase the quality of adverts on the platform.</p>
                 <p className={`${typography.pLead}`}>We will have succeeded in this once we see the following feedback from clients:</p>
                 <ul className={`${typography.pLead} ${lists.ul}`}>
-                  <li className={lists.li}>Qualitative feedback from users saying the quality of the profiles on the service was high</li>
+                  <li className={`${typography.pLead} pb4`}>Qualitative feedback from users saying the quality of the profiles on the service was high</li>
                 </ul>
               </section>
               <section className={classes.section}>
@@ -150,13 +151,17 @@ class Bordellio extends Component {
               </section>
               {data.caseStudy[0].bordellio.features.map((feature, i) => {
                 return (
-                  <Feature t1={feature.t1} content={feature.content} video={feature.video} key={i} />
+                  <Feature title={feature.title} content={feature.content} video={feature.video} key={i} />
                 )
               })}
               <section className={classes.section}>
+                <h1 className={`${typography.t2} fw6`}>Measuring success</h1>
+                <p className={`${typography.pLead}`}>We’re currently conducting usability testing, and we expect to launch the first release this year. So far we’ve completed a single round of usability tests with several clients. These tests were done remotely, using live, moderated testing using Hangouts or LookBack for mobile. In instances where the users screen recording has failed, we’ve reverted to doing the tests ‘blind’ - which has worked out surprisingly well. </p>
+              </section>
+              <section className={classes.section}>
                 <h1 className={typography.t1}>Final thoughts</h1>
                 <p className={`${typography.pLead}`}>In the course of this project I have matured greatly as a designer, due in large part to my role as a co-founder, and the various different hats I’ve had to wear because of this (founder, designer, engineer).  </p>
-                <p className={`${typography.pLead}`}>The biggest difficulty has been the business side of things. The fact this industry exists (most places) in a legal grey area has made this project a challenge, especially when it comes to launching. </p>
+                <p className={`${typography.pLead}`}>The biggest difficulty has been the business side of things. The fact this industry exists (most places) in a legal grey area has made this project a challenge. </p>
                 <p className={`${typography.pLead}`}>While this project is a work in progress, so too is this case study. As we continue to learn and build more this post will be updated to reflect those changes.</p>
               </section>
             </div>
@@ -172,7 +177,7 @@ export default Bordellio
 
 const Feature = ({ title, content, video }) => (
   <section className={classes.section}>
-    <h1 className={typography.t2}>{title}</h1>
+    <h1 className={`${typography.t2} fw6 mb3`}>{title}</h1>
     {/* <video 
       className="w-100"
       autoplay="true"
