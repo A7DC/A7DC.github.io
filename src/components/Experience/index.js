@@ -10,7 +10,7 @@ const classes = {
 }
 
 const Experience = () => (
-  <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra'>
+  <section className='ph4 ph5-ns w-100 h-100 mw9 mla mra'>
     <ContentContainer>
       <div className="flex flex-column flex-row-l">
           <div className={classes.col}>

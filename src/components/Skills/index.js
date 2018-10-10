@@ -7,7 +7,7 @@ import ContentContainer from '../ContentContainer';
 
 const Skills = () => { 
   return (
-    <section className='ph2 ph5-ns w-100 h-100 mw9 mla mra relative'>
+    <section className='ph4 ph5-ns w-100 h-100 mw9 mla mra relative'>
       <ContentContainer>
         <section ref={r => this.container = r} className="relative white pv6">
             <section className='pb5'>

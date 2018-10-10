@@ -55,7 +55,7 @@ const CaseStudyContent = ({ title, state, imageState}) => (
   <section
     className={'w-100 flex flex-column content-box pt6'}>
     <ContentContainer>
-      <div className={`${structure.pullTextLeft} pb6 pt6 ph5 pl5-l pr6-l mw8`}>
+      <div className={`${structure.pullTextLeft} pb6 pt6 ph4 pl5-l pr6-l mw8`}>
         <p className={typography.p}>Case study</p>
         <h1 className={`${typography.t1} pb3`}>{title}</h1>
         <p className={typography.pLead}>

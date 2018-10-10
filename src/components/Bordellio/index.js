@@ -11,7 +11,7 @@ import data from '../../db'
 
 const classes = {
   section: 'pb4 fl',
-  container: 'pb6 pt6 ph5 pl5-l pr6-l mw8',
+  container: 'pb6 pt6 ph4 pl5-l pr6-l mw8',
   imageContainer: 'vh-100 w-100 fl pb6'
 }
 

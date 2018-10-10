@@ -8,7 +8,7 @@ export const typography = {
 
 export const structure = {
   container: 'ph0 ph6-l w-100 h-100 mw9 mla mra relative',
-  containerInner: 'ph2 ph5-l w-100 h-100 mw9 mla mra relative',
+  containerInner: 'ph4 ph5-l w-100 h-100 mw9 mla mra relative',
   pullLeft: 'pl3 pl5-ns absolute left-0 bottom-2',
   heroContainer: 'w-100 vh-80-ns vh-60 pv6-ns ph3 pl5-ns flex content-box'
 }
