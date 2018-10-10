@@ -128,7 +128,7 @@ class Bordellio extends Component {
                 <p className={`${typography.pLead}`}>For the clients; they were frustrated that advertisers were often not available at the time of request, along with being annoyed with fake profiles and/or receiving poor service during the date.</p>
               </section>
               <section className={classes.section}>
-                <h1 className={typography.t2} fw6>Reducing time wasting</h1>
+                <h1 className={`${typography.t2} fw6`}>Reducing time wasting</h1>
                 <p className={`${typography.pLead}`}>We believe that encouraging users to provide ID and including reciprocal ratings between the client and provider will reduce time being wasted for both parties.</p>
                 <p className={`${typography.pLead}`}>We will know that we are right or wrong once we see the following feedback from the market:</p>
                 <ul className={`${typography.pLead} ${lists.ul}`}>
@@ -138,7 +138,7 @@ class Bordellio extends Component {
                 <p className={`${typography.pLead} pb4`}>*Our research tells us that booking requests occur at a 5%-10% success rate. </p>
               </section>
               <section className={classes.section}>
-                <h1 className={typography.t2} fw6>Increasing listing quality and the service received</h1>
+                <h1 className={`${typography.t2} fw6`}>Increasing listing quality and the service received</h1>
                 <p className={`${typography.pLead}`}>We believe that encouraging clients to rate advertisers and publishing an average of ratings on an advertisers profile -- as well as moderating the platform based on these ratings (e.g removing profiles listed at X star rating and below after N amount of ratings) -- that we will increase the quality of adverts on the platform.</p>
                 <p className={`${typography.pLead}`}>We will have succeeded in this once we see the following feedback from clients:</p>
                 <ul className={`${typography.pLead} ${lists.ul}`}>

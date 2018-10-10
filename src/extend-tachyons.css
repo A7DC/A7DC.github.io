@@ -15,9 +15,45 @@
   margin-right: auto;
 }
 
+/* fonts */
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('/fonts/CircularStd-Bold.eot');
+	src: url('/fonts/CircularStd-Bold.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/CircularStd-Bold.woff') format('woff'),
+		url('/fonts/CircularStd-Bold.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('/fonts/CircularStd-Black.eot');
+	src: url('/fonts/CircularStd-Black.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/CircularStd-Black.woff') format('woff'),
+		url('/fonts/CircularStd-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Circular Std';
+	src: url('/fonts/CircularStd-Book.eot');
+	src: url('/fonts/CircularStd-Book.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/CircularStd-Book.woff') format('woff'),
+		url('/fonts/CircularStd-Book.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+.sans-serif {
+	font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
 .circular-typeface {
-	font-family: 'Circular Std', Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Circular Std';
 }
 
 .black {
@@ -40,10 +76,6 @@
 			height: 80vh;
 		}
 }
-
-/* .min-h-4000 {
-	min-height: calc(100vh * 4)
-} */
 
 /* colours */
 
@@ -112,14 +144,6 @@
 	letter-spacing: 0.001rem;
 	line-height: 2;
 }
-
-/* .f4 {
-	font-size: 1.125rem;
-}
-
-.f5 {
-	font-size: 1.5625rem;
-} */
 
 /* letter-spacing */
 
