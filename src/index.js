@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Transition, config } from 'react-spring'
-import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import './styles.css'
 import './extend-tachyons.css'
@@ -13,7 +13,7 @@ import Home from './components/Home'
 import Bordellio from './components/Bordellio'
 
 const App = () => (
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <Router>
     <Route
       render={({ location, ...rest }) => (
         <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
@@ -38,7 +38,7 @@ const App = () => (
         </div>
       )}
     />
-  </BrowserRouter>
+  </Router>
 )
 
 ReactDOM.render(<App />, document.getElementById('root'))
