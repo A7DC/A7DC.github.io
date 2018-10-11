@@ -16,7 +16,7 @@ const App = () => (
   <Router>
     <Route
       render={({ location, ...rest }) => (
-        <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
+        <div className="fill sans-serif font-smoothing lh-copy">
           <Route exact path="/" render={() => <Redirect to="/home" />} />
           <div className="content">
             <Transition
