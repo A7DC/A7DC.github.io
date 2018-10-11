@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import { Keyframes, config, animated } from 'react-spring'
-
 import { typography, structure } from '../../tachyons-classes'
 
 // components
@@ -49,10 +48,11 @@ class WorkTile extends Component {
 
   render() {
     const state = this.props.animation
-    const { title, subtitle, bg, arrow} = this.props
+    const { title, subtitle, bg, arrow, link} = this.props
     return (
       <ContentContainer>
         <div className={classes.container}>
+          <a href={link || '/'} target="_blank" className='white'>
           <ImageHover bg={bg} />
           <div className={structure.pullLeft}>
             <Content native state={state}>
@@ -64,6 +64,7 @@ class WorkTile extends Component {
               )}
             </Content>
           </div>
+          </a>
         </div>
       </ContentContainer>
     )

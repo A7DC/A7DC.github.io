@@ -53,6 +53,7 @@ class Home extends Component {
             title={data.work[0].title}
             subtitle={data.work[0].subtitle}
             padding={data.work[0].padding}
+            link='https://dribbble.com/dcaine'
             arrow />
           <Skills
             threshold={viewportHeight * 2}
@@ -76,6 +77,7 @@ class Home extends Component {
             title={data.work[2].title}
             subtitle={data.work[2].subtitle}
             padding={data.work[2].padding}
+            link='https://blog.framer.com/redesigning-mixcloud-s-login-form-with-framer-js-d49a4f4d5b1f'
             arrow />
           <Experience 
             threshold={2200} 
