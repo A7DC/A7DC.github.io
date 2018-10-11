@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "http://A7DC.github.io/",
+  "engines": {
+    "npm": "6.2.0",
+    "node": "8.11.3"
+  },
   "dependencies": {
     "delay": "^3.0.0",
     "react": "^16.3.2",
