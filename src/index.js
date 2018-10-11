@@ -14,7 +14,7 @@ import Bordellio from './components/Bordellio'
 import LoadingAnimation from './components/LoadingAnimation'
 
 const App = () => (
-  <Router basename='A7DC.github.io'>
+  <Router>
     <Route
       render={({ location, ...rest }) => (
         <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
