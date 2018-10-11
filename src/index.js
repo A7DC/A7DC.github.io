@@ -14,7 +14,7 @@ import Bordellio from './components/Bordellio'
 import LoadingAnimation from './components/LoadingAnimation'
 
 const App = () => (
-  <Router basename='A7DC/A7DC.github.io'>
+  <Router>
     <Route
       render={({ location, ...rest }) => (
         <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
@@ -30,9 +30,8 @@ const App = () => (
               leave={{ transform: 'translateX(-500px)', opacity: 0 }}>
               {style => (
                 <Switch location={location}>
-                  <Route path="/home" render={props => <Home {...props} style={style} />} />
-                  <Route exact path='/loading' render={() => <LoadingAnimation />} />
-                  <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
+                  <Route path={process.env.PUBLIC_URL + '/home'} render={props => <Home {...props} style={style} />} />
+                  <Route path={process.env.PUBLIC_URL + urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
                 </Switch>
               )}
             </Transition>
