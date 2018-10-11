@@ -3,7 +3,7 @@ const data = {
   work: [
     { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png' },
     { title: 'WebVR - coming soon', subtitle: 'Experiments', bg: 'images/vr.jpg' },
-    { title: 'Medium.com', subtitle: 'Writing', bg: 'images/medium-bg.png' }
+    { title: 'Redesigning Mixcloud’s login form with Framer JS', subtitle: 'Framer', bg: 'images/medium-bg.png' }
   ],
   workExperience: [
     { employer: 'Levo', jobTitle: 'Junior designer', datesWorked: 'February 2013 - February 2014' },
