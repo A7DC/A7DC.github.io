@@ -33,7 +33,6 @@ const App = () => (
                   <Route path="/home" render={props => <Home {...props} style={style} />} />
                   <Route exact path='/loading' render={() => <LoadingAnimation />} />
                   <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
-                  <Route render={() => <div>Not Found</div>} />
                 </Switch>
               )}
             </Transition>
