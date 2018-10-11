@@ -11,10 +11,9 @@ import urls from  './urls.js'
 // components
 import Home from './components/Home'
 import Bordellio from './components/Bordellio'
-import LoadingAnimation from './components/LoadingAnimation'
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <Route
       render={({ location, ...rest }) => (
         <div className="fill circular-typeface sans-serif font-smoothing lh-copy">
@@ -30,8 +29,8 @@ const App = () => (
               leave={{ transform: 'translateX(-500px)', opacity: 0 }}>
               {style => (
                 <Switch location={location}>
-                  <Route path={process.env.PUBLIC_URL + '/home'} render={props => <Home {...props} style={style} />} />
-                  <Route path={process.env.PUBLIC_URL + urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
+                  <Route path="/home" render={props => <Home {...props} style={style} />} />
+                  <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
                 </Switch>
               )}
             </Transition>
