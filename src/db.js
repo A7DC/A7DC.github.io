@@ -1,28 +1,29 @@
 const data = {
-  workMain: { title: 'A nifty, free app for paid dates', subtitle: 'Bordellio', bg: 'images/bordellio-work-bg.png' },
+  workMain: { title: 'A nifty, free app for paid dates', subtitle: 'Case study', bg: 'images/bordellio-work-bg.png' },
   work: [
     { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png' },
     { title: 'WebVR - coming soon', subtitle: 'Experiments', bg: 'images/vr.jpg' },
-    { title: 'Redesigning Mixcloud’s login form with Framer JS', subtitle: 'Framer', bg: 'images/medium-bg.png' }
+    { title: 'Redesigning Mixcloud’s login form with Framer JS', subtitle: 'Framer', bg: 'images/medium-bg.png' },
+    { title: 'Building the UI for Bordellio', subtitle: 'Case study', bg: 'images/code.png' },
   ],
   workExperience: [
     { employer: 'Levo', jobTitle: 'Junior designer', datesWorked: 'February 2013 - February 2014' },
     { employer: 'SilverStripe', jobTitle: 'Designer', datesWorked: 'February 2014 - October 2015' },
     { employer: 'Reapit', jobTitle: 'Designer', datesWorked: 'February 2016-March 2017' },
-    { employer: 'Bordellio', jobTitle: 'Founder', datesWorked: 'August 2017-Current' }
+    { employer: 'Bordellio', jobTitle: 'Designer', datesWorked: 'August 2017-Current' }
   ],
   skills: [
     {
       title: 'Visual',
-      content: 'I enjoy creating simple and intentional user interfaces for a variety of mediums, including web, mobile and virtual reality.'
+      content: 'I enjoy creating simple and intentional user interfaces for a variety of mediums, including web, mobile and virtual reality. I make things beautiful.'
     },
     {
       title: 'UX',
-      content: 'I constantly seek validation of my work by testing it with users as much as possible.  I try to keep my testing lean.'
+      content: 'I constantly seek validation of my work by testing it with users as much as possible.  I try to keep my testing lean. I ensure things work.'
     },
     {
       title: 'Code',
-      content: 'I am a component developer, with experience using React and Framer. VR is a new technology I’ve been playing with.'
+      content: 'Programming is just another medium to explore ideas. From interactive prototypes in Framer, or production apps in React and Redux; I make ideas come alive.'
     },
   ],
   skillsExpanded: [

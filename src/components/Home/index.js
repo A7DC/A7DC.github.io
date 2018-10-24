@@ -61,10 +61,10 @@ class Home extends Component {
           <WorkTile
             threshold={viewportHeight * 3}
             scrollY={scrollY}
-            bg={data.work[1].bg}
-            title={data.work[1].title}
-            subtitle={data.work[1].subtitle}
-            padding={data.work[1].padding}
+            bg={data.work[3].bg}
+            title={data.work[3].title}
+            subtitle={data.work[3].subtitle}
+            padding={data.work[3].padding}
             arrow
              />
           <About
