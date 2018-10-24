@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import { Keyframes, config, animated } from 'react-spring'
 import { typography, structure } from '../../tachyons-classes'
 
@@ -52,19 +53,34 @@ class WorkTile extends Component {
     return (
       <ContentContainer>
         <div className={classes.container}>
-          <a href={link || '/'} target="_blank" className='white'>
-          <ImageHover bg={bg} />
-          <div className={structure.pullLeft}>
-            <Content native state={state}>
-              {styles => (
-                <animated.div style={styles}>
-                  <h6 className={typography.p}>{subtitle}</h6>
-                  <h2 className={typography.t1}>{title} {arrow ? <ArrowRight /> : null} </h2>
-                </animated.div>
-              )}
-            </Content>
-          </div>
-          </a>
+          { arrow ?
+            <a href={link || '/'} target="_blank" className='white'>
+              <ImageHover bg={bg} />
+              <div className={structure.pullLeft}>
+                <Content native state={state}>
+                  {styles => (
+                    <animated.div style={styles}>
+                      <h6 className={typography.p}>{subtitle}</h6>
+                      <h2 className={typography.t1}>{title} <ArrowRight /> </h2>
+                    </animated.div>
+                  )}
+                </Content>
+              </div>
+            </a> :
+            <Link to={link || '/'} target="_blank" className='white'>
+              <ImageHover bg={bg} />
+              <div className={structure.pullLeft}>
+                <Content native state={state}>
+                  {styles => (
+                    <animated.div style={styles}>
+                      <h6 className={typography.p}>{subtitle}</h6>
+                      <h2 className={typography.t1}>{title}</h2>
+                    </animated.div>
+                  )}
+                </Content>
+              </div>
+            </Link>
+          }
         </div>
       </ContentContainer>
     )

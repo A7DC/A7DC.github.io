@@ -11,6 +11,7 @@ import urls from  './urls.js'
 // components
 import Home from './components/Home'
 import Bordellio from './components/Bordellio'
+import BordellioDev from './components/BordellioDev'
 
 const App = () => (
   <Router>
@@ -30,6 +31,7 @@ const App = () => (
               {style => (
                 <Switch location={location}>
                   <Route path="/home" render={props => <Home {...props} style={style} />} />
+                  <Route path={urls.bordellioDev} render={props => <BordellioDev {...props} style={style} />} />
                   <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
                 </Switch>
               )}

@@ -10,6 +10,8 @@ import About from '../About'
 import Experience from '../Experience'
 
 import data from '../../db'
+
+import urls from '../../urls.js'
 class Home extends Component {
 
   constructor(props) {
@@ -65,7 +67,7 @@ class Home extends Component {
             title={data.work[3].title}
             subtitle={data.work[3].subtitle}
             padding={data.work[3].padding}
-            arrow
+            link={urls.bordellioDev}
              />
           <About
             threshold={viewportHeight * 4}
