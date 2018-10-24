@@ -160,7 +160,7 @@ class Bordellio extends Component {
               </section>
               <section className={classes.section}>
                 <h1 className={typography.t1}>Final thoughts</h1>
-                <p className={`${typography.pLead}`}>In the course of this project I have matured greatly as a designer, due in large part to my role as a co-founder, and the various different hats I’ve had to wear because of this (founder, designer, engineer).  </p>
+                <p className={`${typography.pLead}`}>In the course of this project I have matured greatly as a designer, due to the various different hats I’ve worn (designing, ux, engineering).  </p>
                 <p className={`${typography.pLead}`}>The biggest difficulty has been the business side of things. The fact this industry exists (most places) in a legal grey area has made this project a challenge. </p>
                 <p className={`${typography.pLead}`}>While this project is a work in progress, so too is this case study. As we continue to learn and build more this post will be updated to reflect those changes.</p>
               </section>
