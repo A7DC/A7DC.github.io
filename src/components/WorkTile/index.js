@@ -67,7 +67,7 @@ class WorkTile extends Component {
                 </Content>
               </div>
             </a> :
-            <Link to={link || '/'} target="_blank" className='white'>
+            <Link to={link || '/'} className='white'>
               <ImageHover bg={bg} />
               <div className={structure.pullLeft}>
                 <Content native state={state}>
