@@ -99,7 +99,7 @@ class BordellioDev extends Component {
                 <h1 className={typography.t1}>Tachyons</h1>
                 <p className={`${typography.pLead}`}>Having worked on numerous projects, both large and small, I knew that the cascading nature of CSS makes it difficult to maintain styles overtime - especially with several people working on the same codebase. </p>
                 <p className={`${typography.pLead}`}>I wanted to be able to quickly and confidently build out components without worrying about causing bugs in the rest of the app, so the functional approach to Tachyons appealed to me.</p>
-                <p className={`${typography.pLead}`}>Because of its functional nature of Tachyons (i.e having single purpose classes that are named based on their visual function) it makes it really easy to ensure styles are applied consistently throughout the app, reducing the chance of someone writing poor code.</p>
+                <p className={`${typography.pLead}`}>Functional just means having single purpose classes that are named based on their visual function. It makes it really easy to ensure styles are applied consistently throughout the app, reducing the chance of someone writing poor code.</p>
                 <p className={`${typography.pLead}`}>For example, imagine you have a scale based on the powers of 2, your bottom margins would look like this:</p>
                 <Feature image='images/tachyons1.png' />
                 <p className={`${typography.pLead}`}>But then what if a colleague came along and added a rule which included a value outside of our scale?</p>
