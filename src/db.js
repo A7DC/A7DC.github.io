@@ -1,5 +1,5 @@
 const data = {
-  workMain: { title: 'A nifty, free app for paid dates', subtitle: 'Case study', bg: 'images/bordellio-work-bg.png' },
+  workMain: { title: 'A nifty, free app for paid dates', subtitle: 'Case study', bg: 'images/bordellio-work-bg.jpg' },
   work: [
     { title: 'UI Work', subtitle: 'Dribbble', bg: 'images/dribbble-bg.png' },
     { title: 'WebVR - coming soon', subtitle: 'Experiments', bg: 'images/vr.jpg' },
