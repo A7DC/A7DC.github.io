@@ -3,7 +3,7 @@ import { Keyframes, config, animated } from 'react-spring'
 import ContentContainer from '../ContentContainer'
 import { typography, structure } from '../../tachyons-classes'
 
-import db from '../../db'
+import data from '../../db'
 
 import urls from '../../urls'
 
@@ -30,7 +30,7 @@ class Hero extends Component {
       <Fragment>
         {home ?
           <HomeContent state={state}/> :
-          <CaseStudyContent imageState={state} title={db.workMain.title}/>
+          <CaseStudyContent imageState={state} title={data.workMain.title}/>
         }
       </Fragment>
     )
@@ -71,7 +71,7 @@ const CaseStudyContent = ({ title, state, imageState}) => (
       {styles => (
         <animated.div style={styles}>
           <div className='vh-100'>
-            <ImageHover bg={'https://images.unsplash.com/photo-1536466528142-f752ae7bdd0c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9a18f8b2fac38ab1fad42682f6ef7f65&auto=format&fit=crop&w=1950&q=80'} />
+            <ImageHover bg={data.workMain.bg} />
           </div>
         </animated.div>
       )}
