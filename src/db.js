@@ -15,15 +15,15 @@ const data = {
   skills: [
     {
       title: 'Visual',
-      content: 'I enjoy creating simple and intentional user interfaces for a variety of mediums, including web, mobile and virtual reality. I make things beautiful.'
+      content: 'I enjoy creating simple and intentional user interfaces for a variety of mediums, including web, mobile and virtual reality.'
     },
     {
       title: 'UX',
-      content: 'I constantly seek validation of my work by testing it with users as much as possible.  I try to keep my testing lean. I ensure things work.'
+      content: 'I constantly seek validation of my work by testing it with users as much as possible.  I try to keep my testing lean.'
     },
     {
       title: 'Code',
-      content: 'Programming is just another medium to explore ideas. From interactive prototypes in Framer, or production apps in React and Redux; I make ideas come alive.'
+      content: 'Programming is just another medium to explore ideas. I have years of experience with Framer and React.'
     },
   ],
   skillsExpanded: [
