@@ -9,8 +9,8 @@ const data = {
   workExperience: [
     { employer: 'Levo', jobTitle: 'Junior designer', datesWorked: 'February 2013 - February 2014' },
     { employer: 'SilverStripe', jobTitle: 'Designer', datesWorked: 'February 2014 - October 2015' },
-    { employer: 'Reapit', jobTitle: 'Designer', datesWorked: 'February 2016-March 2017' },
-    { employer: 'Bordellio', jobTitle: 'Designer', datesWorked: 'August 2017-Current' }
+    { employer: 'Reapit', jobTitle: 'Designer', datesWorked: 'February 2016 - March 2017' },
+    { employer: 'Bordellio', jobTitle: 'Designer', datesWorked: 'August 2017 - Current' }
   ],
   skills: [
     {

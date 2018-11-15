@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Transition, config } from 'react-spring'
 import { HashRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
+import ReactGA from 'react-ga';
 
 import './styles.css'
 import './extend-tachyons.css'
@@ -12,6 +13,9 @@ import urls from  './urls.js'
 import Home from './components/Home'
 import Bordellio from './components/Bordellio'
 import BordellioDev from './components/BordellioDev'
+
+ReactGA.initialize('UA-68646651-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const App = () => (
   <Router>
