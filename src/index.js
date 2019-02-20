@@ -23,11 +23,6 @@ const withTrackerWrapper = (Page) => {
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   ReactGA.initialize('UA-68646651-1');
-  //   ReactGA.pageview(window.location.pathname + window.location.search);
-  // }
-
   componentWillUpdate({ location, history }) {
     const gtag = window.gtag
 
