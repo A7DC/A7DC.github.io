@@ -13,13 +13,34 @@ import urls from  './urls.js'
 import Home from './components/Home'
 import Bordellio from './components/Bordellio'
 import BordellioDev from './components/BordellioDev'
+import withTracker from './components/withTracker'
+
+const withTrackerWrapper = (Page) => {
+  const Wrapper = withTracker(Page)
+  return props => <Wrapper {...props} />
+}
 
 
 class App extends Component {
 
-  componentDidMount() {
-    ReactGA.initialize('UA-68646651-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
+  // componentDidMount() {
+  //   ReactGA.initialize('UA-68646651-1');
+  //   ReactGA.pageview(window.location.pathname + window.location.search);
+  // }
+
+  componentWillUpdate({ location, history }) {
+    const gtag = window.gtag
+
+    if (location.pathname === this.props.location.pathname) {
+      return
+    }
+
+    if (history.action === 'PUSH' && typeof (gtag) === 'function') {
+      gtag('config', 'GA_TRACKING_ID', {
+        'page_location': window.location.href,
+        'page_path': location.pathname,
+      })
+    }
   }
 
   render() {
@@ -42,9 +63,9 @@ class App extends Component {
                   leave={{ transform: 'translateX(-500px)', opacity: 0 }}>
                   {style => (
                     <Switch location={location}>
-                      <Route path="/home" render={props => <Home {...props} style={style} />} />
-                      <Route path={urls.bordellioDev} render={props => <BordellioDev {...props} style={style} />} />
-                      <Route path={urls.bordellio} render={props => <Bordellio {...props} style={style} />} />
+                      <Route path="/home" render={props => withTrackerWrapper(Home)({...props, style: style})} />
+                      <Route path={urls.bordellioDev} render={props => withTrackerWrapper(BordellioDev)({ ...props, style: style })} />
+                      <Route path={urls.bordellio} render={props => withTrackerWrapper(Bordellio)({ ...props, style: style })} />
                     </Switch>
                   )}
                 </Transition>
